@@ -20,6 +20,7 @@ public class MathManager : MonoBehaviour {
     public bool interwaveMath;
 
     AnswerInput A_Input;
+    public TelemetryManager m_telemetry;
 
     MultiplyOrDivide multOrDiv;
     AddOrSubtract addOrSub;
@@ -45,7 +46,6 @@ public class MathManager : MonoBehaviour {
     public MathController m_Controller;
     public UIEffects interMathCanvas;
     public UIEffects interMathButtons;
-    public TelemetryManager m_telemetry;
 
     public static MathManager instance;
 
