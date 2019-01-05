@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VR;
 using UnityEngine.UI;
+using EasyMobile;
 
 public class MenuManager : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class MenuManager : MonoBehaviour
 
 	void Awake()
 	{
-		//InAppPurchasing.InitializePurchasing ();
+		InAppPurchasing.InitializePurchasing ();
 	}
 	private void Start()
     {
@@ -58,9 +59,9 @@ public class MenuManager : MonoBehaviour
 		if (logOutButton) 
 			logOutButton.gameObject.SetActive (LocalUserData.IsLoggedIn ());
 
-	/*	if (userNameText)
+		if (userNameText)
 			userNameText.text = (LocalUserData.IsLoggedIn () && DatabaseManager.instance) ? DatabaseManager.instance.GetUserName (LocalUserData.GetUserEmail ()) : "";
-	*/}
+	}
 
 	public void StartGameButtonPressed()
 	{

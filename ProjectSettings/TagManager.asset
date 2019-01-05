@@ -5,7 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fly
-  - PossiblePlayer
+  - Target
+  - Enemy
+  - fence
+  - ChoiceBox
+  - Question
+  - Feedback
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -15,17 +21,17 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Arrow
+  - MazeWalls
+  - MazeTurret
+  - MazeTurretBullet
+  - Bg
+  - FPSWeapon
+  - WorldUI
+  - Feedback
+  - ArrowTarget
+  - Foreground
+  - Background
   - 
   - Animal
   - 
@@ -42,4 +48,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: GUI
+    uniqueID: 2379361113
     locked: 0

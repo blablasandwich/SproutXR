@@ -33,7 +33,7 @@ public class Login_Canvas : CanvasNavigation
     void LoginPressed()
     {
         if (feedbackText) feedbackText.text = "";
-        /*
+
         if (DatabaseManager.instance == null) return;
 
         if (emailInput.text == "") // || passwordInput.text == "")
@@ -56,7 +56,7 @@ public class Login_Canvas : CanvasNavigation
 
         Debug.Log("Login Successful!");
 		LocalUserData.SetUserEmail (emailInput.text.ToLower ());
-        //PlayerPrefs.SetString("playerName", DatabaseManager.instance.GetUserName(emailInput.text.ToLower()));
+        PlayerPrefs.SetString("playerName", DatabaseManager.instance.GetUserName(emailInput.text.ToLower()));
 		if (FindObjectOfType<SubscriptionCanvas> ())
 			FindObjectOfType<SubscriptionCanvas> ().Refresh ();
 		Destroy (this.gameObject);
