@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 5ed7fd055bb138b46a1b4e61b71c4a02
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/missWaysUI.unity
     guid: e857b8219a25c3b40bc4686210e363a5
+  - enabled: 1
+    path: Assets/Scenes/felix/ftest.unity
+    guid: d6262512b6019144f8dab44311d1ea9c
   m_configObjects: {}
