@@ -807,6 +807,11 @@ MonoBehaviour:
   DaysLeftTemp: 0
   studentButton: {fileID: 114798642515290320}
   teacherButton: {fileID: 114776343296308520}
+  parentButton: {fileID: 0}
+  studentProfileCanvas: {fileID: 113547574137901647, guid: f06c347995f72604fa8ac8e5c5c37be8,
+    type: 3}
+  teacherProfileCanvas: {fileID: 0}
+  parentProfileCanvas: {fileID: 0}
 --- !u!114 &114668761807924304
 MonoBehaviour:
   m_ObjectHideFlags: 0
