@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/MissWays/Scenes/Planet Selection.unity
     guid: 533fe1d47ef9ada41a6acf8e36db8de0
   - enabled: 1
-    path: Assets/MissWays/Scenes/Portal Placement.unity
-    guid: 772b137c69436654381f79aa80434c19
+    path: Assets/MissWays/Scenes/Portal Placement Ex.unity
+    guid: 0cfa8c8fb3991204b984f3bcae44941a
   m_configObjects: {}
