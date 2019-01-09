@@ -6,6 +6,7 @@ namespace UnityStandardAssets.ImageEffects
 {
     class Triangles
     {
+        /*
         private static Mesh[] meshes;
         private static int currentTris = 0;
 
@@ -108,5 +109,6 @@ namespace UnityStandardAssets.ImageEffects
 
             return mesh;
         }
+        */
     }
 }

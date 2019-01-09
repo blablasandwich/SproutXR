@@ -112,7 +112,7 @@ namespace UnityStandardAssets.ImageEffects
         }
 
         void OnDisable () {
-            Quads.Cleanup ();
+            //Quads.Cleanup ();
         }
 
         void OnEnable () {
@@ -353,7 +353,7 @@ namespace UnityStandardAssets.ImageEffects
 
         void AddBokeh ( RenderTexture bokehInfo, RenderTexture tempTex, RenderTexture finalTarget) {
             if (bokehMaterial) {
-                var meshes = Quads.GetMeshes (tempTex.width, tempTex.height);	// quads: exchanging more triangles with less overdraw
+//                var meshes = Quads.GetMeshes (tempTex.width, tempTex.height);	// quads: exchanging more triangles with less overdraw
 
                 RenderTexture.active = tempTex;
                 GL.Clear (false, true, new Color (0.0f, 0.0f, 0.0f, 0.0f));
@@ -373,10 +373,10 @@ namespace UnityStandardAssets.ImageEffects
                 bokehMaterial.SetVector ("_ArScale",new Vector4 (sc, sc * arW, 0.5f, 0.5f * arW));
                 bokehMaterial.SetFloat ("_Intensity", bokehIntensity);
                 bokehMaterial.SetPass (0);
-
+                /*
                 foreach(Mesh m in meshes)
                     if (m) Graphics.DrawMeshNow (m, Matrix4x4.identity);
-
+                    */
                 GL.PopMatrix ();
 
                 Graphics.Blit (tempTex, finalTarget, dofMaterial, 8);

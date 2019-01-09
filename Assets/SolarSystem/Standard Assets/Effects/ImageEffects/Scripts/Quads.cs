@@ -8,6 +8,7 @@ namespace UnityStandardAssets.ImageEffects
 {
     class Quads
     {
+        /*
         static Mesh[] meshes;
         static int currentQuads = 0;
 
@@ -120,6 +121,6 @@ namespace UnityStandardAssets.ImageEffects
 
             return mesh;
         }
-
+        */
     }
 }

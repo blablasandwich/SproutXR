@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using EasyMobile;
+
 
 
 #pragma warning disable 0649
@@ -10,12 +10,12 @@ using EasyMobile;
 public class SubscriptionCanvas : CanvasNavigation
 {
     [Header("References")]
-    [SerializeField] private IAPProductDisplay productPrefab;
+    //[SerializeField] private IAPProductDisplay productPrefab;
     [SerializeField] private Transform subscriptionDisplay;
     //[SerializeField] private Button loginButton;
 	//[SerializeField] private Text activeSubText;
 
-    private IAPProduct[] _products;
+   // private IAPProduct[] _products;
 
 	void OnEnable()
 	{
@@ -60,7 +60,7 @@ public class SubscriptionCanvas : CanvasNavigation
 
 	}*/
 	void InitializeProducts()
-    {
+    {/*
         bool isInitialized = InAppPurchasing.IsInitialized();
         if(isInitialized)
         {
@@ -92,11 +92,11 @@ public class SubscriptionCanvas : CanvasNavigation
         else
         {
             Debug.LogWarning("IAP Not Initialized!");
-        }
+        }*/
     }
 
     IEnumerator CoWaitForIAPInitializtion()
-    {
+    {/*
         bool isInitialized = InAppPurchasing.IsInitialized();
 
         while(isInitialized == false)
@@ -110,7 +110,8 @@ public class SubscriptionCanvas : CanvasNavigation
         if (isInitialized)
             InitializeProducts();
         else
-            Debug.LogWarning("IAP Not initialized!");
+            Debug.LogWarning("IAP Not initialized!");*/
+        yield return null;
     }
 
     void LogInPressed()
