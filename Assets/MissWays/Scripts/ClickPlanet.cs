@@ -22,9 +22,10 @@ public class ClickPlanet : MonoBehaviour
 
                 }
                 else if(raycastHit.collider.CompareTag("Clickable")) {
-                   // SceneManager.LoadScene(1);
-                   // GetComponent<MeshRenderer>().material.color = new Color(0, 1, 0, 1);
+                    // SceneManager.LoadScene(1);
+                    // GetComponent<MeshRenderer>().material.color = new Color(0, 1, 0, 1);
 
+                    Instantiate(QuestionPrefab, Vector3.zero, Quaternion.identity);
 
                 }
 
