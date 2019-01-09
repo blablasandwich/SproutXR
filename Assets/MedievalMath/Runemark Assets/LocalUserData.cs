@@ -1,11 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using EasyMobile;
-#if EM_UIAP
-using UnityEngine.Purchasing;
-using UnityEngine.Purchasing.Security;
-#endif
 
 public static class LocalUserData
 {
@@ -27,7 +22,7 @@ public static class LocalUserData
     }
 
     public static bool IsSubActive()
-    {
+    {/*
         // Check if logged in
         if (IsLoggedIn() == false)
         {
@@ -53,12 +48,12 @@ public static class LocalUserData
                 }
             }
         }
-        
+        */
         return false;
     }
 
     public static double GetDaysLeftOfSub()
-    {
+    {/*
         Dictionary<string, string> dict = InAppPurchasing.StoreExtensionProvider.GetExtension<IAppleExtensions>().GetIntroductoryPriceDictionary();
 
         foreach (Product item in InAppPurchasing.StoreController.products.all)
@@ -76,7 +71,7 @@ public static class LocalUserData
                         return info.getRemainingTime().TotalDays;
                 }
             }
-        }
+        }*/
         
         return 0;
     }

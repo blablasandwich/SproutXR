@@ -22,7 +22,6 @@ public class StudentOrTeacher_Canvas : CanvasNavigation
         if (teacherButton) teacherButton.onClick.AddListener(TeacherSelected);
         if (studentButton) studentButton.onClick.AddListener(StudentSelected);
         if (parentButton) parentButton.onClick.AddListener(ParentSelected);
-
     }
 
 
@@ -68,7 +67,7 @@ public class StudentOrTeacher_Canvas : CanvasNavigation
         GameObject canvasToSpawn = null;
 
         canvasToSpawn = canvas;
-
+        print("spawned canvas: " + canvasToSpawn);
         if (canvasToSpawn)
             canvasToSpawn = Instantiate(canvasToSpawn);
 
