@@ -58,6 +58,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 319c2576b6c33e94fa64a80efdce6710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  QuestionPrefab: {fileID: 3858804369156407037, guid: d69fade9b2e1e624296217528991a2fa,
+    type: 3}
 --- !u!1 &3958712405350488610
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 319c2576b6c33e94fa64a80efdce6710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  QuestionPrefab: {fileID: 0}
 --- !u!1001 &1225986742038530022
 PrefabInstance:
   m_ObjectHideFlags: 0
