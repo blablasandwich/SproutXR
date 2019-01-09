@@ -24,10 +24,10 @@ public class ServerDownload : MonoBehaviour
     Dictionary<string, string> dict;
     void Start()
     {
-        url = "https://students.cah.ucf.edu/~fe171213/medmathscene";
+        url = "https://drive.google.com/uc?export/download&id=1Xda_w1mEJwmRkQs5d3F1cIFc54VdT_fv";
 
-        StartCoroutine(GetAssetBundleFileSize(url));
-        //StartCoroutine(GetAssetBundleOnline(url));
+        //StartCoroutine(GetAssetBundleFileSize(url));
+        StartCoroutine(GetAssetBundleOnline(url));
     }
    
     IEnumerator GetAssetBundleFileSize(string url)
@@ -93,7 +93,13 @@ public class ServerDownload : MonoBehaviour
     void Update()
     {
 
-
+        if(fileSize =="")
+        {
+            fileSize = "1";
+        } else
+        {
+            fileSize = "1";
+        }
         if (www != null)
         {
             if (www.downloadedBytes == 0)
@@ -107,7 +113,7 @@ public class ServerDownload : MonoBehaviour
                 //Debug.Log(www.downloadProgress);
 
                 Debug.Log("Downloaded: " + ((float)www.downloadedBytes / 1048576).ToString("F2") + "MB of " + (float.Parse(fileSize) / 1048576).ToString("F2") + "MB.");
-                prog.value = realProgress;
+                prog.value = www.downloadProgress;
             }
             else if (!printOnce)
             {
