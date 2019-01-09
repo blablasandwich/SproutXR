@@ -111,7 +111,7 @@ public class FillInTheBlankHandler : MonoBehaviour
     /// change the level
     /// </summary>
     /// <param name="i"></param>
-    private void ChangeLevel(int i)
+    public void ChangeLevel(int i)
     {
         SceneManager.LoadScene(i);
     }
