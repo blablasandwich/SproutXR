@@ -9,6 +9,8 @@ public class TV_Behavior : MonoBehaviour
     private bool isPaused;
     private bool playImmediately;
 
+    public GameObject Screen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,8 @@ public class TV_Behavior : MonoBehaviour
         uniMed = FindObjectOfType<UniversalMediaPlayer>();
 
         StartCoroutine(CheckVid());
+
+        uniMed.RenderingObjects[1] = Screen;
     }
 
     // Update is called once per frame
