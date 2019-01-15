@@ -474,9 +474,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8292585061134791062, guid: fbaf9ef98e38aa94d819ebc7f6785007,
         type: 3}
-      propertyPath: PlanetsPrefab
+      propertyPath: TelevisionPrefab
       value: 
       objectReference: {fileID: 95879173530270499, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+        type: 3}
+    - target: {fileID: 8292585061134791062, guid: fbaf9ef98e38aa94d819ebc7f6785007,
+        type: 3}
+      propertyPath: HousePrefab
+      value: 
+      objectReference: {fileID: 5242079739619345768, guid: 2ec0956b3da53fc47925fb06ff727257,
+        type: 3}
+    - target: {fileID: 8292585061134791062, guid: fbaf9ef98e38aa94d819ebc7f6785007,
+        type: 3}
+      propertyPath: MoonPrefab
+      value: 
+      objectReference: {fileID: 4332775924451216732, guid: d8183d4d3d90bcb409573579c26751f5,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbaf9ef98e38aa94d819ebc7f6785007, type: 3}

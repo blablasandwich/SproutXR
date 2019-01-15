@@ -35,7 +35,10 @@ namespace GoogleARCore.Examples.AugmentedImage
         /// A prefab for visualizing an AugmentedImage.
         /// </summary>
         public OnDetectImage PlanetsPrefab;
-
+        public OnDetectImage TelevisionPrefab;
+        public OnDetectImage MoonPrefab;
+        public OnDetectImage HousePrefab;
+     
         /// <summary>
         /// The overlay containing the fit to scan user guide.
         /// </summary>
@@ -85,9 +88,35 @@ namespace GoogleARCore.Examples.AugmentedImage
                 {
                     // Create an anchor to ensure that ARCore keeps tracking this augmented image.
                     Anchor anchor = image.CreateAnchor(image.CenterPose);
-                    visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
-                    visualizer.Image = image;
-                    m_Visualizers.Add(image.DatabaseIndex, visualizer);
+
+                    if (m_TempAugmentedImages[0] == image)
+                    { 
+                        visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
+                        visualizer.Image = image;
+                        m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                    }
+                    else if (m_TempAugmentedImages[1] == image)
+                    {
+                        visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
+                        visualizer.Image = image;
+                        m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                    }
+                    else if (m_TempAugmentedImages[2] == image)
+                    {
+                        visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
+                        visualizer.Image = image;
+                        m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                    }
+                    else if (m_TempAugmentedImages[3] == image)
+                    {
+                        visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
+                        visualizer.Image = image;
+                        m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                    }
+                    else
+                    {
+                        Debug.Log(image);
+                    }
                 }
                 else if (image.TrackingState == TrackingState.Stopped && visualizer != null)
                 {

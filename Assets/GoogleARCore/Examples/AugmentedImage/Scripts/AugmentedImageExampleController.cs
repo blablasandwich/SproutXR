@@ -76,9 +76,18 @@ namespace GoogleARCore.Examples.AugmentedImage
                 {
                     // Create an anchor to ensure that ARCore keeps tracking this augmented image.
                     Anchor anchor = image.CreateAnchor(image.CenterPose);
-                    visualizer = (AugmentedImageVisualizer)Instantiate(AugmentedImageVisualizerPrefab, anchor.transform);
-                    visualizer.Image = image;
-                    m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                    if (m_TempAugmentedImages[0] == image)
+                    {
+                        visualizer = (AugmentedImageVisualizer)Instantiate(AugmentedImageVisualizerPrefab, anchor.transform);
+                        visualizer.Image = image;
+                        m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                    }
+                    else if (m_TempAugmentedImages[1] == image)
+                    {
+                        visualizer = (AugmentedImageVisualizer)Instantiate(AugmentedImageVisualizerPrefab, anchor.transform);
+                        visualizer.Image = image;
+                        m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                    }
                 }
                 else if (image.TrackingState == TrackingState.Stopped && visualizer != null)
                 {
