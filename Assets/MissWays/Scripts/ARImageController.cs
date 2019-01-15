@@ -88,28 +88,28 @@ namespace GoogleARCore.Examples.AugmentedImage
                 {
                     // Create an anchor to ensure that ARCore keeps tracking this augmented image.
                     Anchor anchor = image.CreateAnchor(image.CenterPose);
-
-                    if (m_TempAugmentedImages[0] == image)
+                    
+                    if (image.DatabaseIndex == 0)
                     { 
                         visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
                         visualizer.Image = image;
                         m_Visualizers.Add(image.DatabaseIndex, visualizer);
                     }
-                    else if (m_TempAugmentedImages[1] == image)
+                    else if (image.DatabaseIndex == 1)
                     {
-                        visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
+                        visualizer = (OnDetectImage)Instantiate(TelevisionPrefab, anchor.transform);
                         visualizer.Image = image;
                         m_Visualizers.Add(image.DatabaseIndex, visualizer);
                     }
-                    else if (m_TempAugmentedImages[2] == image)
+                    else if (image.DatabaseIndex == 2)
                     {
-                        visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
+                        visualizer = (OnDetectImage)Instantiate(MoonPrefab, anchor.transform);
                         visualizer.Image = image;
                         m_Visualizers.Add(image.DatabaseIndex, visualizer);
                     }
-                    else if (m_TempAugmentedImages[3] == image)
+                    else if (image.DatabaseIndex == 3)
                     {
-                        visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
+                        visualizer = (OnDetectImage)Instantiate(HousePrefab, anchor.transform);
                         visualizer.Image = image;
                         m_Visualizers.Add(image.DatabaseIndex, visualizer);
                     }
@@ -131,7 +131,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                 if (visualizer.Image.TrackingState == TrackingState.Tracking)
                 {
                     FitToScanOverlay.SetActive(false);
-                    StaticVars.UI.transform.GetChild(1).GetComponent<Animator>().SetTrigger("Close");
+                    //StaticVars.UI.transform.GetChild(1).GetComponent<Animator>().SetTrigger("Close");
                     return;
                 }
             }

@@ -2014,6 +2014,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7798594595932448887}
   - component: {fileID: 5645634302583882100}
+  - component: {fileID: 7911818311416856310}
   m_Layer: 0
   m_Name: Moon
   m_TagString: Untagged
@@ -2055,6 +2056,18 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!114 &7911818311416856310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6857177793094949258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 080bdcca2af3ae24694968897985fd87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6962059349336655298
 GameObject:
   m_ObjectHideFlags: 0

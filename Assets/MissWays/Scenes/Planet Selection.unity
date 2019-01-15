@@ -112,6 +112,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &544347395
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 129894, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: m_Name
+      value: UniversalMediaPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 472386, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 472386, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 472386, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 472386, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 472386, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 472386, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 472386, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 472386, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 472386, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 472386, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 472386, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c404114afaafa3b4494665d1634c383c, type: 3}
 --- !u!1001 &607124551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -330,6 +387,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1302724018, guid: e8b665ccc0232e84ca29080f489402af, type: 3}
+      propertyPath: SessionConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 5e23eeca46578254c909ca503debcbb1,
+        type: 2}
     - target: {fileID: 2130908888, guid: e8b665ccc0232e84ca29080f489402af, type: 3}
       propertyPath: m_UpdateType
       value: 2
@@ -571,6 +633,24 @@ PrefabInstance:
       propertyPath: PlanetsPrefab
       value: 
       objectReference: {fileID: 4202378504982260425, guid: 0a48a636d3b450847840f6701c67324b,
+        type: 3}
+    - target: {fileID: 8292585061134791062, guid: fbaf9ef98e38aa94d819ebc7f6785007,
+        type: 3}
+      propertyPath: HousePrefab
+      value: 
+      objectReference: {fileID: 7483268917886831766, guid: 2ec0956b3da53fc47925fb06ff727257,
+        type: 3}
+    - target: {fileID: 8292585061134791062, guid: fbaf9ef98e38aa94d819ebc7f6785007,
+        type: 3}
+      propertyPath: MoonPrefab
+      value: 
+      objectReference: {fileID: 7911818311416856310, guid: d8183d4d3d90bcb409573579c26751f5,
+        type: 3}
+    - target: {fileID: 8292585061134791062, guid: fbaf9ef98e38aa94d819ebc7f6785007,
+        type: 3}
+      propertyPath: TelevisionPrefab
+      value: 
+      objectReference: {fileID: 1405707163179144402, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
         type: 3}
     - target: {fileID: 7769271114361763195, guid: fbaf9ef98e38aa94d819ebc7f6785007,
         type: 3}
