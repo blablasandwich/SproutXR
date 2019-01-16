@@ -243,8 +243,8 @@ PlayerSettings:
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: D:/Jose/GameDev/SproutXR_Github/_KeyStore/main.keystore
+  AndroidKeyaliasName: sproutxr
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
@@ -628,7 +628,7 @@ PlayerSettings:
   scriptingDefineSymbols:
     1: EASY_MOBILE;EASY_MOBILE_PRO;CROSS_PLATFORM_INPUT;EM_UIAP
     4: CROSS_PLATFORM_INPUT;MOBILE_INPUT
-    7: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    7: CROSS_PLATFORM_INPUT;MOBILE_INPUT;GleyIAPGooglePlay
     14: MOBILE_INPUT
   platformArchitecture: {}
   scriptingBackend: {}
