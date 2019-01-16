@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 143561507}
   - component: {fileID: 143561506}
   m_Layer: 0
-  m_Name: MathController
+  m_Name: mathController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
