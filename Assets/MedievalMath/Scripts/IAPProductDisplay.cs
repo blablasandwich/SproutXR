@@ -10,40 +10,38 @@ public class IAPProductDisplay : MonoBehaviour
     [SerializeField] private Text description = null;
 	[SerializeField] private Button purchaseButton;
 
-    //private IAPProduct product;
-
+    
 	private void Awake()
 	{
         if (description) description.text = "";
 		if (purchaseButton) 
 		{
-			//purchaseButton.onClick.RemoveAllListeners();
-			//purchaseButton.onClick.AddListener(PurchaseProduct);
+			purchaseButton.onClick.RemoveAllListeners();
+			purchaseButton.onClick.AddListener(PurchaseProduct);
 		}
 	}
 
     #region Event Subscriptions
     private void OnEnable()
     {
-        //InAppPurchasing.PurchaseCompleted += PurchaseCompletedHandler;
-        //InAppPurchasing.PurchaseFailed += PurchaseFailedHandler;
+
     }
 
     private void OnDisable()
     {
-        //InAppPurchasing.PurchaseCompleted -= PurchaseCompletedHandler;
-        //InAppPurchasing.PurchaseFailed -= PurchaseFailedHandler;
+       
     }
     #endregion
 
-
+    // Initialize the product and display proper details
+	
 
 	void Update()
 	{
 		if (purchaseButton)
 		{
-			//purchaseButton.gameObject.GetComponentInChildren<Text> ().color = (LocalUserData.IsLoggedIn () && LocalUserData.IsSubActive() == false) ? Color.white : Color.grey;
-			//purchaseButton.interactable = (LocalUserData.IsLoggedIn () && LocalUserData.IsSubActive() == false);
+			purchaseButton.gameObject.GetComponentInChildren<Text> ().color = (LocalUserData.IsLoggedIn () && LocalUserData.IsSubActive() == false) ? Color.white : Color.grey;
+			purchaseButton.interactable = (LocalUserData.IsLoggedIn () && LocalUserData.IsSubActive() == false);
 		}
 	}
 
@@ -51,44 +49,9 @@ public class IAPProductDisplay : MonoBehaviour
     // Purhcase the product
     void PurchaseProduct()
     {
-        /*switch (product.Name)
-        {
-            case EM_IAPConstants.Product_1_Month_Subscription:
-                InAppPurchasing.Purchase(EM_IAPConstants.Product_1_Month_Subscription);
-                break;
-            case EM_IAPConstants.Product_6_Month_Subscription:
-                InAppPurchasing.Purchase(EM_IAPConstants.Product_6_Month_Subscription);
-                break;
-            case EM_IAPConstants.Product_12_Month_Subscription:
-                InAppPurchasing.Purchase(EM_IAPConstants.Product_12_Month_Subscription);
-                break;
-        }*/
+       
     }
 
-    // Successful purchase handler
-    void PurchaseCompletedHandler()
-    {
-        /*
-        switch(product.Name)
-        {
-            case EM_IAPConstants.Product_1_Month_Subscription:
-                Debug.Log("Purchased Small Subscription");
-                break;
-            case EM_IAPConstants.Product_6_Month_Subscription:
-                Debug.Log("Purchased Medium Subscription");
-                break;
-            case EM_IAPConstants.Product_12_Month_Subscription:
-                Debug.Log("Purchased Large Subscription");
-                break;
-        }
-        */
-		Destroy (this.transform.root.gameObject);
-    }
-
-    // Failed purchase handler
-    void PurchaseFailedHandler()
-    {
-        //Debug.Log("The Purchase of product " + product.Name + " has failed.");
-    }
+  
 
 }

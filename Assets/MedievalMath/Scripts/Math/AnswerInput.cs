@@ -47,10 +47,6 @@ public class AnswerInput : MonoBehaviour {
 
     public void Start () {
        // manaBar = FindObjectOfType<ManaBar> ();
-       if(choiceBoxes != null)
-        {
-            choiceBoxes = GameObject.FindGameObjectsWithTag("ChoiceBox");
-        }
         m_math = GameObject.FindObjectOfType<MathManager> ();
         arrowSupplier = GameObject.FindObjectOfType<ArrowSupplier> ();
         audioSource = GameObject.Find ("PlayerAudio").GetComponent<AudioSource> ();

@@ -4,18 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-
 #pragma warning disable 0649
 
 public class SubscriptionCanvas : CanvasNavigation
 {
     [Header("References")]
-    //[SerializeField] private IAPProductDisplay productPrefab;
+    [SerializeField] private IAPProductDisplay productPrefab;
     [SerializeField] private Transform subscriptionDisplay;
     //[SerializeField] private Button loginButton;
 	//[SerializeField] private Text activeSubText;
 
-   // private IAPProduct[] _products;
 
 	void OnEnable()
 	{
@@ -96,21 +94,7 @@ public class SubscriptionCanvas : CanvasNavigation
     }
 
     IEnumerator CoWaitForIAPInitializtion()
-    {/*
-        bool isInitialized = InAppPurchasing.IsInitialized();
-
-        while(isInitialized == false)
-        {
-			yield return new WaitForSeconds (.5f);
-			Debug.Log ("Waiting for initialization...");
-            isInitialized = InAppPurchasing.IsInitialized();
-            yield return null;
-        }
-
-        if (isInitialized)
-            InitializeProducts();
-        else
-            Debug.LogWarning("IAP Not initialized!");*/
+    {
         yield return null;
     }
 

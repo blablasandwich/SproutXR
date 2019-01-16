@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 using System.Security.Cryptography;
 
 public class CreateProfileCanvas : CanvasNavigation
