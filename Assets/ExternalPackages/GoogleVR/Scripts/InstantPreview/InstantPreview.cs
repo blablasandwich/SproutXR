@@ -34,12 +34,10 @@ namespace Gvr.Internal {
       Regular,
       WindowSized,
     }
-    #pragma warning disable
     struct ResolutionSize {
       public int width;
       public int height;
     }
-    #pragma warning restore
 
     [Tooltip("Resolution of video stream. Higher = more expensive / better visual quality.")]
     public Resolutions OutputResolution = Resolutions.Big;
@@ -70,7 +68,7 @@ namespace Gvr.Internal {
     public bool InstallApkOnRun = true;
 
     public UnityEngine.Object InstantPreviewApk;
-#pragma warning disable
+
     struct UnityRect {
       public float right;
       public float left;
@@ -78,14 +76,13 @@ namespace Gvr.Internal {
       public float bottom;
     }
 
-
     struct UnityEyeViews {
       public Matrix4x4 leftEyePose;
       public Matrix4x4 rightEyePose;
       public UnityRect leftEyeViewSize;
       public UnityRect rightEyeViewSize;
     }
-#pragma warning restore
+
 #if UNITY_HAS_GOOGLEVR && UNITY_EDITOR
     static ResolutionSize[] resolutionSizes = new ResolutionSize[] {
       new ResolutionSize() { width = 2560, height = 1440, },  // ResolutionSize.Big

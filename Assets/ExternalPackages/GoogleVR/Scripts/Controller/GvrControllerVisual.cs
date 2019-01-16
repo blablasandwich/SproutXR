@@ -46,10 +46,8 @@ public class GvrControllerVisual : MonoBehaviour, IGvrArmModelReceiver, IGvrCont
   /// An array of prefabs that will be instantiated and added as children
   /// of the controller visual when the controller is created. Used to
   /// attach tooltips or other additional visual elements to the control dynamically.
-  #pragma warning disable
   [SerializeField]
   private GameObject[] attachmentPrefabs;
-  #pragma warning restore
 
   [SerializeField] private Color touchPadColor =
       new Color(200f / 255f, 200f / 255f, 200f / 255f, 1);
