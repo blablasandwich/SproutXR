@@ -95,7 +95,7 @@ public class TV_Behavior : MonoBehaviour
 
     private IEnumerator CheckVid()
     {
-        using (UnityWebRequest w = UnityWebRequest.Get("http://sproutXR-api-dev.herokuapp.com/api/video"))
+        using (UnityWebRequest w = UnityWebRequest.Get("https://www.youtube.com/watch?v=D8yXhDGJG94")) //http://sproutXR-api-dev.herokuapp.com/api/video
         {
             yield return w.SendWebRequest();
 
