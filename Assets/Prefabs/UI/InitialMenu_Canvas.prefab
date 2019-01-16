@@ -38,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 656, y: 377}
-  m_SizeDelta: {x: 2778.4, y: 1595}
+  m_SizeDelta: {x: 750, y: 1334}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &223437195841671772
 Canvas:
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backButton: {fileID: 114795600345880608}
-  nextCanvas: {fileID: 1351758203117916, guid: 6da8778db99eff84aafc1e1ec5b399b6, type: 3}
+  nextCanvas: {fileID: 1995941553276420, guid: 89d330e3ec1c6724f89152f2b5dd78c1, type: 3}
   previousCanvas: {fileID: 0}
   UserNameTemp: 
   UserEmailTemp: 
@@ -618,7 +618,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1334, y: 750}
+  m_ReferenceResolution: {x: 750, y: 1334}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0.519
   m_PhysicalUnit: 3
@@ -1032,7 +1032,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Account
+  m_Text: Subscribe
 --- !u!1 &1394841553845494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1885,7 +1885,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114097683866428702}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1538909198}
+        m_MethodName: OpenLibraryCanvas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1893238758962456
