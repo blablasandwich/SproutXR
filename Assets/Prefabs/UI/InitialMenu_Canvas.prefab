@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.15294118, g: 0.40000004, b: 0.5176471, a: 1}
+  m_Color: {r: 0.27600002, g: 0.3476692, b: 0.5411765, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -377,7 +377,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114041833003539008}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1544283996}
+        m_MethodName: VerifyCredentials
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1195163790961270
@@ -554,6 +565,7 @@ GameObject:
   - component: {fileID: 114888454422374060}
   - component: {fileID: 114311371502746434}
   - component: {fileID: 1538909198}
+  - component: {fileID: 1544283996}
   m_Layer: 0
   m_Name: InitialMenu_Canvas
   m_TagString: Untagged
@@ -655,6 +667,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   libraryCanvas: {fileID: 0}
+--- !u!114 &1544283996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297571846311046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fb6b6ebd1a40ae47b2d7d5e009219c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1313432240973086
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,7 +713,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 675, y: -8.999817}
+  m_AnchoredPosition: {x: 700, y: -8.999817}
   m_SizeDelta: {x: 3081.7, y: 452.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222846635719206330
@@ -733,7 +757,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Email Not Found
+  m_Text: Email/Password Not Found
 --- !u!1 &1322253544937462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1474,7 +1498,7 @@ GameObject:
   - component: {fileID: 222772495580053798}
   - component: {fileID: 114412605759746820}
   m_Layer: 0
-  m_Name: bg (1)
+  m_Name: bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1550,7 +1574,7 @@ GameObject:
   - component: {fileID: 114574561460773244}
   - component: {fileID: 114795600345880608}
   m_Layer: 5
-  m_Name: BackButton (1)
+  m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
