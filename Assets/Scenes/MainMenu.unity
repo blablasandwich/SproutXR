@@ -287,6 +287,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InitialMenu_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1297571846311046, guid: 1cfeb3ea17696a649bb86046e0d152a3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 224594446168234836, guid: 1cfeb3ea17696a649bb86046e0d152a3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -567,6 +571,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Library_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7192953392967141457, guid: 8205f41f4315f474f88ee60bcfaa82a5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6974939302696656771, guid: 8205f41f4315f474f88ee60bcfaa82a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -674,11 +683,58 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 310555809125154587, guid: 8205f41f4315f474f88ee60bcfaa82a5,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 310555809125154587, guid: 8205f41f4315f474f88ee60bcfaa82a5,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
+      objectReference: {fileID: 310555808265758605}
+    - target: {fileID: 310555809125154587, guid: 8205f41f4315f474f88ee60bcfaa82a5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: TriggerEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 310555808563564018, guid: 8205f41f4315f474f88ee60bcfaa82a5,
+        type: 3}
+      propertyPath: mController
+      value: 
       objectReference: {fileID: 143561506}
+    - target: {fileID: 310555808123175663, guid: 8205f41f4315f474f88ee60bcfaa82a5,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 74.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 310555808123175663, guid: 8205f41f4315f474f88ee60bcfaa82a5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -637
+      objectReference: {fileID: 0}
+    - target: {fileID: 310555807983219028, guid: 8205f41f4315f474f88ee60bcfaa82a5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Planet Selection
+      objectReference: {fileID: 0}
+    - target: {fileID: 310555809203944261, guid: 8205f41f4315f474f88ee60bcfaa82a5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8205f41f4315f474f88ee60bcfaa82a5, type: 3}
+--- !u!114 &310555808265758605 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6207222367046062634, guid: 8205f41f4315f474f88ee60bcfaa82a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 310555808265758604}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -745406591, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7466354504286482397 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7192953392967141457, guid: 8205f41f4315f474f88ee60bcfaa82a5,
