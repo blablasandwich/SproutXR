@@ -10,22 +10,27 @@ public class StudentOrTeacher_Canvas : CanvasNavigation
     [Header("UI References")]
     [SerializeField] private Button studentButton;
     [SerializeField] private Button teacherButton;
+    [SerializeField]    private Button parentButton;
 
     MathController mController;
 
 	private void Start()
 	{
         if (teacherButton) teacherButton.onClick.AddListener(SchoolSelected);
-        if (studentButton) studentButton.onClick.AddListener(homePressed);
+        if (studentButton) studentButton.onClick.AddListener(HomePressed);
+        if (parentButton) parentButton.onClick.AddListener(ParentPressed);
 
     }
-
 
     void SchoolSelected()
     {
+        GoToNextCanvas();
+    }
+    void HomePressed()
+    {
             GoToNextCanvas();
     }
-    void homePressed()
+    void ParentPressed()
     {
         GoToNextCanvas();
     }
