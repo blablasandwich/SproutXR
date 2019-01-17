@@ -822,7 +822,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backButton: {fileID: 114067695505292818}
-  nextCanvas: {fileID: 1777996134576698, guid: 663301b7e919041f79c748acc738cc53, type: 3}
+  nextCanvas: {fileID: 113547574137901647, guid: f06c347995f72604fa8ac8e5c5c37be8,
+    type: 3}
   previousCanvas: {fileID: 1602865643699484, guid: 0b65567a9e59047f0a99833fcecfb1f2,
     type: 3}
   UserNameTemp: 
@@ -832,12 +833,6 @@ MonoBehaviour:
   studentButton: {fileID: 114798642515290320}
   teacherButton: {fileID: 114776343296308520}
   parentButton: {fileID: 1455649994}
-  studentProfileCanvas: {fileID: 113547574137901647, guid: f06c347995f72604fa8ac8e5c5c37be8,
-    type: 3}
-  teacherProfileCanvas: {fileID: 113547574137901647, guid: f06c347995f72604fa8ac8e5c5c37be8,
-    type: 3}
-  parentProfileCanvas: {fileID: 113547574137901647, guid: f06c347995f72604fa8ac8e5c5c37be8,
-    type: 3}
 --- !u!114 &114668761807924304
 MonoBehaviour:
   m_ObjectHideFlags: 0
