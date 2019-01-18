@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class DownloadButtonBehavior : MonoBehaviour
 {
     public string currentApp = "";
-     
+    public MathController mController;
     public void SelectCurrentApp(string selectedApp)
     {
         currentApp = selectedApp;
@@ -16,6 +16,7 @@ public class DownloadButtonBehavior : MonoBehaviour
     {
         if (currentApp != "")
         {
+            if(currentApp == "kellsLevel") { mController.StartGame(); }
             SceneManager.LoadScene(currentApp);
         }
         else print("No Scene Selected");

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1455649996}
   - component: {fileID: 1455649995}
   - component: {fileID: 1455649994}
+  - component: {fileID: 471160766701964319}
   m_Layer: 0
   m_Name: Parent
   m_TagString: Untagged
@@ -27,15 +28,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455649992}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0000012584}
-  m_LocalScale: {x: 4.3258343, y: 4.3258343, z: 2.1629171}
+  m_LocalPosition: {x: 0, y: 0, z: 1.6374}
+  m_LocalScale: {x: 2.2474008, y: 2.2474008, z: 1.1237004}
   m_Children: []
   m_Father: {fileID: 224497638925383426}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -34.906, y: -140}
+  m_AnchoredPosition: {x: -16.686, y: -48.633}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1455649996
@@ -114,9 +115,79 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1455649995}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 471160766701964319}
+        m_MethodName: TriggerEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &471160766701964319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455649992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -745406591, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Trigger:
+    m_IsTriggerExpanded: 1
+    m_Type: 0
+    m_LifecycleEvent: 0
+    m_ApplyRules: 0
+    m_Rules:
+      m_Rules: []
+    m_TriggerBool: 0
+    m_InitTime: 5
+    m_RepeatTime: 5
+    m_Repetitions: 0
+    repetitionCount: 0
+  m_EventPayload:
+    m_IsEventExpanded: 1
+    m_StandardEventType: CustomEvent
+    m_Parameters:
+      m_Parameters:
+      - m_RequirementType: 0
+        m_GroupID: 
+        m_Tooltip: 
+        m_Name: UserType
+        m_Value:
+          m_EditingCustomValue: 0
+          m_PopupIndex: 0
+          m_CustomValue: 
+          m_FixedType: 0
+          m_EnumType: 
+          m_EnumTypeIsCustomizable: 0
+          m_CanDisable: 0
+          m_PropertyType: 1
+          m_ValueType: System.String
+          m_Value: Parent
+          m_Target:
+            m_Target: {fileID: 0}
+            m_Path: 
+            m_ValidTypeNames:
+            - System.Int32
+            - System.Boolean
+            - System.Decimal
+            - System.Double
+            - System.Single
+            - System.Int64
+            - System.Int16
+            - System.String
+            m_Type: System.String
+            m_EnumType: 
+    m_Name: Registration
 --- !u!1 &1014387490104120
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,8 +214,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014387490104120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 6.8158}
-  m_LocalScale: {x: 18.210773, y: 28.298601, z: 11.751488}
+  m_LocalPosition: {x: 0, y: 0, z: 5.1784}
+  m_LocalScale: {x: 9.461043, y: 14.701972, z: 6.1052504}
   m_Children: []
   m_Father: {fileID: 224497638925383426}
   m_RootOrder: 0
@@ -218,8 +289,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221583430954218}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1007391, y: 1.1007391, z: -6.163123}
+  m_LocalPosition: {x: 0, y: 0, z: 1.6374}
+  m_LocalScale: {x: 0.571867, y: 0.571867, z: -3.2019274}
   m_Children:
   - {fileID: 224777613571628846}
   m_Father: {fileID: 224497638925383426}
@@ -227,7 +298,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -22, y: 43}
+  m_AnchoredPosition: {x: 38, y: 71}
   m_SizeDelta: {x: 318.8, y: 116.899994}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &222454909473690628
@@ -414,15 +485,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609353087835182}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00000098522}
-  m_LocalScale: {x: 1.0488632, y: 0.68196946, z: -3.8183672}
+  m_LocalPosition: {x: 0, y: 0, z: 1.6374}
+  m_LocalScale: {x: 0.3543036, y: 0.3543036, z: -1.9837563}
   m_Children: []
   m_Father: {fileID: 224497638925383426}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.2259, y: 1062}
+  m_AnchoredPosition: {x: -1.7865, y: 575.84}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222840377971928772
@@ -479,6 +550,7 @@ GameObject:
   - component: {fileID: 222542801638600104}
   - component: {fileID: 114881421951201306}
   - component: {fileID: 114776343296308520}
+  - component: {fileID: 6536676653413173860}
   m_Layer: 0
   m_Name: Teacher
   m_TagString: Untagged
@@ -494,15 +566,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801194480674122}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0000011745}
-  m_LocalScale: {x: 4.3258343, y: 4.3258343, z: 2.1629171}
+  m_LocalPosition: {x: 0, y: 0, z: 1.6374}
+  m_LocalScale: {x: 2.2474008, y: 2.2474008, z: 1.1237004}
   m_Children: []
   m_Father: {fileID: 224497638925383426}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35.744, y: 478.64105}
+  m_AnchoredPosition: {x: -17.122, y: 272.77}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222542801638600104
@@ -581,9 +653,79 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114881421951201306}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6536676653413173860}
+        m_MethodName: TriggerEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &6536676653413173860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801194480674122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -745406591, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Trigger:
+    m_IsTriggerExpanded: 1
+    m_Type: 0
+    m_LifecycleEvent: 0
+    m_ApplyRules: 0
+    m_Rules:
+      m_Rules: []
+    m_TriggerBool: 0
+    m_InitTime: 5
+    m_RepeatTime: 5
+    m_Repetitions: 0
+    repetitionCount: 0
+  m_EventPayload:
+    m_IsEventExpanded: 1
+    m_StandardEventType: CustomEvent
+    m_Parameters:
+      m_Parameters:
+      - m_RequirementType: 0
+        m_GroupID: 
+        m_Tooltip: 
+        m_Name: UserType
+        m_Value:
+          m_EditingCustomValue: 0
+          m_PopupIndex: 0
+          m_CustomValue: 
+          m_FixedType: 0
+          m_EnumType: 
+          m_EnumTypeIsCustomizable: 0
+          m_CanDisable: 0
+          m_PropertyType: 1
+          m_ValueType: System.String
+          m_Value: Teacher
+          m_Target:
+            m_Target: {fileID: 0}
+            m_Path: 
+            m_ValidTypeNames:
+            - System.Int32
+            - System.Boolean
+            - System.Decimal
+            - System.Double
+            - System.Single
+            - System.Int64
+            - System.Int16
+            - System.String
+            m_Type: System.String
+            m_EnumType: 
+    m_Name: Registration
 --- !u!1 &1953610572469896
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,6 +738,7 @@ GameObject:
   - component: {fileID: 222392813184682866}
   - component: {fileID: 114851685354597818}
   - component: {fileID: 114798642515290320}
+  - component: {fileID: 7537009564067555410}
   m_Layer: 0
   m_Name: Student
   m_TagString: Untagged
@@ -611,15 +754,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953610572469896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0000012584}
-  m_LocalScale: {x: 4.3258343, y: 4.3258343, z: 2.1629171}
+  m_LocalPosition: {x: 0, y: 0, z: 1.6374}
+  m_LocalScale: {x: 2.2474008, y: 2.2474008, z: 1.1237004}
   m_Children: []
   m_Father: {fileID: 224497638925383426}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -34.906, y: -758.98895}
+  m_AnchoredPosition: {x: -16.686, y: -370.21}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222392813184682866
@@ -698,9 +841,79 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114851685354597818}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7537009564067555410}
+        m_MethodName: TriggerEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &7537009564067555410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953610572469896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -745406591, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Trigger:
+    m_IsTriggerExpanded: 1
+    m_Type: 0
+    m_LifecycleEvent: 0
+    m_ApplyRules: 0
+    m_Rules:
+      m_Rules: []
+    m_TriggerBool: 0
+    m_InitTime: 5
+    m_RepeatTime: 5
+    m_Repetitions: 0
+    repetitionCount: 0
+  m_EventPayload:
+    m_IsEventExpanded: 1
+    m_StandardEventType: CustomEvent
+    m_Parameters:
+      m_Parameters:
+      - m_RequirementType: 0
+        m_GroupID: 
+        m_Tooltip: 
+        m_Name: UserType
+        m_Value:
+          m_EditingCustomValue: 0
+          m_PopupIndex: 0
+          m_CustomValue: 
+          m_FixedType: 0
+          m_EnumType: 
+          m_EnumTypeIsCustomizable: 0
+          m_CanDisable: 0
+          m_PropertyType: 1
+          m_ValueType: System.String
+          m_Value: Student
+          m_Target:
+            m_Target: {fileID: 0}
+            m_Path: 
+            m_ValidTypeNames:
+            - System.Int32
+            - System.Boolean
+            - System.Decimal
+            - System.Double
+            - System.Single
+            - System.Int64
+            - System.Int16
+            - System.String
+            m_Type: System.String
+            m_EnumType: 
+    m_Name: Registration
 --- !u!1 &1995941553276420
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +925,7 @@ GameObject:
   - component: {fileID: 224497638925383426}
   - component: {fileID: 95993318917858792}
   - component: {fileID: 223321176986552924}
+  - component: {fileID: 9116065903375376097}
   - component: {fileID: 114527827163840788}
   - component: {fileID: 114668761807924304}
   m_Layer: 0
@@ -786,6 +1000,28 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &9116065903375376097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995941553276420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 750, y: 1334}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0.381
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
 --- !u!114 &114527827163840788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,19 +1035,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backButton: {fileID: 114067695505292818}
-  nextCanvas: {fileID: 1777996134576698, guid: 663301b7e919041f79c748acc738cc53, type: 3}
-  previousCanvas: {fileID: 0}
+  nextCanvas: {fileID: 113547574137901647, guid: f06c347995f72604fa8ac8e5c5c37be8,
+    type: 3}
+  previousCanvas: {fileID: 1602865643699484, guid: 0b65567a9e59047f0a99833fcecfb1f2,
+    type: 3}
   UserNameTemp: 
   UserEmailTemp: 
   UserPasswordTemp: 
   DaysLeftTemp: 0
   studentButton: {fileID: 114798642515290320}
   teacherButton: {fileID: 114776343296308520}
-  parentButton: {fileID: 0}
-  studentProfileCanvas: {fileID: 113547574137901647, guid: f06c347995f72604fa8ac8e5c5c37be8,
-    type: 3}
-  teacherProfileCanvas: {fileID: 0}
-  parentProfileCanvas: {fileID: 0}
+  parentButton: {fileID: 1455649994}
 --- !u!114 &114668761807924304
 MonoBehaviour:
   m_ObjectHideFlags: 0
