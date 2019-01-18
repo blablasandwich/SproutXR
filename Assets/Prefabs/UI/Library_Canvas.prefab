@@ -927,7 +927,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MissWaysUI
+          m_StringArgument: Planet Selection
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1042,8 +1042,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 751, y: -1200}
-  m_SizeDelta: {x: 533, y: 300}
+  m_AnchoredPosition: {x: 751, y: -637}
+  m_SizeDelta: {x: 533, y: 74.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &310555808123175658
 CanvasRenderer:
@@ -1510,6 +1510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentApp: 
+  mController: {fileID: 0}
 --- !u!1 &310555808685219061
 GameObject:
   m_ObjectHideFlags: 0
@@ -2191,17 +2192,6 @@ MonoBehaviour:
           m_StringArgument: kellsLevel
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: StartGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 6207222367046062634}
         m_MethodName: TriggerEvent
         m_Mode: 1
@@ -2488,7 +2478,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 119}
+  m_AnchoredPosition: {x: 0, y: 6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &310555809203944263
@@ -3107,6 +3097,7 @@ GameObject:
   - component: {fileID: 6972542457195960775}
   - component: {fileID: 7080561671314529943}
   - component: {fileID: 7079864873953895667}
+  - component: {fileID: 7368929394516473767}
   m_Layer: 5
   m_Name: DashboardButton
   m_TagString: Untagged
@@ -3210,6 +3201,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7080561671314529943}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7368929394516473767}
+        m_MethodName: GoToURL
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: http://sproutxr-dashboard-dev.herokuapp.com
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &7368929394516473767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7193932327284533369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61e27a657562d264982fe0d736d9fe7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

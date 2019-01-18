@@ -8098,6 +8098,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699373679}
   m_CullTransparentMesh: 0
+--- !u!114 &701200896 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114995210194817388, guid: d07cae040ee2fb74e87e9fd4abccc51d,
+    type: 3}
+  m_PrefabInstance: {fileID: 598551149}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a7e1ce91263e9f4c8215c2a7875c905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &712106231 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1890275119012672, guid: f0f715bc6f280a641ad8675b2b2bd6a3,
@@ -10140,7 +10152,7 @@ MonoBehaviour:
   horseRiderPrefab: {fileID: 1372078820083414, guid: 0f5a5b7deccc20241a03bdea3a668b45,
     type: 3}
   bonusEnemy: {fileID: 0}
-  currentWave: 14
+  currentWave: 1
   finalWave: 15
   storyText: {fileID: 585508146}
   billboardCanvas: {fileID: 505358069}
@@ -10676,6 +10688,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1146072278}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &966504195 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114995210194817388, guid: d07cae040ee2fb74e87e9fd4abccc51d,
+    type: 3}
+  m_PrefabInstance: {fileID: 168356024}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a7e1ce91263e9f4c8215c2a7875c905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &975913146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15933,6 +15957,10 @@ PrefabInstance:
       propertyPath: tutorialBehavior
       value: 
       objectReference: {fileID: 206640375}
+    - target: {fileID: 1477516977126168, guid: 1fbd5b1903afe6e4199b8c202bba70ba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4618680038859016, guid: 1fbd5b1903afe6e4199b8c202bba70ba, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.35
@@ -15964,10 +15992,6 @@ PrefabInstance:
     - target: {fileID: 4618680038859016, guid: 1fbd5b1903afe6e4199b8c202bba70ba, type: 3}
       propertyPath: m_RootOrder
       value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 1477516977126168, guid: 1fbd5b1903afe6e4199b8c202bba70ba, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114019952929571836, guid: 1fbd5b1903afe6e4199b8c202bba70ba,
         type: 3}
@@ -16499,7 +16523,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   API_URL: 
   m_playermathstats: {fileID: 1869398080}
-  m_barriers: []
+  m_barriers:
+  - {fileID: 1525378163}
+  - {fileID: 966504195}
+  - {fileID: 701200896}
 --- !u!4 &1448174398
 Transform:
   m_ObjectHideFlags: 0
@@ -17114,6 +17141,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3549777eb42c864bb9bc1e83d04f4d7, type: 3}
+--- !u!114 &1525378163 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114995210194817388, guid: d07cae040ee2fb74e87e9fd4abccc51d,
+    type: 3}
+  m_PrefabInstance: {fileID: 824347822}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a7e1ce91263e9f4c8215c2a7875c905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1536759226
 PrefabInstance:
   m_ObjectHideFlags: 0
