@@ -492,6 +492,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &1749420095
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1475655333514350, guid: 4ab8b86fe4358454582d5b16bc9342b9, type: 3}
+      propertyPath: m_Name
+      value: FlashLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604588671294128, guid: 4ab8b86fe4358454582d5b16bc9342b9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 236.20007
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604588671294128, guid: 4ab8b86fe4358454582d5b16bc9342b9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 66.25944
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604588671294128, guid: 4ab8b86fe4358454582d5b16bc9342b9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.665405
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604588671294128, guid: 4ab8b86fe4358454582d5b16bc9342b9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604588671294128, guid: 4ab8b86fe4358454582d5b16bc9342b9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604588671294128, guid: 4ab8b86fe4358454582d5b16bc9342b9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604588671294128, guid: 4ab8b86fe4358454582d5b16bc9342b9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604588671294128, guid: 4ab8b86fe4358454582d5b16bc9342b9, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604588671294128, guid: 4ab8b86fe4358454582d5b16bc9342b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604588671294128, guid: 4ab8b86fe4358454582d5b16bc9342b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604588671294128, guid: 4ab8b86fe4358454582d5b16bc9342b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4ab8b86fe4358454582d5b16bc9342b9, type: 3}
+--- !u!114 &1749420096 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114001257211058770, guid: 4ab8b86fe4358454582d5b16bc9342b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1749420095}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7755d628d4514f74584d67c3d844c0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &58003069581647581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -696,6 +765,19 @@ PrefabInstance:
     - target: {fileID: 1782315189, guid: 5d29f9897afb57b45920157fb5d27de1, type: 3}
       propertyPath: m_Color.b
       value: 0.6792453
+      objectReference: {fileID: 0}
+    - target: {fileID: 6361952483597257575, guid: 5d29f9897afb57b45920157fb5d27de1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1179222590, guid: 5d29f9897afb57b45920157fb5d27de1, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1749420096}
+    - target: {fileID: 1179222590, guid: 5d29f9897afb57b45920157fb5d27de1, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: toggleFlash
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d29f9897afb57b45920157fb5d27de1, type: 3}
