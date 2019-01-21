@@ -18,4 +18,4 @@ MonoBehaviour:
   EnableCloudAnchor: 0
   AugmentedImageDatabase: {fileID: 11400000, guid: c4bbec34d3d505a4bb8fb8cc16dc5b07,
     type: 2}
-  CameraFocusMode: 0
+  CameraFocusMode: 1
