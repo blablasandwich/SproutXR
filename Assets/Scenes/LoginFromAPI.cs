@@ -13,6 +13,11 @@ public class LoginFromAPI : MonoBehaviour
     public InputField passwordInputField;
     public Text feedbackText;
 
+    /* Testing Login
+     email: example@lucernastudios.com
+     pass: 12345678
+    */
+
     public string API_URL = "http://sproutxr-api-dev.herokuapp.com";
 
     private User user;
@@ -36,7 +41,7 @@ public class LoginFromAPI : MonoBehaviour
         libraryCanvas = GetComponent<LoginUIManager>();
     }
 
-    public void VerifyCredentials()
+    public void CheckUser()
     {
         inputEmail = emailInputField.text;
         inputPassword = passwordInputField.text;
@@ -53,7 +58,6 @@ public class LoginFromAPI : MonoBehaviour
         else
         {
             Debug.Log("Error: Password does not match.");
-            // TODO: Tell the user the password is not good
             feedbackText.text = "Email/Password Not Found";
         }
 
@@ -83,7 +87,7 @@ public class LoginFromAPI : MonoBehaviour
         else
         {
             // Show results as text
-            // Debug.Log(www.downloadHandler.text);
+            Debug.Log(www.downloadHandler.text);
             
             user = JsonUtility.FromJson<User>(www.downloadHandler.text);
             // Or retrieve results as binary data
