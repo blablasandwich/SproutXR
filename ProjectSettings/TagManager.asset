@@ -12,6 +12,12 @@ TagManager:
   - Question
   - Feedback
   - Water
+  - Earth
+  - AstronomicalBody
+  - Satellite
+  - Clickable
+  - Planet
+  - Screen
   layers:
   - Default
   - TransparentFX

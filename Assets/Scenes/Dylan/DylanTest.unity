@@ -207,13 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b9f100b4f437df4b8baf20ebf0483ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Screen: {fileID: 0}
---- !u!1 &1313216696 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 95879174600215918, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
-    type: 3}
-  m_PrefabInstance: {fileID: 95879173287007702}
-  m_PrefabAsset: {fileID: 0}
+  activeVideo: 0
 --- !u!1001 &1407292321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -227,20 +221,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
       propertyPath: _renderingObjects.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
       propertyPath: _path
-      value: https://www.youtube.com/watch?v=iRZ2Sh5-XuM
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
       propertyPath: _autoPlay
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
-      propertyPath: _renderingObjects.Array.data[0]
-      value: 
-      objectReference: {fileID: 1313216696}
     - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
       propertyPath: _useAdvanced
       value: 1
@@ -461,20 +451,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tv_MissWays_Final
       objectReference: {fileID: 0}
+    - target: {fileID: 95879174600215918, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+        type: 3}
+      propertyPath: m_TagString
+      value: Screen
+      objectReference: {fileID: 0}
     - target: {fileID: 95879173530270498, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.41
+      value: 3.785
       objectReference: {fileID: 0}
     - target: {fileID: 95879173530270498, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.42
+      value: 6.788
       objectReference: {fileID: 0}
     - target: {fileID: 95879173530270498, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.66
+      value: -5.337
       objectReference: {fileID: 0}
     - target: {fileID: 95879173530270498, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
         type: 3}
@@ -515,6 +510,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 95879173530270496, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+        type: 3}
+      propertyPath: activeVideo
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60, type: 3}
