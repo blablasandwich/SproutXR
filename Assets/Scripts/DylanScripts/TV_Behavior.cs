@@ -7,20 +7,22 @@ public class TV_Behavior : MonoBehaviour
 {
     private UniversalMediaPlayer uniMed;
     private bool isPaused;
-    private bool playImmediately;
+    private bool isOff;
 
-    private GameObject Screen;
+    public GameObject Screen;
 
     public int activeVideo = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        Screen = GameObject.FindGameObjectWithTag("Screen");
-        uniMed.RenderingObjects[1] = Screen;
+        Screen = GameObject.FindWithTag("Screen");
 
+        isOff = false;
         isPaused = false;
         uniMed = FindObjectOfType<UniversalMediaPlayer>();
+
+        uniMed.RenderingObjects[0] = Screen;
 
         StartCoroutine(CheckVid());
     }
@@ -30,9 +32,17 @@ public class TV_Behavior : MonoBehaviour
     {
        if (Input.GetKeyDown(KeyCode.Space))
        {
-            OnOff();
-            Debug.Log("A");
+            if (!isOff)
+            {
+                Off();
+            }
+            else
+            {
+
+                On();
+            }
        }
+
        if (Input.GetKeyDown(KeyCode.P))
        {
             Pause();
@@ -88,13 +98,17 @@ public class TV_Behavior : MonoBehaviour
         uniMed.Position = 0;
     }
 
-    void OnOff()
+    void On()
     {
-        if (uniMed.IsPlaying || isPaused)
-            uniMed.Stop();
-        else
-            uniMed.Play();
+        uniMed.Play();
+        isOff = false;
+    }
 
+    void Off()
+    {
+        uniMed.Stop();
+        isPaused = false;
+        isOff = true;
     }
 
     [System.Serializable]
