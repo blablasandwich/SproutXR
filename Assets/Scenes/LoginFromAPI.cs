@@ -9,7 +9,7 @@ using System.Text;
 public class LoginFromAPI : MonoBehaviour
 {
     public LoginUIManager libraryCanvas;
-    public InputField emailInputField;
+    public InputField usernameInputField;
     public InputField passwordInputField;
     public Text feedbackText;
 
@@ -22,20 +22,20 @@ public class LoginFromAPI : MonoBehaviour
 
     private User user;
     private bool authenticated = false;
-    private string inputEmail = "";
+    private string inputUsername = "";
     private string inputPassword = "";    
 
     [System.Serializable]
     public class User
     {
-        public string email = "";
+        public string username = "";
         public string password_hash = "";
     }
 
     public void Start()
     {
         user = new User();
-        emailInputField = GameObject.Find("Email/InputField").GetComponent<InputField>();
+        usernameInputField = GameObject.Find("Username/InputField").GetComponent<InputField>();
         passwordInputField = GameObject.Find("Password/InputField").GetComponent<InputField>();
         feedbackText = GameObject.Find("FeedbackText").GetComponent<Text>();
         libraryCanvas = GetComponent<LoginUIManager>();
@@ -43,7 +43,7 @@ public class LoginFromAPI : MonoBehaviour
 
     public void CheckUser()
     {
-        inputEmail = emailInputField.text;
+        inputUsername = usernameInputField.text;
         inputPassword = passwordInputField.text;
 
         StartCoroutine(GetUser());
@@ -58,7 +58,7 @@ public class LoginFromAPI : MonoBehaviour
         else
         {
             Debug.Log("Error: Password does not match.");
-            feedbackText.text = "Email/Password Not Found";
+            feedbackText.text = "Username/Password Not Found";
         }
 
         if (authenticated)
@@ -76,7 +76,7 @@ public class LoginFromAPI : MonoBehaviour
 
     IEnumerator GetUser()
     {
-        string url = API_URL + "/api/email/" + inputEmail;
+        string url = API_URL + "/api/username/" + inputUsername;
         UnityWebRequest www = UnityWebRequest.Get(url);
         yield return www.SendWebRequest();
 
