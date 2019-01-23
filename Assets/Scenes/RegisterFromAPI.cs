@@ -33,6 +33,7 @@ public class RegisterFromAPI : MonoBehaviour
         usernameInputField = GameObject.Find("DisplayName/InputField").GetComponent<InputField>();
         passwordInputField = GameObject.Find("Password/InputField").GetComponent<InputField>();
         passwordConfirmInputField = GameObject.Find("Confirm Password/InputField").GetComponent<InputField>();
+        Debug.Log(usernameInputField.text);
 
         //feedbackText = GameObject.Find("FeedbackText").GetComponent<Text>();
         libraryCanvas = GetComponent<LoginUIManager>();
