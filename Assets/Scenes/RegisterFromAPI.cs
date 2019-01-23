@@ -130,7 +130,7 @@ public class RegisterFromAPI : MonoBehaviour
     {
 
         string username = user.username;
-        string password_hash = user.password_hash;
+        string password_hash = MD5Hash(user.password_hash);
 
         string payload = "";
         
