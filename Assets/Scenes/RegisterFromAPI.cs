@@ -33,7 +33,6 @@ public class RegisterFromAPI : MonoBehaviour
         usernameInputField = GameObject.Find("DisplayName/InputField").GetComponent<InputField>();
         passwordInputField = GameObject.Find("Password/InputField").GetComponent<InputField>();
         passwordConfirmInputField = GameObject.Find("Confirm Password/InputField").GetComponent<InputField>();
-        Debug.Log(usernameInputField.text);
 
         //feedbackText = GameObject.Find("FeedbackText").GetComponent<Text>();
         libraryCanvas = GetComponent<LoginUIManager>();
@@ -41,10 +40,10 @@ public class RegisterFromAPI : MonoBehaviour
 
     public void VerifyPasswords()
     {
-        inputUsername = usernameInputField.text;
-        inputPassword = passwordInputField.text;
+        user.username = usernameInputField.text;
+        user.password_hash = passwordInputField.text;
 
-        if (inputPassword == passwordConfirmInputField.text)
+        if (user.password_hash == passwordConfirmInputField.text)
         {
             // Register
             StartCoroutine(APIPost("/api/user", CreateUserPayload()));
@@ -140,7 +139,7 @@ public class RegisterFromAPI : MonoBehaviour
 
         string jsonPayload = "{" + payload + "}";
 
-        //Debug.Log("JSON payload:\n" + jsonPayload);
+        Debug.Log("<color=red>JSON payload:\n</color>" + jsonPayload);
 
         return jsonPayload;
     }
