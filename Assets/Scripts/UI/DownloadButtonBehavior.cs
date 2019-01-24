@@ -7,6 +7,12 @@ public class DownloadButtonBehavior : MonoBehaviour
 {
     public string currentApp = "";
     public MathController mController;
+    public ServerDownload serverDL;
+
+    public void Start()
+    {
+        serverDL = FindObjectOfType<ServerDownload>();
+    }
     public void SelectCurrentApp(string selectedApp)
     {
         currentApp = selectedApp;
@@ -16,8 +22,14 @@ public class DownloadButtonBehavior : MonoBehaviour
     {
         if (currentApp != "")
         {
-            if(currentApp == "kellsLevel") { mController.StartGame(); }
-            SceneManager.LoadScene(currentApp);
+            if(currentApp == "kellsLevel") {
+                //Will do a check if it's already downloadd or not
+                serverDL.DownloadAndroidAssetBundle();
+            } else
+            {
+                SceneManager.LoadScene(currentApp);
+            }
+            
         }
         else print("No Scene Selected");
     }
