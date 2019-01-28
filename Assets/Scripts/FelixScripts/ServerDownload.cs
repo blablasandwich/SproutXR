@@ -7,6 +7,7 @@ using System.IO;
 using UnityEngine.SceneManagement;
 using System.Linq;
 
+[RequireComponent(typeof(GameEnumList))]
 public class ServerDownload : MonoBehaviour
 {
     //https://drive.google.com/uc?export/download&id=1Xda_w1mEJwmRkQs5d3F1cIFc54VdT_fv   med math levels
@@ -21,12 +22,19 @@ public class ServerDownload : MonoBehaviour
     
     public bool uCache = false;
     public Slider prog;
-    public Text downloadText;  
-    public EnumList.MedievalMathLevels levelSelect;
+    public Text downloadText;
+    [Tooltip("This will automatically be set from the GameEnumList at start of play")]
+    public string level;
+    [Tooltip("Read only purposes from where asset bundle location is downloaded from")]
+    public string url;
+    //TODO: android/iOS type for url
+    public string deviceType;
 
+    private GameEnumList.GameList game;
     private DownloadButtonBehavior dlButton;
     private MathController mController;
-    string url;
+
+    private bool isDownloading = false;
     private bool checksizeOnce = false;
     private ServerDownload instance;
     private float bitsDL = 0; 
@@ -54,61 +62,42 @@ public class ServerDownload : MonoBehaviour
 
     void Start()
     {
+        game = GetComponent<GameEnumList>().gameList;
+        level = GetComponent<GameEnumList>().selectedLevel;
         mController = FindObjectOfType<MathController>();
         dlButton = FindObjectOfType<DownloadButtonBehavior>();
-        url = "https://s3.amazonaws.com/flamfoof/MedievalMath/AssetBundle/" + levelSelect;
-        filePath = GetStreamedAssetPath(levelSelect.ToString());
+        //TODO: Make an iOS and Android file path for url depending on device
+        url = "https://s3.amazonaws.com/flamfoof/" + game + "/AssetBundle/" + level;
+        filePath = GetStreamedAssetPath(level.ToString());
         Debug.Log(filePath);
         //StartCoroutine(PlayButton());
         //StartCoroutine(GetAndroidBundle(url));
         //StartCoroutine(GetAssetBundleFileSize(url));
         //StartCoroutine(GetAssetBundleOnline(url));
-        
+        DownloadAndroidAssetBundle();
     }
 
     //TODO: Make this function more modular for other situations like a different game URL
     //Currently being called from download button behavior script
     public void DownloadAndroidAssetBundle()
     {
-        StartCoroutine(PlayButton());
+        if(!isDownloading)
+            StartCoroutine(PlayButton());
     }
-
-    public IEnumerator GetAndroidBundle(string url)
-    {
-        //TODO: Have a version checking function to compare different asset bundle files
-        WWW request = WWW.LoadFromCacheOrDownload(url, 0);
-
-        while(!request.isDone)
-        {
-            //Debug.Log(request.progress);
-            prog.gameObject.SetActive(true);
-            if(request.progress > 0)
-                prog.value = request.progress + 0.1f;
-            if(downloadText)
-                downloadText.text = "Downloading....";
-            
-            yield return null;
-        }
-        if(request.error == null)
-        {
-            bundle = request.assetBundle;
-            prog.gameObject.SetActive(false);
-            downloadText.text = "Launch";
-            Debug.Log("Success");
-        } else
-        {
-            Debug.Log(request.error);
-        }
-
-    }
-
+    //TODO: Check if asset bundle is already downloaded, then change text accordingly
     public IEnumerator PlayButton()
     {
         string[] sceneArray;
-        yield return GetAndroidBundle(url);
+        isDownloading = true;
+        //Checks if there is an available bundle
+        yield return GetAndroidBundle();
         if (!bundle)
         {
             Debug.Log("Bundle failed to load");
+            if (game.ToString() == "none")
+                Debug.LogError("No game is selected for download");
+            if (level == "none")
+                Debug.LogError("No level is selected");
             yield break;
         }
         Debug.Log("Starting this");
@@ -134,16 +123,48 @@ public class ServerDownload : MonoBehaviour
                     break;
             }
         }
-        /*
+        ///*For texting without the dlButton
         sceneArray = bundle.GetAllScenePaths();
         for (int i = 0; i < bundle.GetAllScenePaths().Length; i++)
         {
             Debug.Log(bundle.GetAllScenePaths()[i]);
         }
         Debug.Log("Level name loaded is: " + sceneArray[0]);
-        
-        //SceneManager.LoadScene(sceneArray[0]);
-        */
+
+        SceneManager.LoadScene(sceneArray[0]);
+        //*/
+
+    }
+
+    public IEnumerator GetAndroidBundle()
+    {
+        //TODO: Have a version checking function to compare different asset bundle files
+        WWW request = WWW.LoadFromCacheOrDownload(url, 0);
+
+        while (!request.isDone)
+        {
+            Debug.Log(prog.name);
+            if(!prog.isActiveAndEnabled)
+                prog.gameObject.SetActive(true);
+            if (request.progress > 0)
+                prog.value = request.progress + 0.1f;
+            if (downloadText)
+                downloadText.text = "Downloading....";
+
+            yield return null;
+        }
+        if (request.error == null)
+        {
+            bundle = request.assetBundle;
+            prog.gameObject.SetActive(false);
+            if (downloadText)
+                downloadText.text = "Launch";
+            Debug.Log("Success");
+        }
+        else
+        {
+            Debug.Log(request.error);
+        }
 
     }
 
@@ -318,7 +339,7 @@ Debug.Log("Checking if file path exists");
 AssetBundle validAB;
 
 if (System.IO.File.Exists(filePath))
-    validAB = AssetBundle.LoadFromFile(GetStreamedAssetPath(levelSelect.ToString()));
+    validAB = AssetBundle.LoadFromFile(GetStreamedAssetPath(level.ToString()));
 else
 {
     validAB = null;
