@@ -7,24 +7,29 @@ public class DownloadButtonBehavior : MonoBehaviour
 {
     public string currentApp = "";
     public MathController mController;
-    public ServerDownload serverDL;
+    public GameObject dlManager;
 
     public void Start()
     {
-        serverDL = FindObjectOfType<ServerDownload>();
+        dlManager = GameObject.Find("DownloadManager");
     }
     public void SelectCurrentApp(string selectedApp)
     {
         currentApp = selectedApp;
+        dlManager.GetComponent<DownloadManagerController>().SetGame(selectedApp);
+        dlManager.GetComponent<ServerDownload>().IsAssetBundleCached();
+        
     }
     // Start is called before the first frame update
     public void launchApp()
     {
         if (currentApp != "")
         {
-            if(currentApp == "kellsLevel") {
-                //Will do a check if it's already downloadd or not
-                serverDL.DownloadAndroidAssetBundle();
+            if(dlManager.GetComponent<GameEnumList>().gameList == GameEnumList.GameList.MedievalMath) {
+                dlManager.GetComponent<ServerDownload>().DownloadAndroidAssetBundle();
+            } else if(dlManager.GetComponent<GameEnumList>().gameList == GameEnumList.GameList.MissWays)
+            {
+                SceneManager.LoadScene(dlManager.GetComponent<GameEnumList>().misswaysLevels.ToString());
             } else
             {
                 SceneManager.LoadScene(currentApp);

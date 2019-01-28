@@ -7,7 +7,7 @@ using System.IO;
 using UnityEngine.SceneManagement;
 using System.Linq;
 
-[RequireComponent(typeof(GameEnumList))]
+
 public class ServerDownload : MonoBehaviour
 {
     //https://drive.google.com/uc?export/download&id=1Xda_w1mEJwmRkQs5d3F1cIFc54VdT_fv   med math levels
@@ -30,7 +30,7 @@ public class ServerDownload : MonoBehaviour
     //TODO: android/iOS type for url
     public string deviceType;
 
-    private GameEnumList.GameList game;
+    private GameEnumList game;
     private DownloadButtonBehavior dlButton;
     private MathController mController;
 
@@ -62,32 +62,48 @@ public class ServerDownload : MonoBehaviour
 
     void Start()
     {
-        game = GetComponent<GameEnumList>().gameList;
+        game = GetComponent<GameEnumList>();
         level = GetComponent<GameEnumList>().selectedLevel;
         mController = FindObjectOfType<MathController>();
         dlButton = FindObjectOfType<DownloadButtonBehavior>();
         //TODO: Make an iOS and Android file path for url depending on device
-        url = "https://s3.amazonaws.com/flamfoof/" + game + "/AssetBundle/" + level;
+        url = "https://s3.amazonaws.com/flamfoof/" + game.gameList + "/AssetBundle/" + level;
+        
         filePath = GetStreamedAssetPath(level.ToString());
-        Debug.Log(filePath);
+        //Debug.Log(filePath);
         //StartCoroutine(PlayButton());
         //StartCoroutine(GetAndroidBundle(url));
         //StartCoroutine(GetAssetBundleFileSize(url));
         //StartCoroutine(GetAssetBundleOnline(url));
-        DownloadAndroidAssetBundle();
+        //DownloadAndroidAssetBundle();
     }
 
     //TODO: Make this function more modular for other situations like a different game URL
     //Currently being called from download button behavior script
     public void DownloadAndroidAssetBundle()
     {
-        if(!isDownloading)
+        url = "https://s3.amazonaws.com/flamfoof/" + game.gameList + "/AssetBundle/" + level;
+        //Checks if a version already exists
+        if (!IsAssetBundleCached())
+        {
+            if (!isDownloading)
+                StartCoroutine(PlayButton());
+        } else
+        {
+            Debug.Log("Asset bundle already exists");
+            if (downloadText)
+                downloadText.text = "Launch";
+            //Finds that asset bundle, same as above because it assigns it the asset bundle
             StartCoroutine(PlayButton());
+
+            //Different ways to start each app. Should end up looking the same as kellsLevel
+            StartCoroutine(PlayGame());
+        }
+        
     }
     //TODO: Check if asset bundle is already downloaded, then change text accordingly
     public IEnumerator PlayButton()
     {
-        string[] sceneArray;
         isDownloading = true;
         //Checks if there is an available bundle
         yield return GetAndroidBundle();
@@ -98,52 +114,24 @@ public class ServerDownload : MonoBehaviour
                 Debug.LogError("No game is selected for download");
             if (level == "none")
                 Debug.LogError("No level is selected");
+
+            isDownloading = false;
             yield break;
         }
+
+        isDownloading = false;
+
         Debug.Log("Starting this");
-        //Different ways to start each app. Should end up looking the same as kellsLevel
-
-
-        if (dlButton)
-        {
-            Debug.Log("Yes this does exist");
-            switch(dlButton.currentApp)
-            {
-                case "kellsLevel":
-                    sceneArray = bundle.GetAllScenePaths();
-                    for (int i = 0; i < bundle.GetAllScenePaths().Length; i++)
-                    {
-                        Debug.Log(bundle.GetAllScenePaths()[i]);
-                    }
-                    Debug.Log("Level name loaded is: " + sceneArray[0]);
-                    mController.StartGame();
-                    break;
-                default:
-                    SceneManager.LoadScene(dlButton.currentApp);
-                    break;
-            }
-        }
-        ///*For texting without the dlButton
-        sceneArray = bundle.GetAllScenePaths();
-        for (int i = 0; i < bundle.GetAllScenePaths().Length; i++)
-        {
-            Debug.Log(bundle.GetAllScenePaths()[i]);
-        }
-        Debug.Log("Level name loaded is: " + sceneArray[0]);
-
-        SceneManager.LoadScene(sceneArray[0]);
-        //*/
-
     }
 
     public IEnumerator GetAndroidBundle()
     {
         //TODO: Have a version checking function to compare different asset bundle files
         WWW request = WWW.LoadFromCacheOrDownload(url, 0);
-
+        
+            
         while (!request.isDone)
         {
-            Debug.Log(prog.name);
             if(!prog.isActiveAndEnabled)
                 prog.gameObject.SetActive(true);
             if (request.progress > 0)
@@ -155,7 +143,11 @@ public class ServerDownload : MonoBehaviour
         }
         if (request.error == null)
         {
-            bundle = request.assetBundle;
+            if (!bundle)
+            {
+                bundle = request.assetBundle;
+            }
+
             prog.gameObject.SetActive(false);
             if (downloadText)
                 downloadText.text = "Launch";
@@ -166,6 +158,76 @@ public class ServerDownload : MonoBehaviour
             Debug.Log(request.error);
         }
 
+    }
+
+    public IEnumerator PlayGame()
+    {
+        float time = 0;
+        //to prevent switching between games when loading
+        GameEnumList.GameList currentGame = game.gameList;
+        while(!bundle)
+        {
+            if (time > 5.0f)
+                break;
+            yield return null;
+        }
+
+        string[] sceneArray;
+        if (dlButton)
+        {
+            Debug.Log("Yes this does exist");
+            switch (currentGame)
+            {
+                case GameEnumList.GameList.MedievalMath:
+                    sceneArray = bundle.GetAllScenePaths();
+                    for (int i = 0; i < bundle.GetAllScenePaths().Length; i++)
+                    {
+                        Debug.Log(bundle.GetAllScenePaths()[i]);
+                    }
+                    Debug.Log("Level name loaded is: " + sceneArray[0]);
+                    mController.StartGame();
+                    break;
+                /* No asset bundle made for miss ways yet
+                case GameEnumList.GameList.MissWays:
+                    sceneArray = bundle.GetAllScenePaths();
+                    for (int i = 0; i < bundle.GetAllScenePaths().Length; i++)
+                    {
+                        Debug.Log(bundle.GetAllScenePaths()[i]);
+                    }
+                    Debug.Log("Level name loaded is: " + sceneArray[0]);
+                    break;
+                    */
+                default:
+                    SceneManager.LoadScene(game.selectedLevel);
+                    break;
+            }
+        }
+
+        /*For texting without the dlButton
+        sceneArray = bundle.GetAllScenePaths();
+        for (int i = 0; i < bundle.GetAllScenePaths().Length; i++)
+        {
+            Debug.Log(bundle.GetAllScenePaths()[i]);
+        }
+        Debug.Log("Level name loaded is: " + sceneArray[0]);
+
+        SceneManager.LoadScene(sceneArray[0]);
+        */
+    }
+
+    public bool IsAssetBundleCached()
+    {
+        //update url
+        url = "https://s3.amazonaws.com/flamfoof/" + game.gameList + "/AssetBundle/" + level;
+        if (Caching.IsVersionCached(url, 0))
+        {
+            if (downloadText)
+                downloadText.text = "Launch";
+            return true;
+        }
+        if (downloadText)
+            downloadText.text = "Download Now!";
+        return false;
     }
 
     private string GetStreamedAssetPath(string name)

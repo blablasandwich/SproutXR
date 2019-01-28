@@ -8,7 +8,8 @@ public class GameEnumProperties : Editor
     public SerializedProperty
         gameProp,
         mainLevel,
-        mmLevel;
+        mmLevel,
+        mwLevel;
 
     void OnEnable()
     {
@@ -16,6 +17,7 @@ public class GameEnumProperties : Editor
         gameProp = serializedObject.FindProperty("gameList");
         mainLevel = serializedObject.FindProperty("selectedLevel");
         mmLevel = serializedObject.FindProperty("medMathLevels");
+        mwLevel = serializedObject.FindProperty("misswaysLevels");
     }
 
     public override void OnInspectorGUI()
@@ -38,6 +40,11 @@ public class GameEnumProperties : Editor
                 GameEnumList.MedievalMathLevels temp2 = (GameEnumList.MedievalMathLevels)mmLevel.enumValueIndex;
                 EditorGUILayout.PropertyField(mmLevel, new GUIContent("medMathLevels"));
                 Selection.activeGameObject.GetComponent<GameEnumList>().selectedLevel = temp2.ToString();
+                break;
+            case GameEnumList.GameList.MissWays:
+                GameEnumList.MissWaysLevels temp3 = (GameEnumList.MissWaysLevels)mwLevel.enumValueIndex;
+                EditorGUILayout.PropertyField(mwLevel, new GUIContent("misswaysLevels"));
+                Selection.activeGameObject.GetComponent<GameEnumList>().selectedLevel = temp3.ToString();
                 break;
             default:
                 Debug.LogError("Check if game is registered on this file where this error is from. Also change it in the GameEnumList.");
