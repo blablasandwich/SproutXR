@@ -80,6 +80,12 @@ namespace GoogleARCore.Examples.AugmentedImage
 
             // Create visualizers and anchors for updated augmented images that are tracking and do not previously
             // have a visualizer. Remove visualizers for stopped images.
+
+            //**************************************************
+            //***********************READ ME********************
+            // img targets 1-7 are planets 8+ are other things
+            //**************************************************
+            //**************************************************
             foreach (var image in m_TempAugmentedImages)
             {
                 OnDetectImage visualizer = null;
@@ -88,26 +94,20 @@ namespace GoogleARCore.Examples.AugmentedImage
                 {
                     // Create an anchor to ensure that ARCore keeps tracking this augmented image.
                     Anchor anchor = image.CreateAnchor(image.CenterPose);
-                    
-                    if (image.DatabaseIndex == 0)
-                    { 
-                        visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
-                        visualizer.Image = image;
-                        m_Visualizers.Add(image.DatabaseIndex, visualizer);
-                    }
-                    else if (image.DatabaseIndex == 1)
+
+                    if (image.DatabaseIndex == 8)
                     {
                         visualizer = (OnDetectImage)Instantiate(TelevisionPrefab, anchor.transform);
                         visualizer.Image = image;
                         m_Visualizers.Add(image.DatabaseIndex, visualizer);
                     }
-                    else if (image.DatabaseIndex == 2)
+                    else if (image.DatabaseIndex == 9)
                     {
                         visualizer = (OnDetectImage)Instantiate(MoonPrefab, anchor.transform);
                         visualizer.Image = image;
                         m_Visualizers.Add(image.DatabaseIndex, visualizer);
                     }
-                    else if (image.DatabaseIndex == 3)
+                    else if (image.DatabaseIndex == 10)
                     {
                         visualizer = (OnDetectImage)Instantiate(HousePrefab, anchor.transform);
                         visualizer.Image = image;
@@ -115,7 +115,58 @@ namespace GoogleARCore.Examples.AugmentedImage
                     }
                     else
                     {
-                        Debug.Log(image);
+                        switch (image.DatabaseIndex)
+                        {
+                            case 0:
+                                visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
+                                visualizer.Image = image;
+                                //StaticVars.planet = StaticVars.Planet.Mercury;
+                                StaticVars.planet = StaticVars.Planet.Earth;
+                                m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                                break;
+                            case 1:
+                                visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
+                                visualizer.Image = image;
+                                StaticVars.planet = StaticVars.Planet.Venus;
+                                m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                                break;
+                            case 2:
+                                visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
+                                visualizer.Image = image;
+                                StaticVars.planet = StaticVars.Planet.Earth;
+                                m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                                break;
+                            case 3:
+                                visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
+                                visualizer.Image = image;
+                                StaticVars.planet = StaticVars.Planet.Mars;
+                                m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                                break;
+                            case 4:
+                                visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
+                                visualizer.Image = image;
+                                StaticVars.planet = StaticVars.Planet.Jupiter;
+                                m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                                break;
+                            case 5:
+                                visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
+                                visualizer.Image = image;
+                                StaticVars.planet = StaticVars.Planet.Saturn;
+                                m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                                break;
+                            case 6:
+                                visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
+                                visualizer.Image = image;
+                                StaticVars.planet = StaticVars.Planet.Uranus;
+                                m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                                break;
+                            case 7:
+                                visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
+                                visualizer.Image = image;
+                                StaticVars.planet = StaticVars.Planet.Neptune;
+                                m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                                break;
+                        }
                     }
                 }
                 else if (image.TrackingState == TrackingState.Stopped && visualizer != null)

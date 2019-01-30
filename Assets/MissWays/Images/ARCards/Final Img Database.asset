@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1208cb4bfc946f7aa1d7b5348cb086, type: 3}
+  m_Name: Final Img Database
+  m_EditorClassIdentifier: 
+  m_Images:
+  - Name: Mercury
+    Width: 0
+    Quality: 90
+    TextureGUID: 56dc6b77efc53ee418c134eb743406b1
+  - Name: Venus
+    Width: 0
+    Quality: 100
+    TextureGUID: 15c39c8524276304f8fcd3e8a237d932
+  - Name: Earth
+    Width: 0
+    Quality: 100
+    TextureGUID: 976611a6574e76640ae6c4fbc1979a84
+  - Name: Mars
+    Width: 0
+    Quality: 80
+    TextureGUID: 4d21a6c786fcbd940ad64e726e09c2a4
+  - Name: Jupiter
+    Width: 0
+    Quality: 100
+    TextureGUID: a75272e0bde342b4aa05a8a96f6d18be
+  - Name: Saturn
+    Width: 0
+    Quality: 100
+    TextureGUID: 3f480bd8d58b00b4ea013be16101c044
+  - Name: Uranus
+    Width: 0
+    Quality: 100
+    TextureGUID: b7f0699af2af7274db92643796a422e6
+  - Name: Neptune
+    Width: 0
+    Quality: 100
+    TextureGUID: f6b09d92f64164e4e9aced4ca25633eb
+  - Name: TV
+    Width: 0
+    Quality: 100
+    TextureGUID: c16c7e990d90ac84bb6611fcff2bf33d
+  - Name: Moon
+    Width: 0
+    Quality: 100
+    TextureGUID: aa6d1f7f4bc7aef41a68dd6a72d6bfba
+  - Name: House
+    Width: 0
+    Quality: 90
+    TextureGUID: ed0987c8d21325644b0dabb7b1820742
+  - Name: PlaceHolderPlanet 4
+    Width: 0
+    Quality: 100
+    TextureGUID: 10448ae1c21a8844480a1d4069bece44
+  - Name: PlaceHolderPlanet 5
+    Width: 0
+    Quality: 100
+    TextureGUID: e5b63c6d5d05db547844089ad80e0b10
+  - Name: PlaceHolderPlanet 6
+    Width: 0
+    Quality: 100
+    TextureGUID: b06703cb1fbb6cb42bdd74ad0dbdc9e0
+  - Name: PlaceHolderPlanet 7
+    Width: 0
+    Quality: 100
+    TextureGUID: dcad0587231aa0843a07e0ef446728a8
+  - Name: PlaceHolderPlanet 8
+    Width: 0
+    Quality: 100
+    TextureGUID: 2feb7d939b76eeb4396ee3145ad1af64
+  - Name: PlaceHolderPlanet 9
+    Width: 0
+    Quality: 100
+    TextureGUID: 20b93a0cb596e8146a9e1bbf237df7ff
+  m_RawData: 
+  m_IsRawDataDirty: 1
+  m_CliVersion: 1.2

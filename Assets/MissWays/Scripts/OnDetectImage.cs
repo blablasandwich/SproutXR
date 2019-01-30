@@ -83,9 +83,9 @@ namespace GoogleARCore.Examples.AugmentedImage
 
         void Testimg()
         {
-            switch (Image.Name.ToString())
+            switch (StaticVars.planet)
             {
-                case "007":
+                case StaticVars.Planet.Neptune:
                     Mercury.SetActive(false);
                     Venus.SetActive(false);
                     Earth.SetActive(false);
@@ -95,7 +95,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                     Uranus.SetActive(false);
                     Neptune.SetActive(true);
                     break;
-                case "006":
+                case StaticVars.Planet.Uranus:
                     Mercury.SetActive(false);
                     Venus.SetActive(false);
                     Earth.SetActive(false);
@@ -105,7 +105,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                     Uranus.SetActive(true);
                     Neptune.SetActive(false);
                     break;
-                case "005":
+                case StaticVars.Planet.Saturn:
                     Mercury.SetActive(false);
                     Venus.SetActive(false);
                     Earth.SetActive(false);
@@ -115,7 +115,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                     Uranus.SetActive(false);
                     Neptune.SetActive(false);
                     break;
-                case "004":
+                case StaticVars.Planet.Jupiter:
                     Mercury.SetActive(false);
                     Venus.SetActive(false);
                     Earth.SetActive(false);
@@ -125,7 +125,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                     Uranus.SetActive(false);
                     Neptune.SetActive(false);
                     break;
-                case "003":
+                case StaticVars.Planet.Mars:
                     Mercury.SetActive(false);
                     Venus.SetActive(false);
                     Earth.SetActive(false);
@@ -135,7 +135,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                     Uranus.SetActive(false);
                     Neptune.SetActive(false);
                     break;
-                case "Earth":
+                case StaticVars.Planet.Earth:
                     Mercury.SetActive(false);
                     Venus.SetActive(false);
                     Earth.SetActive(true);
@@ -144,9 +144,9 @@ namespace GoogleARCore.Examples.AugmentedImage
                     Saturn.SetActive(false);
                     Uranus.SetActive(false);
                     Neptune.SetActive(false);
-                    StaticVars.UIHeaderText.text = "You Scanned Earth!";
+                    //StaticVars.UIHeaderText.text = "You Scanned Earth!";
                     break;
-                case "001":
+                case StaticVars.Planet.Venus:
                     Mercury.SetActive(false);
                     Venus.SetActive(true);
                     Earth.SetActive(false);
@@ -156,7 +156,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                     Uranus.SetActive(false);
                     Neptune.SetActive(false);
                     break;
-                case "000":
+                case StaticVars.Planet.Mercury:
                     Mercury.SetActive(true);
                     Venus.SetActive(false);
                     Earth.SetActive(false);
