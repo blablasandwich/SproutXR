@@ -36,6 +36,8 @@ namespace GoogleARCore.Examples.AugmentedImage
         /// </summary>
         public OnDetectImage PlanetsPrefab;
         public OnDetectImage TelevisionPrefab;
+        public OnDetectImage TelevisionPrefab2;
+        public OnDetectImage TelevisionPrefab3;
         public OnDetectImage MoonPrefab;
         public OnDetectImage HousePrefab;
      
@@ -103,11 +105,23 @@ namespace GoogleARCore.Examples.AugmentedImage
                     }
                     else if (image.DatabaseIndex == 2)
                     {
-                        visualizer = (OnDetectImage)Instantiate(MoonPrefab, anchor.transform);
+                        visualizer = (OnDetectImage)Instantiate(TelevisionPrefab2, anchor.transform);
                         visualizer.Image = image;
                         m_Visualizers.Add(image.DatabaseIndex, visualizer);
                     }
                     else if (image.DatabaseIndex == 3)
+                    {
+                        visualizer = (OnDetectImage)Instantiate(TelevisionPrefab3, anchor.transform);
+                        visualizer.Image = image;
+                        m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                    }
+                    else if (image.DatabaseIndex == 4)
+                    {
+                        visualizer = (OnDetectImage)Instantiate(MoonPrefab, anchor.transform);
+                        visualizer.Image = image;
+                        m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                    }
+                    else if (image.DatabaseIndex == 5)
                     {
                         visualizer = (OnDetectImage)Instantiate(HousePrefab, anchor.transform);
                         visualizer.Image = image;

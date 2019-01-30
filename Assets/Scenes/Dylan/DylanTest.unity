@@ -222,7 +222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
       propertyPath: _renderingObjects.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
       propertyPath: _path
@@ -459,6 +459,11 @@ PrefabInstance:
         type: 3}
       propertyPath: activeVideo
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95879174067647198, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+        type: 3}
+      propertyPath: m_Layer
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60, type: 3}

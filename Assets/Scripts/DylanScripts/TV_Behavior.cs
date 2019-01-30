@@ -38,7 +38,6 @@ public class TV_Behavior : MonoBehaviour
             }
             else
             {
-
                 On();
             }
        }
@@ -58,7 +57,6 @@ public class TV_Behavior : MonoBehaviour
             Replay();
         }
 
-       /*
        if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began))
         {
             Ray raycast = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
@@ -74,11 +72,21 @@ public class TV_Behavior : MonoBehaviour
                 }
                 if (raycastHit.collider.gameObject.layer == 24)
                 {
-                    OnOff();
+                    if (!isOff)
+                    {
+                        Off();
+                    }
+                    else
+                    {
+                        On();
+                    }
+                }
+                if (raycastHit.collider.gameObject.layer == 25)
+                {
+                    Replay();
                 }
             }
         }
-        */
     }
 
     void Pause()
