@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Screen: {fileID: 95879174600215918}
+  activeVideo: 0
 --- !u!114 &1405707163179144402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,6 +237,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080bdcca2af3ae24694968897985fd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mercury: {fileID: 0}
+  Venus: {fileID: 0}
+  Earth: {fileID: 0}
+  Mars: {fileID: 0}
+  Jupiter: {fileID: 0}
+  Saturn: {fileID: 0}
+  Uranus: {fileID: 0}
+  Neptune: {fileID: 0}
+  Center: {fileID: 95879173530270501}
+  planets: 0
 --- !u!1 &95879173611668018
 GameObject:
   m_ObjectHideFlags: 0

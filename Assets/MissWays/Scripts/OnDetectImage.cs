@@ -46,7 +46,7 @@ namespace GoogleARCore.Examples.AugmentedImage
         public GameObject Uranus;
         public GameObject Neptune;
         public GameObject Center;
-
+        public bool planets = false;
 
         /// <summary>
         /// The Unity Update method.
@@ -61,7 +61,11 @@ namespace GoogleARCore.Examples.AugmentedImage
 
             float halfWidth = Image.ExtentX / 2;
             float halfHeight = Image.ExtentZ / 2;
-            Testimg();
+
+            if (planets)
+            {
+                Testimg();
+            }
             Center.transform.localPosition = new Vector3(halfWidth, 0f , halfHeight);
             Center.SetActive(true);
         }
@@ -154,14 +158,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                     Neptune.SetActive(false);
                     break;
                 default:
-                    Mercury.SetActive(false);
-                    Venus.SetActive(false);
-                    Earth.SetActive(false);
-                    Mars.SetActive(false);
-                    Jupiter.SetActive(false);
-                    Saturn.SetActive(false);
-                    Uranus.SetActive(false);
-                    Neptune.SetActive(false);
                     break;
             }
         }

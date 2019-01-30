@@ -22,7 +22,9 @@ public class TV_Behavior : MonoBehaviour
         isPaused = false;
         uniMed = FindObjectOfType<UniversalMediaPlayer>();
 
+        //this array needs to be init in scene 
         uniMed.RenderingObjects[0] = Screen;
+
 
         StartCoroutine(CheckVid());
     }

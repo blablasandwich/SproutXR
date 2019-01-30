@@ -55,6 +55,7 @@ MonoBehaviour:
   Uranus: {fileID: 3892830058915666695}
   Neptune: {fileID: 1226521644256027566}
   Center: {fileID: 1138118951868772}
+  planets: 1
 --- !u!114 &7127965388078418104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +127,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 114469655137885770, guid: 20a1e20fa159a844ab77ff4d5e235ca9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4983235100952432, guid: 20a1e20fa159a844ab77ff4d5e235ca9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -181,11 +187,6 @@ PrefabInstance:
     - target: {fileID: 4983235100952432, guid: 20a1e20fa159a844ab77ff4d5e235ca9, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114469655137885770, guid: 20a1e20fa159a844ab77ff4d5e235ca9,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20a1e20fa159a844ab77ff4d5e235ca9, type: 3}
@@ -276,6 +277,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 114708165385170498, guid: 583c7fdefbc7d3942b7dec4d61b10ee0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1753995477723474, guid: 583c7fdefbc7d3942b7dec4d61b10ee0, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -283,11 +289,6 @@ PrefabInstance:
     - target: {fileID: 1315735457254088, guid: 583c7fdefbc7d3942b7dec4d61b10ee0, type: 3}
       propertyPath: m_Layer
       value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 114708165385170498, guid: 583c7fdefbc7d3942b7dec4d61b10ee0,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 583c7fdefbc7d3942b7dec4d61b10ee0, type: 3}
@@ -416,6 +417,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 114743469501157914, guid: 10d65989ecf289147b02b256c114a91a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4233128521469472, guid: 10d65989ecf289147b02b256c114a91a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -472,11 +478,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 114743469501157914, guid: 10d65989ecf289147b02b256c114a91a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10d65989ecf289147b02b256c114a91a, type: 3}
 --- !u!1 &4442003174626807801 stripped
@@ -509,6 +510,16 @@ PrefabInstance:
     - target: {fileID: 1630155751259304, guid: d29fc1c391e4f9c4fba23e72a0471c31, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114316921296124458, guid: d29fc1c391e4f9c4fba23e72a0471c31,
+        type: 3}
+      propertyPath: earthRadiusRatio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114047054977268788, guid: d29fc1c391e4f9c4fba23e72a0471c31,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4439259920061096, guid: d29fc1c391e4f9c4fba23e72a0471c31, type: 3}
       propertyPath: m_LocalPosition.x
@@ -566,11 +577,7 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 1123527246982528, guid: d29fc1c391e4f9c4fba23e72a0471c31, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1075352064709284, guid: d29fc1c391e4f9c4fba23e72a0471c31, type: 3}
+    - target: {fileID: 1770510009322924, guid: d29fc1c391e4f9c4fba23e72a0471c31, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
@@ -582,7 +589,7 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 1770510009322924, guid: d29fc1c391e4f9c4fba23e72a0471c31, type: 3}
+    - target: {fileID: 1410494737502002, guid: d29fc1c391e4f9c4fba23e72a0471c31, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
@@ -590,19 +597,13 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 1410494737502002, guid: d29fc1c391e4f9c4fba23e72a0471c31, type: 3}
+    - target: {fileID: 1075352064709284, guid: d29fc1c391e4f9c4fba23e72a0471c31, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 114316921296124458, guid: d29fc1c391e4f9c4fba23e72a0471c31,
-        type: 3}
-      propertyPath: earthRadiusRatio
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114047054977268788, guid: d29fc1c391e4f9c4fba23e72a0471c31,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
+    - target: {fileID: 1123527246982528, guid: d29fc1c391e4f9c4fba23e72a0471c31, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d29fc1c391e4f9c4fba23e72a0471c31, type: 3}
@@ -693,6 +694,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 114603979716077472, guid: 622a9f393bf5a4840aa16604ec0f32e1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1547285577711416, guid: 622a9f393bf5a4840aa16604ec0f32e1, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -700,11 +706,6 @@ PrefabInstance:
     - target: {fileID: 1334553015291092, guid: 622a9f393bf5a4840aa16604ec0f32e1, type: 3}
       propertyPath: m_Layer
       value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 114603979716077472, guid: 622a9f393bf5a4840aa16604ec0f32e1,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1481424202358948, guid: 622a9f393bf5a4840aa16604ec0f32e1, type: 3}
       propertyPath: m_Layer
@@ -1155,6 +1156,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 114398414788515042, guid: 94f967fb128c41442a87a87b800f1f9c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4771131016767518, guid: 94f967fb128c41442a87a87b800f1f9c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1211,11 +1217,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 114398414788515042, guid: 94f967fb128c41442a87a87b800f1f9c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1209080094115240, guid: 94f967fb128c41442a87a87b800f1f9c, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -1256,6 +1257,11 @@ PrefabInstance:
     - target: {fileID: 1405126987779850, guid: 2d1f17ce4562f05469e62828be33db3b, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114131594391242328, guid: 2d1f17ce4562f05469e62828be33db3b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4022406683555128, guid: 2d1f17ce4562f05469e62828be33db3b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1312,11 +1318,6 @@ PrefabInstance:
     - target: {fileID: 4022406683555128, guid: 2d1f17ce4562f05469e62828be33db3b, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114131594391242328, guid: 2d1f17ce4562f05469e62828be33db3b,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1037327884126790, guid: 2d1f17ce4562f05469e62828be33db3b, type: 3}
       propertyPath: m_Layer
@@ -1367,6 +1368,26 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 135244012096416406, guid: d29fc1c391e4f9c4fba23e72a0471c31,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114316921296124458, guid: d29fc1c391e4f9c4fba23e72a0471c31,
+        type: 3}
+      propertyPath: earthRadiusRatio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114047054977268788, guid: d29fc1c391e4f9c4fba23e72a0471c31,
+        type: 3}
+      propertyPath: planetSpeedRotation
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114047054977268788, guid: d29fc1c391e4f9c4fba23e72a0471c31,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4439259920061096, guid: d29fc1c391e4f9c4fba23e72a0471c31, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1423,11 +1444,7 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 1123527246982528, guid: d29fc1c391e4f9c4fba23e72a0471c31, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1075352064709284, guid: d29fc1c391e4f9c4fba23e72a0471c31, type: 3}
+    - target: {fileID: 1770510009322924, guid: d29fc1c391e4f9c4fba23e72a0471c31, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
@@ -1443,7 +1460,7 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 1770510009322924, guid: d29fc1c391e4f9c4fba23e72a0471c31, type: 3}
+    - target: {fileID: 1410494737502002, guid: d29fc1c391e4f9c4fba23e72a0471c31, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
@@ -1451,36 +1468,15 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 1410494737502002, guid: d29fc1c391e4f9c4fba23e72a0471c31, type: 3}
+    - target: {fileID: 1075352064709284, guid: d29fc1c391e4f9c4fba23e72a0471c31, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 135244012096416406, guid: d29fc1c391e4f9c4fba23e72a0471c31,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114316921296124458, guid: d29fc1c391e4f9c4fba23e72a0471c31,
-        type: 3}
-      propertyPath: earthRadiusRatio
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114047054977268788, guid: d29fc1c391e4f9c4fba23e72a0471c31,
-        type: 3}
-      propertyPath: planetSpeedRotation
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114047054977268788, guid: d29fc1c391e4f9c4fba23e72a0471c31,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
+    - target: {fileID: 1123527246982528, guid: d29fc1c391e4f9c4fba23e72a0471c31, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 135672418739666138, guid: d29fc1c391e4f9c4fba23e72a0471c31,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114107304221981144, guid: d29fc1c391e4f9c4fba23e72a0471c31,
         type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1489,6 +1485,11 @@ PrefabInstance:
         type: 3}
       propertyPath: planetSpeedRotation
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114107304221981144, guid: d29fc1c391e4f9c4fba23e72a0471c31,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d29fc1c391e4f9c4fba23e72a0471c31, type: 3}
