@@ -20,6 +20,7 @@
 
 namespace GoogleARCore.Examples.AugmentedImage
 {
+    using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.InteropServices;
     using GoogleARCore;
@@ -100,18 +101,21 @@ namespace GoogleARCore.Examples.AugmentedImage
                         visualizer = (OnDetectImage)Instantiate(TelevisionPrefab, anchor.transform);
                         visualizer.Image = image;
                         m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                        StartCoroutine(TrackTimeOnTarget(8));
                     }
                     else if (image.DatabaseIndex == 9)
                     {
                         visualizer = (OnDetectImage)Instantiate(MoonPrefab, anchor.transform);
                         visualizer.Image = image;
                         m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                        StartCoroutine(TrackTimeOnTarget(9));
                     }
                     else if (image.DatabaseIndex == 10)
                     {
                         visualizer = (OnDetectImage)Instantiate(HousePrefab, anchor.transform);
                         visualizer.Image = image;
                         m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                        StartCoroutine(TrackTimeOnTarget(10));
                     }
                     else
                     {
@@ -123,48 +127,57 @@ namespace GoogleARCore.Examples.AugmentedImage
                                 //StaticVars.planet = StaticVars.Planet.Mercury;
                                 StaticVars.planet = StaticVars.Planet.Earth;
                                 m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                                StartCoroutine(TrackTimeOnTarget(0));
                                 break;
                             case 1:
                                 visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
                                 visualizer.Image = image;
                                 StaticVars.planet = StaticVars.Planet.Venus;
                                 m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                                StartCoroutine(TrackTimeOnTarget(1));
+
                                 break;
                             case 2:
                                 visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
                                 visualizer.Image = image;
                                 StaticVars.planet = StaticVars.Planet.Earth;
                                 m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                                StartCoroutine(TrackTimeOnTarget(2));
                                 break;
                             case 3:
                                 visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
                                 visualizer.Image = image;
                                 StaticVars.planet = StaticVars.Planet.Mars;
                                 m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                                StartCoroutine(TrackTimeOnTarget(3));
                                 break;
                             case 4:
                                 visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
                                 visualizer.Image = image;
                                 StaticVars.planet = StaticVars.Planet.Jupiter;
                                 m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                                StartCoroutine(TrackTimeOnTarget(4));
                                 break;
                             case 5:
                                 visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
                                 visualizer.Image = image;
                                 StaticVars.planet = StaticVars.Planet.Saturn;
                                 m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                                StartCoroutine(TrackTimeOnTarget(5));
                                 break;
                             case 6:
                                 visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
                                 visualizer.Image = image;
                                 StaticVars.planet = StaticVars.Planet.Uranus;
                                 m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                                StartCoroutine(TrackTimeOnTarget(6));
                                 break;
                             case 7:
                                 visualizer = (OnDetectImage)Instantiate(PlanetsPrefab, anchor.transform);
                                 visualizer.Image = image;
                                 StaticVars.planet = StaticVars.Planet.Neptune;
                                 m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                                StartCoroutine(TrackTimeOnTarget(7));
                                 break;
                         }
                     }
@@ -173,6 +186,13 @@ namespace GoogleARCore.Examples.AugmentedImage
                 {
                     m_Visualizers.Remove(image.DatabaseIndex);
                     GameObject.Destroy(visualizer.gameObject);
+
+                    //send img target analytics
+                    StopCoroutine("TrackTimeOnTarget");
+                    StaticVars.ImgTargetPost();
+                    //reset for next analytics
+                    StaticVars.TimeSpentOnTarget = 0;
+                    StaticVars.CurrentTarget = StaticVars.NULL;
                 }
             }
 
@@ -189,5 +209,22 @@ namespace GoogleARCore.Examples.AugmentedImage
 
             FitToScanOverlay.SetActive(true);
         }
+
+        IEnumerator TrackTimeOnTarget(int target)
+        {
+            while (StaticVars.CurrentTarget!=StaticVars.NULL)
+            {
+                StaticVars.TimeSpentOnTarget++;
+                print(StaticVars.TimeSpentOnTarget);
+                yield return new WaitForSeconds(1f);
+            }
+
+            print("Stoped looking at the target.");
+
+            yield return new WaitForSeconds(1f);
+
+            print("MyCoroutine is now finished.");
+        }
     }
 }
+

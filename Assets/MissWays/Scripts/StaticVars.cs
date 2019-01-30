@@ -5,6 +5,7 @@ public static class StaticVars
     public static GameObject UI;
     public static TextMeshPro UIHeaderText;
     public static int NumOfQuestions = 0;
+    public const int NULL = 50;
     public enum Planet
     { Mercury = 0,
       Venus   = 1,
@@ -15,6 +16,13 @@ public static class StaticVars
       Uranus  = 6,
       Neptune = 7 };
     public static Planet planet;
-    public static bool LookingAtTarget = false;
+    public static int CurrentTarget = NULL;
     public static float TimeSpentOnTarget = 0f;
+
+    public static void ImgTargetPost()
+    {
+       //CurrentTarget
+       //timTimeSpentOnTarget
+       //send to backend
+    }
 }
