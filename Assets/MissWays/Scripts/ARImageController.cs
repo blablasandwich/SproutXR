@@ -107,29 +107,16 @@ namespace GoogleARCore.Examples.AugmentedImage
                     }
                     else if (image.DatabaseIndex == 9)
                     {
-                        visualizer = (OnDetectImage)Instantiate(TelevisionPrefab2, anchor.transform);
+                        visualizer = (OnDetectImage)Instantiate(MoonPrefab, anchor.transform);
                         visualizer.Image = image;
                         m_Visualizers.Add(image.DatabaseIndex, visualizer);
                         StartCoroutine(TrackTimeOnTarget(9));
                     }
                     else if (image.DatabaseIndex == 10)
                     {
-                        visualizer = (OnDetectImage)Instantiate(TelevisionPrefab3, anchor.transform);
-                        visualizer.Image = image;
-                        m_Visualizers.Add(image.DatabaseIndex, visualizer);
-                    }
-                    else if (image.DatabaseIndex == 4)
-                    {
-                        visualizer = (OnDetectImage)Instantiate(MoonPrefab, anchor.transform);
-                        visualizer.Image = image;
-                        m_Visualizers.Add(image.DatabaseIndex, visualizer);
-                    }
-                    else if (image.DatabaseIndex == 5)
-                    {
                         visualizer = (OnDetectImage)Instantiate(HousePrefab, anchor.transform);
                         visualizer.Image = image;
                         m_Visualizers.Add(image.DatabaseIndex, visualizer);
-                        StartCoroutine(TrackTimeOnTarget(10));
                     }
                     else
                     {
