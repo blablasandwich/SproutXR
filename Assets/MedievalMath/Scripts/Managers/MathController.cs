@@ -158,7 +158,7 @@ public class MathController : MonoBehaviour {
     }
 
     public IEnumerator ActivatorVR(string vrToggle) {
-        SceneManager.LoadScene("kellsLevel");
+        SceneManager.LoadSceneAsync("kellsLevel");
         yield return new WaitForSeconds(.5f);
         UnityEngine.XR.XRSettings.LoadDeviceByName(vrToggle);
         yield return null;
