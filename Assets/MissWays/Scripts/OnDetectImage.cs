@@ -37,29 +37,16 @@ namespace GoogleARCore.Examples.AugmentedImage
         /// </summary>
         public AugmentedImage Image;
 
-        private GameObject Mercury;
-        private GameObject Venus;
-        private GameObject Earth;
-        private GameObject Mars;
-        private GameObject Jupiter;
-        private GameObject Saturn;
-        private GameObject Uranus;
-        private GameObject Neptune;
-        private GameObject Center;
+        public GameObject Mercury;
+        public GameObject Venus;
+        public GameObject Earth;
+        public GameObject Mars;
+        public GameObject Jupiter;
+        public GameObject Saturn;
+        public GameObject Uranus;
+        public GameObject Neptune;
+        public GameObject Center;
 
-
-        private void Awake()
-        {
-            Center  = GameObject.Find("3D Planet");
-            Mercury = Center.transform.GetChild(0).GetChild(0).gameObject;
-            Venus   = Center.transform.GetChild(0).GetChild(1).gameObject;
-            Earth   = Center.transform.GetChild(0).GetChild(2).gameObject;
-            Mars    = Center.transform.GetChild(0).GetChild(3).gameObject;
-            Jupiter = Center.transform.GetChild(0).GetChild(4).gameObject;
-            Saturn  = Center.transform.GetChild(0).GetChild(5).gameObject;
-            Uranus  = Center.transform.GetChild(0).GetChild(6).gameObject;
-            Neptune = Center.transform.GetChild(0).GetChild(7).gameObject;
-        }
 
         /// <summary>
         /// The Unity Update method.
