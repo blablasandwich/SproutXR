@@ -9,7 +9,7 @@ public class TV_Behavior : MonoBehaviour
     private bool isPaused;
     private bool isOff;
 
-    public GameObject Screen;
+    public static GameObject Screen;
 
     public int activeVideo = 0;
 

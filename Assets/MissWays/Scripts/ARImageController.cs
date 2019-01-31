@@ -104,6 +104,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                         visualizer.Image = image;
                         m_Visualizers.Add(image.DatabaseIndex, visualizer);
                         StartCoroutine(TrackTimeOnTarget(8));
+                        FindObjectOfType<TV_Behavior>().activeVideo = 1;
                     }
                     else if (image.DatabaseIndex == 9)
                     {
