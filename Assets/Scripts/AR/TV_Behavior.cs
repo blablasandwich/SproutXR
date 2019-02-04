@@ -6,8 +6,9 @@ using UnityEngine.Networking;
 public class TV_Behavior : MonoBehaviour
 {
     private UniversalMediaPlayer uniMed;
-    private bool isPaused;
+    public bool isPaused;
     private bool isOff;
+    public float delayDestroy = 5.0f;
 
     public static GameObject Screen;
 
@@ -24,7 +25,6 @@ public class TV_Behavior : MonoBehaviour
 
         //this array needs to be init in scene 
         uniMed.RenderingObjects[0] = Screen;
-
 
         StartCoroutine(CheckVid());
     }
@@ -116,7 +116,9 @@ public class TV_Behavior : MonoBehaviour
 
     void Off()
     {
-        uniMed.Stop();
+        transform.parent.gameObject.SetActive(false);
+        Debug.Log("off now");
+        uniMed.Release();
         isPaused = false;
         isOff = true;
     }
@@ -149,8 +151,13 @@ public class TV_Behavior : MonoBehaviour
 
                 uniMed.Path = S.video;
                 uniMed.Play();
-
+                
+                
                 Debug.Log(S.video);
+                yield return new WaitForSeconds(delayDestroy);
+                Debug.Log("Video Time Length: " + uniMed.Length / 1000);
+                yield return DestroyTV();
+
             }
             else if (activeVideo == 2)
             {
@@ -162,6 +169,9 @@ public class TV_Behavior : MonoBehaviour
                 uniMed.Play();
 
                 Debug.Log(S.video2);
+                yield return new WaitForSeconds(delayDestroy);
+                Debug.Log("Video Time Length: " + uniMed.Length / 1000);
+                yield return DestroyTV();
             }
             else if (activeVideo == 3)
             {
@@ -171,9 +181,18 @@ public class TV_Behavior : MonoBehaviour
 
                 uniMed.Path = S.video3;
                 uniMed.Play();
-
                 Debug.Log(S.video3);
+                yield return new WaitForSeconds(delayDestroy);
+                Debug.Log("Video Time Length: " + uniMed.Length / 1000);
+                yield return DestroyTV();
             }
         }
+    }
+
+    private IEnumerator DestroyTV()
+    {
+        Debug.Log("Destroyed TV in " + ((uniMed.Length / 1000.0f)) + " seconds.");
+        yield return new WaitForSeconds((uniMed.Length / 1000.0f));
+        transform.gameObject.SetActive(false);
     }
 }
