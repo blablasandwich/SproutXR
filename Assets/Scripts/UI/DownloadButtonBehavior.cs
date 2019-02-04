@@ -8,6 +8,7 @@ public class DownloadButtonBehavior : MonoBehaviour
     public string currentApp = "";
     public MathController mController;
     public GameObject dlManager;
+    public GameObject loadingScreen;
 
     public void Start()
     {
@@ -29,9 +30,11 @@ public class DownloadButtonBehavior : MonoBehaviour
                 dlManager.GetComponent<ServerDownload>().DownloadAndroidAssetBundle();
             } else if(dlManager.GetComponent<GameEnumList>().gameList == GameEnumList.GameList.MissWays)
             {
+                loadingScreen.SetActive(true);
                 SceneManager.LoadScene(dlManager.GetComponent<GameEnumList>().misswaysLevels.ToString());
             } else
             {
+                loadingScreen.SetActive(true);
                 SceneManager.LoadScene(currentApp);
             }
             

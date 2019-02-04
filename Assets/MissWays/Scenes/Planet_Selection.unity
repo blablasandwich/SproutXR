@@ -124,6 +124,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SproutMainButton
       objectReference: {fileID: 0}
+    - target: {fileID: 3659703132764061204, guid: 5ab02c04c39b1124b814c112df1e9491,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3659703132764061207, guid: 5ab02c04c39b1124b814c112df1e9491,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -715,6 +720,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ARUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6361952483886154779, guid: 5d29f9897afb57b45920157fb5d27de1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6361952483886154775, guid: 5d29f9897afb57b45920157fb5d27de1,
         type: 3}
@@ -1840,6 +1850,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 104
+      objectReference: {fileID: 0}
+    - target: {fileID: 1179222588, guid: 5d29f9897afb57b45920157fb5d27de1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d29f9897afb57b45920157fb5d27de1, type: 3}
