@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 public class TV_Behavior : MonoBehaviour
 {
     private UniversalMediaPlayer uniMed;
+
     public bool isPaused;
     private bool isOff;
     public float delayDestroy = 5.0f;
@@ -21,6 +22,7 @@ public class TV_Behavior : MonoBehaviour
 
         isOff = false;
         isPaused = false;
+
         uniMed = FindObjectOfType<UniversalMediaPlayer>();
 
         //this array needs to be init in scene 
@@ -150,7 +152,7 @@ public class TV_Behavior : MonoBehaviour
                 TV_URL S=JsonUtility.FromJson<TV_URL>(w.downloadHandler.text);
 
                 uniMed.Path = S.video;
-                uniMed.Play();
+                //uniMed.Play();
                 
                 
                 Debug.Log(S.video);
@@ -166,7 +168,7 @@ public class TV_Behavior : MonoBehaviour
                 TV_URL S = JsonUtility.FromJson<TV_URL>(w.downloadHandler.text);
 
                 uniMed.Path = S.video2;
-                uniMed.Play();
+                //uniMed.Play();
 
                 Debug.Log(S.video2);
                 yield return new WaitForSeconds(delayDestroy);
@@ -180,7 +182,7 @@ public class TV_Behavior : MonoBehaviour
                 TV_URL S = JsonUtility.FromJson<TV_URL>(w.downloadHandler.text);
 
                 uniMed.Path = S.video3;
-                uniMed.Play();
+                //uniMed.Play();
                 Debug.Log(S.video3);
                 yield return new WaitForSeconds(delayDestroy);
                 Debug.Log("Video Time Length: " + uniMed.Length / 1000);
