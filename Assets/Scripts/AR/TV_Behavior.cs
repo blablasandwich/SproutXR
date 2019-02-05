@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class TV_Behavior : MonoBehaviour
 {
@@ -12,12 +13,14 @@ public class TV_Behavior : MonoBehaviour
     public float delayDestroy = 5.0f;
 
     public static GameObject Screen;
+    public Image ReplayCanvas;
 
     public int activeVideo = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        ReplayCanvas.enabled = false;
         Screen = GameObject.FindWithTag("Screen");
 
         isOff = false;
@@ -28,7 +31,7 @@ public class TV_Behavior : MonoBehaviour
         //this array needs to be init in scene 
         uniMed.RenderingObjects[0] = Screen;
 
-        StartCoroutine(CheckVid());
+        //StartCoroutine(CheckVid());
     }
 
     // Update is called once per frame
@@ -69,7 +72,9 @@ public class TV_Behavior : MonoBehaviour
             {
                 if (raycastHit.collider.gameObject.layer == 23)
                 {
-                    if (isPaused)
+                    if (ReplayCanvas.enabled == true)
+                        Replay();
+                    else if (isPaused)
                         Resume();
                     else
                         Pause();
@@ -107,6 +112,7 @@ public class TV_Behavior : MonoBehaviour
 
     void Replay()
     {
+        ReplayCanvas.enabled = false;
         uniMed.Position = 0;
     }
 
@@ -114,6 +120,11 @@ public class TV_Behavior : MonoBehaviour
     {
         uniMed.Play();
         isOff = false;
+    }
+
+    public void RunCheckVid()
+    {
+        StartCoroutine(CheckVid());
     }
 
     void Off()
@@ -135,7 +146,7 @@ public class TV_Behavior : MonoBehaviour
 
 
 
-    private IEnumerator CheckVid()
+    public IEnumerator CheckVid()
     {
         using (UnityWebRequest w = UnityWebRequest.Get("http://sproutXR-api-dev.herokuapp.com/api/video")) //http://sproutXR-api-dev.herokuapp.com/api/video
         {
@@ -152,7 +163,7 @@ public class TV_Behavior : MonoBehaviour
                 TV_URL S=JsonUtility.FromJson<TV_URL>(w.downloadHandler.text);
 
                 uniMed.Path = S.video;
-                //uniMed.Play();
+                uniMed.Play();
                 
                 
                 Debug.Log(S.video);
@@ -168,7 +179,7 @@ public class TV_Behavior : MonoBehaviour
                 TV_URL S = JsonUtility.FromJson<TV_URL>(w.downloadHandler.text);
 
                 uniMed.Path = S.video2;
-                //uniMed.Play();
+                uniMed.Play();
 
                 Debug.Log(S.video2);
                 yield return new WaitForSeconds(delayDestroy);
@@ -182,11 +193,15 @@ public class TV_Behavior : MonoBehaviour
                 TV_URL S = JsonUtility.FromJson<TV_URL>(w.downloadHandler.text);
 
                 uniMed.Path = S.video3;
-                //uniMed.Play();
+                uniMed.Play();
                 Debug.Log(S.video3);
                 yield return new WaitForSeconds(delayDestroy);
                 Debug.Log("Video Time Length: " + uniMed.Length / 1000);
                 yield return DestroyTV();
+            }
+            else
+            {
+                Debug.Log("I started way too soon");
             }
         }
     }
@@ -195,6 +210,16 @@ public class TV_Behavior : MonoBehaviour
     {
         Debug.Log("Destroyed TV in " + ((uniMed.Length / 1000.0f)) + " seconds.");
         yield return new WaitForSeconds((uniMed.Length / 1000.0f));
+        ReplayCanvas.enabled = true;
+    }
+
+
+    /*
+    private IEnumerator DestroyTV()
+    {
+        Debug.Log("Destroyed TV in " + ((uniMed.Length / 1000.0f)) + " seconds.");
+        yield return new WaitForSeconds((uniMed.Length / 1000.0f));
         transform.gameObject.SetActive(false);
     }
+    */
 }

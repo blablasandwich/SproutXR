@@ -4,11 +4,35 @@ using UnityEngine;
 
 public class TurnOffOnLeave : DefaultTrackableEventHandler
 {
+    public int VideoToPlay;
+
     protected override void OnTrackingFound()
     {
         UniversalMediaPlayer turnOffuniMed = FindObjectOfType<UniversalMediaPlayer>();
+        TV_Behavior TV = FindObjectOfType<TV_Behavior>();
 
-        turnOffuniMed.Play();
+        switch (VideoToPlay)
+        {
+            case 1:
+                TV.activeVideo = 1;
+                TV.ReplayCanvas.enabled = false;
+                TV.RunCheckVid();
+                break;
+            case 2:
+                TV.activeVideo = 2;
+                TV.ReplayCanvas.enabled = false;
+                TV.RunCheckVid();
+                break;
+            case 3:
+                TV.activeVideo = 3;
+                TV.ReplayCanvas.enabled = false;
+                TV.RunCheckVid();
+                break;
+            default:
+                print("Video to play not found");
+                break;
+        }
+   
 
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);

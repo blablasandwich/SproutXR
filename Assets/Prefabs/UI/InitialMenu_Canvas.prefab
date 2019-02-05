@@ -380,7 +380,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1544283996}
-        m_MethodName: VerifyCredentials
+        m_MethodName: CheckUser
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -751,7 +751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   libraryCanvas: {fileID: 0}
-  emailInputField: {fileID: 0}
+  usernameInputField: {fileID: 0}
   passwordInputField: {fileID: 0}
   feedbackText: {fileID: 0}
   API_URL: http://sproutxr-api-dev.herokuapp.com
@@ -1838,7 +1838,7 @@ GameObject:
   - component: {fileID: 222757215438353440}
   - component: {fileID: 114866391409657968}
   m_Layer: 5
-  m_Name: Email
+  m_Name: Username
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1861,8 +1861,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 282.50012, y: 566.0002}
-  m_SizeDelta: {x: 468.5, y: 274.40002}
+  m_AnchoredPosition: {x: 258, y: 566.0002}
+  m_SizeDelta: {x: 600, y: 900}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222757215438353440
 CanvasRenderer:
@@ -1905,7 +1905,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Email
+  m_Text: Username
 --- !u!1 &1725301577249606
 GameObject:
   m_ObjectHideFlags: 0
@@ -2178,7 +2178,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 981, y: 0.000030518}
+  m_AnchoredPosition: {x: 1018, y: 0.000030518}
   m_SizeDelta: {x: 430.5, y: 93.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222171410901337434
