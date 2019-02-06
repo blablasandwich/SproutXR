@@ -5,7 +5,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
-
+using TMPro;
 public class RegisterFromAPI : MonoBehaviour
 {
     public LoginUIManager libraryCanvas;
@@ -13,18 +13,23 @@ public class RegisterFromAPI : MonoBehaviour
     public InputField passwordInputField;
     public InputField passwordConfirmInputField;
     public Text feedbackText;
+    public TMP_InputField CID_InputField;
+    public GameObject CIDUI;
+    // "classroom_code" : classroomCode
 
     public string API_URL = "http://sproutxr-api-dev.herokuapp.com";
 
     private User user;
     private string inputUsername = "";
     private string inputPassword = "";
+    private string cid = "";
 
     [System.Serializable]
     public class User
     {
         public string username = "";
         public string password_hash = "";
+        public string cid = "";
     }
 
     public void Start()
@@ -36,6 +41,15 @@ public class RegisterFromAPI : MonoBehaviour
 
         //feedbackText = GameObject.Find("FeedbackText").GetComponent<Text>();
         libraryCanvas = GetComponent<LoginUIManager>();
+    }
+
+    public void ValidateCID()
+    {
+        if (CID_InputField.text != "")
+        {
+            user.cid = CID_InputField.text;
+            CIDUI.SetActive(false);
+        }
     }
 
     public void VerifyPasswords()
@@ -53,7 +67,7 @@ public class RegisterFromAPI : MonoBehaviour
 
         else
         { Debug.Log("Passwords Dont Match"); }
-        
+
     }
 
 
@@ -131,11 +145,13 @@ public class RegisterFromAPI : MonoBehaviour
 
         string username = user.username;
         string password_hash = MD5Hash(user.password_hash);
+        string cid = user.cid;
 
         string payload = "";
-        
+
         payload = addJson(payload, "username", username);
         payload = addJson(payload, "password_hash", password_hash);
+        payload = addJson(payload, "classroom_code", cid);
 
         string jsonPayload = "{" + payload + "}";
 
