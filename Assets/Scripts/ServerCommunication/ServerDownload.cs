@@ -31,7 +31,7 @@ public class ServerDownload : MonoBehaviour
     public string deviceType;
 
     private GameEnumList game;
-    private DownloadButtonBehavior dlButton;
+    public DownloadButtonBehavior dlButton;
     private MathController mController;
 
     private bool isDownloading = false;
@@ -66,6 +66,10 @@ public class ServerDownload : MonoBehaviour
         level = GetComponent<GameEnumList>().selectedLevel;
         mController = FindObjectOfType<MathController>();
         dlButton = FindObjectOfType<DownloadButtonBehavior>();
+        if(dlButton == null)
+        {
+            //dlButton = Resources.FindObjectsOfTypeAll<DownloadButtonBehavior>()[0];
+        }
         //TODO: Make an iOS and Android file path for url depending on device
         url = "https://s3.amazonaws.com/flamfoof/" + game.gameList + "/AssetBundle/" + level;
         
@@ -173,35 +177,33 @@ public class ServerDownload : MonoBehaviour
         }
 
         string[] sceneArray;
-        if (dlButton)
+        Debug.Log("Yes this does exist");
+        switch (currentGame)
         {
-            Debug.Log("Yes this does exist");
-            switch (currentGame)
-            {
-                case GameEnumList.GameList.MedievalMath:
-                    sceneArray = bundle.GetAllScenePaths();
-                    for (int i = 0; i < bundle.GetAllScenePaths().Length; i++)
-                    {
-                        Debug.Log(bundle.GetAllScenePaths()[i]);
-                    }
-                    Debug.Log("Level name loaded is: " + sceneArray[0]);
-                    mController.StartGame();
-                    break;
-                /* No asset bundle made for miss ways yet
-                case GameEnumList.GameList.MissWays:
-                    sceneArray = bundle.GetAllScenePaths();
-                    for (int i = 0; i < bundle.GetAllScenePaths().Length; i++)
-                    {
-                        Debug.Log(bundle.GetAllScenePaths()[i]);
-                    }
-                    Debug.Log("Level name loaded is: " + sceneArray[0]);
-                    break;
-                    */
-                default:
-                    SceneManager.LoadScene(game.selectedLevel);
-                    break;
-            }
+            case GameEnumList.GameList.MedievalMath:
+                sceneArray = bundle.GetAllScenePaths();
+                for (int i = 0; i < bundle.GetAllScenePaths().Length; i++)
+                {
+                    Debug.Log(bundle.GetAllScenePaths()[i]);
+                }
+                Debug.Log("Level name loaded is: " + sceneArray[0]);
+                mController.StartGame();
+                break;
+            /* No asset bundle made for miss ways yet
+            case GameEnumList.GameList.MissWays:
+                sceneArray = bundle.GetAllScenePaths();
+                for (int i = 0; i < bundle.GetAllScenePaths().Length; i++)
+                {
+                    Debug.Log(bundle.GetAllScenePaths()[i]);
+                }
+                Debug.Log("Level name loaded is: " + sceneArray[0]);
+                break;
+                */
+            default:
+                SceneManager.LoadScene(game.selectedLevel);
+                break;
         }
+        
 
         /*For texting without the dlButton
         sceneArray = bundle.GetAllScenePaths();
