@@ -14,7 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MissWays/Scenes/Portal_Placement Ex.unity
     guid: 0cfa8c8fb3991204b984f3bcae44941a
-  - enabled: 0
-    path: Assets/MedievalMath/Scenes/kellsLevel.unity
-    guid: db422f7a99295f340bb7b6003cbbaca2
   m_configObjects: {}
