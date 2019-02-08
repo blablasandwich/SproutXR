@@ -287,6 +287,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InitialMenu_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1297571846311046, guid: 1cfeb3ea17696a649bb86046e0d152a3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 224594446168234836, guid: 1cfeb3ea17696a649bb86046e0d152a3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -731,6 +735,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 310555809060987482, guid: 8205f41f4315f474f88ee60bcfaa82a5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 265
+      objectReference: {fileID: 0}
+    - target: {fileID: 310555808563564022, guid: 8205f41f4315f474f88ee60bcfaa82a5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 452
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8205f41f4315f474f88ee60bcfaa82a5, type: 3}
