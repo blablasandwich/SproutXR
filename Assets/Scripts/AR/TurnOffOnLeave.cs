@@ -11,6 +11,22 @@ public class TurnOffOnLeave : DefaultTrackableEventHandler
         UniversalMediaPlayer turnOffuniMed = FindObjectOfType<UniversalMediaPlayer>();
         TV_Behavior TV = FindObjectOfType<TV_Behavior>();
 
+        var rendererComponents = GetComponentsInChildren<Renderer>(true);
+        var colliderComponents = GetComponentsInChildren<Collider>(true);
+        var canvasComponents = GetComponentsInChildren<Canvas>(true);
+
+        // Enable rendering:
+        foreach (var component in rendererComponents)
+            component.enabled = true;
+
+        // Enable colliders:
+        foreach (var component in colliderComponents)
+            component.enabled = true;
+
+        // Enable canvas':
+        foreach (var component in canvasComponents)
+            component.enabled = true;
+
         switch (VideoToPlay)
         {
             case 1:
@@ -34,21 +50,6 @@ public class TurnOffOnLeave : DefaultTrackableEventHandler
         }
    
 
-        var rendererComponents = GetComponentsInChildren<Renderer>(true);
-        var colliderComponents = GetComponentsInChildren<Collider>(true);
-        var canvasComponents = GetComponentsInChildren<Canvas>(true);
-
-        // Enable rendering:
-        foreach (var component in rendererComponents)
-            component.enabled = true;
-
-        // Enable colliders:
-        foreach (var component in colliderComponents)
-            component.enabled = true;
-
-        // Enable canvas':
-        foreach (var component in canvasComponents)
-            component.enabled = true;
     }
 
     protected override void OnTrackingLost()
