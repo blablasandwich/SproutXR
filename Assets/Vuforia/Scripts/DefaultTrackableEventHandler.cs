@@ -18,7 +18,6 @@ using UnityEngine.UI;
 /// </summary>
 public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 {
-    public Text debugText;
 
     #region PROTECTED_MEMBER_VARIABLES
 
@@ -62,16 +61,11 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             newStatus == TrackableBehaviour.Status.TRACKED ||
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
-            Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
-            debugText.text += "Tracking Found";
             OnTrackingFound();
         }
         else if (previousStatus == TrackableBehaviour.Status.TRACKED &&
                  newStatus == TrackableBehaviour.Status.NO_POSE)
         {
-            Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
-            debugText.text += "Tracking lost";
-
             OnTrackingLost();
         }
         else

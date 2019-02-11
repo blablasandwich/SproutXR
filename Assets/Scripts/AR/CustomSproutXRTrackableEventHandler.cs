@@ -1,10 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CustomSproutXRTrackableEventHandler : DefaultTrackableEventHandler
 {
     public int VideoToPlay;
+    public Text debugText;
+
+    public void DebugAR<T> (T msg)
+    {
+        debugText.text += msg.ToString() + "\n";
+    }
 
     protected override void OnTrackingFound()
     {
@@ -14,6 +21,9 @@ public class CustomSproutXRTrackableEventHandler : DefaultTrackableEventHandler
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);
         var canvasComponents = GetComponentsInChildren<Canvas>(true);
+
+        Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
+        DebugAR("Tracking Found");
 
         // Enable rendering:
         foreach (var component in rendererComponents)
@@ -31,6 +41,8 @@ public class CustomSproutXRTrackableEventHandler : DefaultTrackableEventHandler
         {
             case 1:
                 TV.activeVideo = 1;
+                DebugAR("Playing Video 1");
+                DebugAR(TV.mediaPlayer.Path);
                 TV.ReplayCanvas.enabled = false;
                 TV.RunCheckVid();
                 break;
@@ -48,13 +60,14 @@ public class CustomSproutXRTrackableEventHandler : DefaultTrackableEventHandler
                 print("Video to play not found");
                 break;
         }
-   
-
     }
 
     protected override void OnTrackingLost()
     {
         UniversalMediaPlayer turnOffuniMed = FindObjectOfType<UniversalMediaPlayer>();
+
+        Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
+        DebugAR("Tracking lost");
 
         turnOffuniMed.Pause();
 
