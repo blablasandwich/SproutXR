@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurnOffOnLeave : DefaultTrackableEventHandler
+public class CustomSproutXRTrackableEventHandler : DefaultTrackableEventHandler
 {
     public int VideoToPlay;
 
