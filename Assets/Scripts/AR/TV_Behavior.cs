@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class TV_Behavior : MonoBehaviour
 {
-    private UniversalMediaPlayer uniMed;
+    public UniversalMediaPlayer mediaPlayer;
 
     public bool isPaused;
     private bool isOff;
@@ -26,10 +26,10 @@ public class TV_Behavior : MonoBehaviour
         isOff = false;
         isPaused = false;
 
-        uniMed = FindObjectOfType<UniversalMediaPlayer>();
+        mediaPlayer = FindObjectOfType<UniversalMediaPlayer>();
 
         //this array needs to be init in scene 
-        uniMed.RenderingObjects[0] = Screen;
+        mediaPlayer.RenderingObjects[0] = Screen;
 
         //StartCoroutine(CheckVid());
     }
@@ -100,25 +100,25 @@ public class TV_Behavior : MonoBehaviour
 
     void Pause()
     {
-        uniMed.Pause();
+        mediaPlayer.Pause();
         isPaused = true;
     }
 
     void Resume()
     {
-        uniMed.Play();
+        mediaPlayer.Play();
         isPaused = false;
     }
 
     void Replay()
     {
         ReplayCanvas.enabled = false;
-        uniMed.Position = 0;
+        mediaPlayer.Position = 0;
     }
 
     void On()
     {
-        uniMed.Play();
+        mediaPlayer.Play();
         isOff = false;
     }
 
@@ -131,7 +131,7 @@ public class TV_Behavior : MonoBehaviour
     {
         transform.parent.gameObject.SetActive(false);
         Debug.Log("off now");
-        uniMed.Release();
+        mediaPlayer.Release();
         isPaused = false;
         isOff = true;
     }
@@ -162,13 +162,13 @@ public class TV_Behavior : MonoBehaviour
 
                 TV_URL S=JsonUtility.FromJson<TV_URL>(w.downloadHandler.text);
 
-                uniMed.Path = S.video;
-                uniMed.Play();
+                mediaPlayer.Path = S.video;
+                mediaPlayer.Play();
                 
                 
                 Debug.Log(S.video);
                 yield return new WaitForSeconds(delayDestroy);
-                Debug.Log("Video Time Length: " + uniMed.Length / 1000);
+                Debug.Log("Video Time Length: " + mediaPlayer.Length / 1000);
                 yield return DestroyTV();
 
             }
@@ -178,12 +178,12 @@ public class TV_Behavior : MonoBehaviour
 
                 TV_URL S = JsonUtility.FromJson<TV_URL>(w.downloadHandler.text);
 
-                uniMed.Path = S.video2;
-                uniMed.Play();
+                mediaPlayer.Path = S.video2;
+                mediaPlayer.Play();
 
                 Debug.Log(S.video2);
                 yield return new WaitForSeconds(delayDestroy);
-                Debug.Log("Video Time Length: " + uniMed.Length / 1000);
+                Debug.Log("Video Time Length: " + mediaPlayer.Length / 1000);
                 yield return DestroyTV();
             }
             else if (activeVideo == 3)
@@ -192,11 +192,11 @@ public class TV_Behavior : MonoBehaviour
 
                 TV_URL S = JsonUtility.FromJson<TV_URL>(w.downloadHandler.text);
 
-                uniMed.Path = S.video3;
-                uniMed.Play();
+                mediaPlayer.Path = S.video3;
+                mediaPlayer.Play();
                 Debug.Log(S.video3);
                 yield return new WaitForSeconds(delayDestroy);
-                Debug.Log("Video Time Length: " + uniMed.Length / 1000);
+                Debug.Log("Video Time Length: " + mediaPlayer.Length / 1000);
                 yield return DestroyTV();
             }
             else
@@ -208,8 +208,8 @@ public class TV_Behavior : MonoBehaviour
 
     private IEnumerator DestroyTV()
     {
-        Debug.Log("Destroyed TV in " + ((uniMed.Length / 1000.0f)) + " seconds.");
-        yield return new WaitForSeconds((uniMed.Length / 1000.0f));
+        Debug.Log("Destroyed TV in " + ((mediaPlayer.Length / 1000.0f)) + " seconds.");
+        yield return new WaitForSeconds((mediaPlayer.Length / 1000.0f));
         ReplayCanvas.enabled = true;
     }
 
