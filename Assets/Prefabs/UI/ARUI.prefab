@@ -120,7 +120,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 660404742828474783}
+      - m_Target: {fileID: 0}
         m_MethodName: Toggle
         m_Mode: 1
         m_Arguments:
@@ -2806,7 +2806,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0.002, y: 0.009000001, z: -0.24700001}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: -570}
+  m_AnchoredPosition: {x: -3, y: -593}
   m_SizeDelta: {x: 258.22, y: 116.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6361952484421822007
@@ -4039,11 +4039,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SproutMainButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 3659703132764061204, guid: 5ab02c04c39b1124b814c112df1e9491,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3659703132764061207, guid: 5ab02c04c39b1124b814c112df1e9491,
         type: 3}

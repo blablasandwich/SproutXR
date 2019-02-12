@@ -7,10 +7,15 @@ public class ToggleBehavior : MonoBehaviour
     public Animator toggleAnim;
 
     // Start is called before the first frame update
-    public void toggle()
+    public void toggle(string selectedButton)
     {
-        //print("togglingToggle");
-        toggleAnim.Play("toggleAnimation");
-        toggleAnim.speed *= -1f;
+        if(selectedButton == "area")
+        {
+            toggleAnim.SetTrigger("AreaSelected");
+
+        }
+        else toggleAnim.SetTrigger("PerimeterSelected");
+
+
     }
 }
