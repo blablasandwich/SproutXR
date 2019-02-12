@@ -27,11 +27,14 @@ public class DownloadButtonBehavior : MonoBehaviour
         if (currentApp != "")
         {
             if(dlManager.GetComponent<GameEnumList>().gameList == GameEnumList.GameList.MedievalMath) {
+                loadingScreen.SetActive(true);
                 dlManager.GetComponent<ServerDownload>().DownloadAndroidAssetBundle();
-            } else if(dlManager.GetComponent<GameEnumList>().gameList == GameEnumList.GameList.MissWays)
+            }
+            else if(dlManager.GetComponent<GameEnumList>().gameList == GameEnumList.GameList.MissWays)
             {
                 loadingScreen.SetActive(true);
                 SceneManager.LoadScene(dlManager.GetComponent<GameEnumList>().misswaysLevels.ToString());
+               // Debug.Log("<color blue> </color>")
             } else
             {
                 loadingScreen.SetActive(true);
