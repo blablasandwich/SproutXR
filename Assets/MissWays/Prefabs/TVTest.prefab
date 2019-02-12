@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8064446029345326948}
+  - component: {fileID: 1438631379}
   m_Layer: 0
   m_Name: TVTest
   m_TagString: Untagged
@@ -25,13 +26,32 @@ Transform:
   m_GameObject: {fileID: 4722439943967725574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75764, y: 0.75764, z: 0.75764}
   m_Children:
   - {fileID: 8349371920667195827}
   - {fileID: 8349371919939400100}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1438631379
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4722439943967725574}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 99b6b2f7d61d82f4dad1ee2f025bf116, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &8253492966549357201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44,30 +64,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tv_MissWays_Final
       objectReference: {fileID: 0}
-    - target: {fileID: 95879173530270501, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 95879174600215918, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
-        type: 3}
-      propertyPath: m_TagString
-      value: Screen
-      objectReference: {fileID: 0}
     - target: {fileID: 95879173530270498, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.785
+      value: 3.7443
       objectReference: {fileID: 0}
     - target: {fileID: 95879173530270498, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.788
+      value: 7.046
       objectReference: {fileID: 0}
     - target: {fileID: 95879173530270498, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.337
+      value: -5.6463
       objectReference: {fileID: 0}
     - target: {fileID: 95879173530270498, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
         type: 3}
@@ -112,28 +122,64 @@ PrefabInstance:
     - target: {fileID: 95879173530270498, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.020000007
+      value: 0.068064
+      objectReference: {fileID: 0}
+    - target: {fileID: 95879173530270498, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.068064
       objectReference: {fileID: 0}
     - target: {fileID: 95879173530270498, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.020000007
+      value: 0.068064
       objectReference: {fileID: 0}
-    - target: {fileID: 95879173530270496, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+    - target: {fileID: 8839420189484835409, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
         type: 3}
-      propertyPath: activeVideo
-      value: 1
+      propertyPath: m_LocalScale.x
+      value: 8.8188
+      objectReference: {fileID: 0}
+    - target: {fileID: 8839420189484835409, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.8188
+      objectReference: {fileID: 0}
+    - target: {fileID: 8839420189484835409, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8.8188
       objectReference: {fileID: 0}
     - target: {fileID: 95879174067647198, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
         type: 3}
       propertyPath: m_Layer
       value: 25
       objectReference: {fileID: 0}
-    - target: {fileID: 1405707163179144402, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+    - target: {fileID: 95879174600215918, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: m_TagString
+      value: Screen
       objectReference: {fileID: 0}
+    - target: {fileID: 95879173530270496, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+        type: 3}
+      propertyPath: ReplayCanvas
+      value: 
+      objectReference: {fileID: 6719405596972782726}
+    - target: {fileID: 95879173530270496, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+        type: 3}
+      propertyPath: activeVideo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2061674171311614176, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+        type: 3}
+      propertyPath: m_Name
+      value: replayButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443657042962257431, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bec6ff88281b0a54ea7b396e8c1a4f50,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60, type: 3}
 --- !u!4 &8349371920667195827 stripped
@@ -142,6 +188,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8253492966549357201}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6719405596972782726 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3443657042962257431, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+    type: 3}
+  m_PrefabInstance: {fileID: 8253492966549357201}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8349371919939454182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -152,62 +210,6 @@ PrefabInstance:
     - target: {fileID: 129894, guid: c404114afaafa3b4494665d1634c383c, type: 3}
       propertyPath: m_Name
       value: UniversalMediaPlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
-      propertyPath: _renderingObjects.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
-      propertyPath: _path
-      value: https://www.youtube.com/watch?v=HhlJoNJd2ZQ&list=RDHhlJoNJd2ZQ&start_radio=1&t=0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
-      propertyPath: _autoPlay
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
-      propertyPath: _useAdvanced
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
-      propertyPath: _fixedVideoWidth
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
-      propertyPath: _fixedVideoHeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
-      propertyPath: _desktopFlipVertically
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
-      propertyPath: _renderingObjects.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
-      propertyPath: _renderingObjects.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
-      propertyPath: _renderingObjects.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
-      propertyPath: _renderingObjects.Array.data[4]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
-      propertyPath: _useFixedSize
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
-      propertyPath: _chosenPlatform
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
-      propertyPath: _androidPlayerType
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 472386, guid: c404114afaafa3b4494665d1634c383c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -252,6 +254,34 @@ PrefabInstance:
     - target: {fileID: 472386, guid: c404114afaafa3b4494665d1634c383c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: _renderingObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: _path
+      value: https://www.youtube.com/watch?v=HhlJoNJd2ZQ&list=RDHhlJoNJd2ZQ&start_radio=1&t=0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: _useAdvanced
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: _fixedVideoWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: _fixedVideoHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: _chosenPlatform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: _androidPlayerType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c404114afaafa3b4494665d1634c383c, type: 3}
