@@ -10,6 +10,7 @@ public class CustomSproutXRTrackableEventHandler : DefaultTrackableEventHandler
 
     public void DebugAR<T> (T msg)
     {
+        // Function displays text on AR screen for debug on the phone
         debugText.text += msg.ToString() + "\n";
     }
 
@@ -41,10 +42,12 @@ public class CustomSproutXRTrackableEventHandler : DefaultTrackableEventHandler
         {
             case 1:
                 TV.activeVideo = 1;
-                DebugAR("Playing Video 1");
-                DebugAR(TV.mediaPlayer.Path);
+                DebugAR("Selected Video 1");
+                TV.mediaPlayer.Play();
                 TV.ReplayCanvas.enabled = false;
+                DebugAR("Fetching Video 1");
                 TV.RunCheckVid();
+                DebugAR(TV.mediaPlayer.Path);
                 break;
             case 2:
                 TV.activeVideo = 2;

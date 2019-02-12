@@ -17,6 +17,15 @@ public class TV_Behavior : MonoBehaviour
 
     public int activeVideo = 0;
 
+
+    public Text debugText;
+
+    public void DebugAR<T> (T msg)
+    {
+        // Function displays text on AR screen for debug on the phone
+        debugText.text += msg.ToString() + "\n";
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -155,16 +164,19 @@ public class TV_Behavior : MonoBehaviour
             if (w.isNetworkError || w.isHttpError)
             {
                 Debug.Log("Error: " + w.error);
+                DebugAR("Error: " + w.error);
+                DebugAR("Error: " + w.isNetworkError);
+                DebugAR("Error: " + w.isHttpError);
             }
             else if (activeVideo == 1)
             {
                 Debug.Log("Found Video: " + w.downloadHandler.text);
+                DebugAR("Found Video: " + w.downloadHandler.text);
 
                 TV_URL S=JsonUtility.FromJson<TV_URL>(w.downloadHandler.text);
 
                 mediaPlayer.Path = S.video;
                 mediaPlayer.Play();
-                
                 
                 Debug.Log(S.video);
                 yield return new WaitForSeconds(delayDestroy);
