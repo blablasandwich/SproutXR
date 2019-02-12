@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="SparkPortalLogo" size="0.500000 0.167187" />
     <ImageTarget name="Back" size="0.250000 0.437188" />
     <ImageTarget name="Poetry" size="0.250000 0.143642" />
     <ImageTarget name="Main" size="0.250000 0.440536" />
