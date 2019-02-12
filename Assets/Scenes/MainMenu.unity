@@ -746,6 +746,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 452
       objectReference: {fileID: 0}
+    - target: {fileID: 310555807455843434, guid: 8205f41f4315f474f88ee60bcfaa82a5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: ARMain
+      objectReference: {fileID: 0}
+    - target: {fileID: 310555807983219028, guid: 8205f41f4315f474f88ee60bcfaa82a5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: ARMain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8205f41f4315f474f88ee60bcfaa82a5, type: 3}
 --- !u!114 &310555808265758606 stripped
