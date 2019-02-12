@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class CustomSproutXRTrackableEventHandler : DefaultTrackableEventHandler
 {
     public int VideoToPlay;
-    public Text debugText;
 
+    // TODO: Move code to external file
+    public Text debugText;
     public void DebugAR<T> (T msg)
     {
         // Function displays text on AR screen for debug on the phone
@@ -43,6 +44,7 @@ public class CustomSproutXRTrackableEventHandler : DefaultTrackableEventHandler
             case 1:
                 TV.activeVideo = 1;
                 DebugAR("Selected Video 1");
+                // TODO: Remove Play hardcode from here
                 TV.mediaPlayer.Play();
                 TV.ReplayCanvas.enabled = false;
                 DebugAR("Fetching Video 1");
