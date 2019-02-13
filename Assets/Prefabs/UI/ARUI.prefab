@@ -120,7 +120,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 660404742828474783}
         m_MethodName: Toggle
         m_Mode: 1
         m_Arguments:
@@ -4194,6 +4194,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6361952483886154775}
     m_Modifications:
+    - target: {fileID: 1875728578054736937, guid: ac1be9d1c85efe346b6b9bd4079245f8,
+        type: 3}
+      propertyPath: m_Name
+      value: DebugAR
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875728578054736937, guid: ac1be9d1c85efe346b6b9bd4079245f8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1875728578054736936, guid: ac1be9d1c85efe346b6b9bd4079245f8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4298,16 +4308,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1875728578054736937, guid: ac1be9d1c85efe346b6b9bd4079245f8,
-        type: 3}
-      propertyPath: m_Name
-      value: DebugAR
-      objectReference: {fileID: 0}
-    - target: {fileID: 1875728578054736937, guid: ac1be9d1c85efe346b6b9bd4079245f8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac1be9d1c85efe346b6b9bd4079245f8, type: 3}
