@@ -59,6 +59,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8064446029345326948}
     m_Modifications:
+    - target: {fileID: 3443657042962257431, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bec6ff88281b0a54ea7b396e8c1a4f50,
+        type: 3}
     - target: {fileID: 95879173530270501, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
         type: 3}
       propertyPath: m_Name
@@ -169,22 +175,32 @@ PrefabInstance:
       propertyPath: activeVideo
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 95879173530270496, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+        type: 3}
+      propertyPath: mediaPlayer
+      value: 
+      objectReference: {fileID: 8349371919932491634}
+    - target: {fileID: 95879173530270496, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+        type: 3}
+      propertyPath: Screen
+      value: 
+      objectReference: {fileID: 8349371919580745727}
     - target: {fileID: 2061674171311614176, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
         type: 3}
       propertyPath: m_Name
       value: replayButton
       objectReference: {fileID: 0}
-    - target: {fileID: 3443657042962257431, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: bec6ff88281b0a54ea7b396e8c1a4f50,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60, type: 3}
 --- !u!4 &8349371920667195827 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 95879173530270498, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+    type: 3}
+  m_PrefabInstance: {fileID: 8253492966549357201}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8349371919580745727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 95879174600215918, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
     type: 3}
   m_PrefabInstance: {fileID: 8253492966549357201}
   m_PrefabAsset: {fileID: 0}
@@ -207,10 +223,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8064446029345326948}
     m_Modifications:
-    - target: {fileID: 129894, guid: c404114afaafa3b4494665d1634c383c, type: 3}
-      propertyPath: m_Name
-      value: UniversalMediaPlayer
-      objectReference: {fileID: 0}
     - target: {fileID: 472386, guid: c404114afaafa3b4494665d1634c383c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -255,6 +267,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 129894, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: m_Name
+      value: UniversalMediaPlayer
+      objectReference: {fileID: 0}
     - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
       propertyPath: _renderingObjects.Array.size
       value: 1
@@ -291,3 +307,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8349371919939454182}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8349371919932491634 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8349371919939454182}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bad016bb70440e43a0a4da64cfad6d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

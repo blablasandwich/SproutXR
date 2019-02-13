@@ -46,19 +46,19 @@ public class CustomSproutXRTrackableEventHandler : DefaultTrackableEventHandler
                 DebugAR("Selected Video 1");
                 // TODO: Remove Play hardcode from here
                 TV.mediaPlayer.Play();
-                TV.ReplayCanvas.enabled = false;
+                //TV.ReplayCanvas1.enabled = false;
                 DebugAR("Fetching Video 1");
                 TV.RunCheckVid();
                 DebugAR(TV.mediaPlayer.Path);
                 break;
             case 2:
                 TV.activeVideo = 2;
-                TV.ReplayCanvas.enabled = false;
+              //  TV.ReplayCanvas1.enabled = false;
                 TV.RunCheckVid();
                 break;
             case 3:
                 TV.activeVideo = 3;
-                TV.ReplayCanvas.enabled = false;
+               // TV.ReplayCanvas1.enabled = false;
                 TV.RunCheckVid();
                 break;
             default:
