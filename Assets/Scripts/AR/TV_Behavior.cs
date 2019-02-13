@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using UMP;
 
 public class TV_Behavior : MonoBehaviour
 {
@@ -12,42 +13,153 @@ public class TV_Behavior : MonoBehaviour
     private bool isOff;
     public float delayDestroy = 5.0f;
 
-    public static GameObject Screen;
-    public Image ReplayCanvas;
+    public static GameObject screen;
+    private Image ReplayCanvas;
+
+    public bool videoReady = false;
 
     public int activeVideo = 0;
+    public string apiUrl = "http://sproutXR-api-dev.herokuapp.com/api/video";
+    public TV_JSON tvJson;
 
+    public Image ReplayCanvas1 { get => ReplayCanvas1; set => ReplayCanvas1 = value; }
 
-    public Text debugText;
-
-    public void DebugAR<T> (T msg)
-    {
-        // Function displays text on AR screen for debug on the phone
-        debugText.text += msg.ToString() + "\n";
-    }
 
     // Start is called before the first frame update
     void Start()
     {
-        ReplayCanvas.enabled = false;
-        Screen = GameObject.FindWithTag("Screen");
-
-        isOff = false;
-        isPaused = false;
-
+        screen = GameObject.FindWithTag("Screen");
         mediaPlayer = FindObjectOfType<UniversalMediaPlayer>();
 
         //this array needs to be init in scene 
-        mediaPlayer.RenderingObjects[0] = Screen;
+        mediaPlayer.RenderingObjects[0] = screen;
 
-        //StartCoroutine(CheckVid());
+        ReplayCanvas.enabled = false;
+
+        On();
     }
 
-    // Update is called once per frame
     void Update()
     {
-       if (Input.GetKeyDown(KeyCode.Space))
-       {
+        TestWithKeyboad();
+    }
+
+
+    void Pause()
+    {
+        Debug.Log("TV: Pause");
+        mediaPlayer.Pause();
+        isPaused = true;
+    }
+
+    void Play()
+    {
+        Debug.Log("TV: Play");
+        mediaPlayer.Play();
+        isPaused = false;
+    }
+
+    void Resume()
+    {
+        Debug.Log("TV: Resume");
+        Play();
+    }
+
+    void Replay()
+    {
+        Debug.Log("TV: Replay");
+        ReplayCanvas.enabled = false;
+        mediaPlayer.Position = 0;
+        On();
+    }
+
+    void On()
+    {
+        Debug.Log("TV: On");
+        isOff = false;
+        Play();
+    }
+
+    void Off()
+    {
+        Debug.Log("TV: Off");
+        transform.parent.gameObject.SetActive(false);
+        mediaPlayer.Release();
+        isPaused = false;
+        isOff = true;
+    }
+
+    [System.Serializable]
+    public class TV_JSON
+    {
+        public string video;
+        public string video2;
+        public string video3;
+    }
+
+    public void RunRequestVideos()
+    {
+        if (!videoReady)
+        {
+            StartCoroutine(RequestVideos());
+        }
+    }
+
+    public IEnumerator RequestVideos()
+    {
+        using (UnityWebRequest w = UnityWebRequest.Get(apiUrl))
+        {
+            yield return w.SendWebRequest();
+
+            if (w.isNetworkError || w.isHttpError)
+            {
+                Debug.Log("Error: " + w.error);
+                ARPrint.log.text = "Error: " + w.error;
+                ARPrint.log.text = "Error: " + w.isNetworkError;
+                ARPrint.log.text = "Error: " + w.isHttpError;
+            }
+            else
+            {
+                tvJson = JsonUtility.FromJson<TV_JSON>(w.downloadHandler.text);
+                videoReady = true;
+
+                // TODO: Move to separate function that sets the videos
+                switch (activeVideo)
+                {
+                    case 1:
+                        mediaPlayer.Path = tvJson.video;
+                        break;
+                    case 2:
+                        mediaPlayer.Path = tvJson.video2;
+                        break;
+                    case 3:
+                        mediaPlayer.Path = tvJson.video3;
+                        break;
+                    default:
+                        Debug.Log("RequestVideos() Started Too Early");
+                        break;
+                }
+
+                Play();
+                Debug.Log("Playing this video: " + mediaPlayer.Path);
+                Debug.Log("Video Time Length: " + mediaPlayer.Length / 1000);
+                yield return new WaitForSeconds(delayDestroy);
+                yield return DestroyTV();
+            }
+        }
+    }
+
+    private IEnumerator DestroyTV()
+    {
+        Debug.Log("Destroyed TV in " + ((mediaPlayer.Length / 1000.0f)) + " seconds.");
+        yield return new WaitForSeconds((mediaPlayer.Length / 1000.0f));
+        ReplayCanvas.enabled = true;
+    }
+
+    void TestWithKeyboad()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
             if (!isOff)
             {
                 Off();
@@ -56,24 +168,24 @@ public class TV_Behavior : MonoBehaviour
             {
                 On();
             }
-       }
+        }
 
-       if (Input.GetKeyDown(KeyCode.P))
-       {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
             Pause();
-       }
+        }
 
-       if (Input.GetKeyDown(KeyCode.O))
-       {
+        if (Input.GetKeyDown(KeyCode.O))
+        {
             Resume();
-       }
+        }
 
-       if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I))
         {
             Replay();
         }
 
-       if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began))
+        if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began))
         {
             Ray raycast = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
             RaycastHit raycastHit;
@@ -107,131 +219,4 @@ public class TV_Behavior : MonoBehaviour
         }
     }
 
-    void Pause()
-    {
-        mediaPlayer.Pause();
-        isPaused = true;
-    }
-
-    void Resume()
-    {
-        mediaPlayer.Play();
-        isPaused = false;
-    }
-
-    void Replay()
-    {
-        ReplayCanvas.enabled = false;
-        mediaPlayer.Position = 0;
-    }
-
-    void On()
-    {
-        mediaPlayer.Play();
-        isOff = false;
-    }
-
-    public void RunCheckVid()
-    {
-        StartCoroutine(CheckVid());
-    }
-
-    void Off()
-    {
-        transform.parent.gameObject.SetActive(false);
-        Debug.Log("off now");
-        mediaPlayer.Release();
-        isPaused = false;
-        isOff = true;
-    }
-
-    [System.Serializable]
-    public class TV_URL
-    {
-        public string video;
-        public string video2;
-        public string video3;
-    }
-
-
-
-    public IEnumerator CheckVid()
-    {
-        using (UnityWebRequest w = UnityWebRequest.Get("http://sproutXR-api-dev.herokuapp.com/api/video")) //http://sproutXR-api-dev.herokuapp.com/api/video
-        {
-            yield return w.SendWebRequest();
-
-            if (w.isNetworkError || w.isHttpError)
-            {
-                Debug.Log("Error: " + w.error);
-                DebugAR("Error: " + w.error);
-                DebugAR("Error: " + w.isNetworkError);
-                DebugAR("Error: " + w.isHttpError);
-            }
-            else if (activeVideo == 1)
-            {
-                Debug.Log("Found Video: " + w.downloadHandler.text);
-                DebugAR("Found Video: " + w.downloadHandler.text);
-
-                TV_URL S=JsonUtility.FromJson<TV_URL>(w.downloadHandler.text);
-
-                mediaPlayer.Path = S.video;
-                mediaPlayer.Play();
-                
-                Debug.Log(S.video);
-                yield return new WaitForSeconds(delayDestroy);
-                Debug.Log("Video Time Length: " + mediaPlayer.Length / 1000);
-                yield return DestroyTV();
-
-            }
-            else if (activeVideo == 2)
-            {
-                Debug.Log("Found Video: " + w.downloadHandler.text);
-
-                TV_URL S = JsonUtility.FromJson<TV_URL>(w.downloadHandler.text);
-
-                mediaPlayer.Path = S.video2;
-                mediaPlayer.Play();
-
-                Debug.Log(S.video2);
-                yield return new WaitForSeconds(delayDestroy);
-                Debug.Log("Video Time Length: " + mediaPlayer.Length / 1000);
-                yield return DestroyTV();
-            }
-            else if (activeVideo == 3)
-            {
-                Debug.Log("Found Video: " + w.downloadHandler.text);
-
-                TV_URL S = JsonUtility.FromJson<TV_URL>(w.downloadHandler.text);
-
-                mediaPlayer.Path = S.video3;
-                mediaPlayer.Play();
-                Debug.Log(S.video3);
-                yield return new WaitForSeconds(delayDestroy);
-                Debug.Log("Video Time Length: " + mediaPlayer.Length / 1000);
-                yield return DestroyTV();
-            }
-            else
-            {
-                Debug.Log("I started way too soon");
-            }
-        }
-    }
-
-    private IEnumerator DestroyTV()
-    {
-        Debug.Log("Destroyed TV in " + ((mediaPlayer.Length / 1000.0f)) + " seconds.");
-        yield return new WaitForSeconds((mediaPlayer.Length / 1000.0f));
-        ReplayCanvas.enabled = true;
-    }
-
-
-    /*
-    private IEnumerator DestroyTV()
-    {
-        Debug.Log("Destroyed TV in " + ((uniMed.Length / 1000.0f)) + " seconds.");
-        yield return new WaitForSeconds((uniMed.Length / 1000.0f));
-        transform.gameObject.SetActive(false);
-    }
-    */
 }
