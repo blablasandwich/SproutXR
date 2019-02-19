@@ -223,10 +223,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b9f100b4f437df4b8baf20ebf0483ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mediaPlayer: {fileID: 0}
   isPaused: 0
   delayDestroy: 5
-  ReplayCanvas: {fileID: 2598686849017757543}
+  screen: {fileID: 95879174600215918}
+  videoReady: 0
   activeVideo: 0
+  apiUrl: http://sproutXR-api-dev.herokuapp.com/api/video
+  tvJson:
+    video: 
+    video2: 
+    video3: 
 --- !u!1 &95879173611668018
 GameObject:
   m_ObjectHideFlags: 0

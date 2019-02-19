@@ -12,7 +12,7 @@ public class TV_Behavior : MonoBehaviour
     private bool isOff;
     public float delayDestroy = 5.0f;
 
-    public static GameObject Screen;
+    public GameObject Screen;
     public Image ReplayCanvas;
 
     public int activeVideo = 0;
@@ -30,15 +30,15 @@ public class TV_Behavior : MonoBehaviour
     void Start()
     {
         ReplayCanvas.enabled = false;
-        Screen = GameObject.FindWithTag("Screen");
+        //Screen = GameObject.FindWithTag("Screen");
 
         isOff = false;
         isPaused = false;
 
-        mediaPlayer = FindObjectOfType<UniversalMediaPlayer>();
+        //mediaPlayer = FindObjectOfType<UniversalMediaPlayer>();
 
         //this array needs to be init in scene 
-        mediaPlayer.RenderingObjects[0] = Screen;
+        //mediaPlayer.RenderingObjects[0] = Screen;
 
         //StartCoroutine(CheckVid());
     }

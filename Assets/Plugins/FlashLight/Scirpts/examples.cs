@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class examples : MonoBehaviour {
-    
+    /*
     public FlashLight flctr;
     public GameObject openFlashBtn;
     public GameObject closeFlashBtn;
@@ -61,5 +61,6 @@ public class examples : MonoBehaviour {
         }
     }
 
-
+    */
+    
 }
