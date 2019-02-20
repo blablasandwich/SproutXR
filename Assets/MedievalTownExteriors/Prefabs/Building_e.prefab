@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3315252}
   - component: {fileID: 2386116}
   - component: {fileID: 6492400}
+  - component: {fileID: 8804782893108412667}
   m_Layer: 0
   m_Name: Building_e
   m_TagString: Untagged
@@ -93,6 +94,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: d4b73ecf89aca924390b5d6752fb2ca6, type: 3}
+--- !u!114 &8804782893108412667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12259c85fd511145b101c3e4db0ba81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &61340344953235642
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,6 +117,7 @@ GameObject:
   - component: {fileID: 4048930803106391244}
   - component: {fileID: 3474759961960480451}
   - component: {fileID: 4711495296279488934}
+  - component: {fileID: 6243058251474949785}
   m_Layer: 0
   m_Name: Roof
   m_TagString: Untagged
@@ -170,3 +184,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!95 &6243058251474949785
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61340344953235642}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 70aaf07dc556fac42be3fca08d06b4e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
