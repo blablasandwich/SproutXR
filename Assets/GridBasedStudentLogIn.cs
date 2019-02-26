@@ -38,18 +38,20 @@ public class GridBasedStudentLogIn : MonoBehaviour
     {
         ParseJsonToObject(w.downloadHandler.text);
 
-    foreach(MyObject obj in JsonArry)
-        {
-            GameObject currentStudent = Instantiate(studentProfilePicPrefab, studentCardHolder.transform);
-            GridStudentButtonInfo info = currentStudent.GetComponent<GridStudentButtonInfo>();
+        for (int i = 0; i < 10; i++) {
+            foreach (MyObject obj in JsonArry)
+            {
+                GameObject currentStudent = Instantiate(studentProfilePicPrefab, studentCardHolder.transform);
+                GridStudentButtonInfo info = currentStudent.GetComponent<GridStudentButtonInfo>();
 
-            //set icon color
-            Color c = new Color(Random.Range(0, 1f), Random.Range(0, 1f), Random.Range(0, 1f), Random.Range(0, 1f));
-            info.pic.color = c;
+                //set icon color
+                Color c = new Color(Random.Range(0, 1f), Random.Range(0, 1f), Random.Range(0, 1f), Random.Range(0, 1f));
+                info.pic.color = c;
 
-            //set gameobjname and user name
-            info.studentName.text = obj.username;
-            info.name = obj.username;
+                //set gameobjname and user name
+                info.studentName.text = obj.username;
+                info.name = obj.username;
+            }
         }
     }
 
