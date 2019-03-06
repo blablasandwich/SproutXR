@@ -11,12 +11,14 @@ public class GridStudentButtonInfo : MonoBehaviour
     public Button btn;
     public LoginFromAPI api;
     public GameObject cardUI;
+    public GameObject Library;
     // Start is called before the first frame update
 
     public void Start()
     {
         api = GameObject.Find("InitialMenu_Canvas").GetComponent<LoginFromAPI>();
         cardUI = GameObject.Find("GridBasedStudentSelectionUI");
+        Library = api.GetComponent<LoginUIManager>().libraryCanvas;
     }
 
     public void PressBtn()
@@ -24,5 +26,7 @@ public class GridStudentButtonInfo : MonoBehaviour
         api.LogInCard(studentName.text, password);
         cardUI.SetActive(false);
         api.gameObject.SetActive(false);
+        Library.SetActive(true);
+
     }
 }
