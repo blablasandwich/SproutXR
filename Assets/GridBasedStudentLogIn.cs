@@ -58,7 +58,58 @@ public class GridBasedStudentLogIn : MonoBehaviour
 
     public IEnumerator CheckDataBase()
     {
-        using (UnityWebRequest w = UnityWebRequest.Get("http://"+ "sproutxr-api-dev.herokuapp.com/api/classroom/" + URLID.text + "/user"))
+        switch (URLID.text)
+        {
+            case "15":
+                URLID.text = "http://sproutxr-api-dev.herokuapp.com/api/classroom/15/user";
+                break;
+            case "14":
+                URLID.text = "http://sproutxr-api-dev.herokuapp.com/api/classroom/14/user";
+                break;
+            case "13":
+                URLID.text = "http://sproutxr-api-dev.herokuapp.com/api/classroom/13/user";
+                break;
+            case "12":
+                URLID.text = "http://sproutxr-api-dev.herokuapp.com/api/classroom/12/user";
+                break;
+            case "11":
+                URLID.text = "http://sproutxr-api-dev.herokuapp.com/api/classroom/11/user";
+                break;
+            case "10":
+                URLID.text = "http://sproutxr-api-dev.herokuapp.com/api/classroom/10/user";
+                break;
+            case "9":
+                URLID.text = "http://sproutxr-api-dev.herokuapp.com/api/classroom/9/user";
+                break;
+            case "8":
+                URLID.text = "http://sproutxr-api-dev.herokuapp.com/api/classroom/8/user";
+                break;
+            case "7":
+                URLID.text = "http://sproutxr-api-dev.herokuapp.com/api/classroom/7/user";
+                break;
+            case "6":
+                URLID.text = "http://sproutxr-api-dev.herokuapp.com/api/classroom/6/user";
+                break;
+            case "5":
+                URLID.text = "http://sproutxr-api-dev.herokuapp.com/api/classroom/5/user";
+                break;
+            case "4":
+                URLID.text = "http://sproutxr-api-dev.herokuapp.com/api/classroom/4/user";
+                break;
+            case "3":
+                URLID.text = "http://sproutxr-api-dev.herokuapp.com/api/classroom/3/user";
+                break;
+            case "2":
+                URLID.text = "http://sproutxr-api-dev.herokuapp.com/api/classroom/2/user";
+                break;
+            case "1":
+                URLID.text = "http://sproutxr-api-dev.herokuapp.com/api/classroom/1/user";
+                break;
+            default:
+                URLID.text = "http://sproutxr-api-dev.herokuapp.com/api/classroom/0/user";
+                break;
+        }
+        using (UnityWebRequest w = UnityWebRequest.Get("http://sproutxr-api-dev.herokuapp.com/api/classroom/15/user"))
         {
             yield return w.SendWebRequest();
 
