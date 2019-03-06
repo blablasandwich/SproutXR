@@ -9,16 +9,16 @@ public class SceneChanger : MonoBehaviour
     private static GameObject DeactiveObj;
     private static GameObject ActiveObj;
 
-    void Awake()
+   void Awake()
     {
         SceneChanger[] objs = GameObject.FindObjectsOfType<SceneChanger>();
         if (objs.Length > 1)
-        {
-            Destroy(this.gameObject);
-        }
+      {
+          Destroy(this.gameObject);
+      }
 
-        DontDestroyOnLoad(this.gameObject);
-    }
+     DontDestroyOnLoad(this.gameObject);
+    } 
 
     private void Start()
     {
