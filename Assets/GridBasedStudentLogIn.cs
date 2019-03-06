@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 using UnityEngine.Networking;
 
 public class GridBasedStudentLogIn : MonoBehaviour
@@ -9,7 +9,7 @@ public class GridBasedStudentLogIn : MonoBehaviour
     public GameObject studentProfilePicPrefab;
     public GameObject studentCardHolder;
     List<MyObject> JsonArry;
-    public Text URLID;
+    public TextMeshProUGUI URLID;
     public void ClickBtn()
     {
       //  string id = inputid.text;
@@ -33,7 +33,6 @@ public class GridBasedStudentLogIn : MonoBehaviour
     private class MyObject
     {
         public string username;
-        public string password_hash;
     }
 
     void stuff(UnityWebRequest w)
@@ -52,7 +51,6 @@ public class GridBasedStudentLogIn : MonoBehaviour
                 //set gameobjname and user name
                 info.studentName.text = obj.username;
                 info.name = obj.username;
-            info.password = obj.password_hash;
             }
         }
 
@@ -109,7 +107,7 @@ public class GridBasedStudentLogIn : MonoBehaviour
                 URLID.text = "http://sproutxr-api-dev.herokuapp.com/api/classroom/0/user";
                 break;
         }
-        using (UnityWebRequest w = UnityWebRequest.Get("http://sproutxr-api-dev.herokuapp.com/api/classroom/15/user"))
+        using (UnityWebRequest w = UnityWebRequest.Get(URLID.text))
         {
             yield return w.SendWebRequest();
 
