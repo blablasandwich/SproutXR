@@ -12,7 +12,7 @@ public class LoginFromAPI : MonoBehaviour
     public InputField usernameInputField;
     public InputField passwordInputField;
     public Text feedbackText;
-
+    public bool cardUser = false;
     /* Testing Login
      email: example@lucernastudios.com
      pass: 12345678
@@ -45,7 +45,15 @@ public class LoginFromAPI : MonoBehaviour
     {
         inputUsername = usernameInputField.text;
         inputPassword = passwordInputField.text;
+        cardUser = false;
+        StartCoroutine(GetUser());
+    }
 
+    public void LogInCard(string user, string password)
+    {
+        inputUsername = user;
+        inputPassword = password;
+        cardUser = true;
         StartCoroutine(GetUser());
     }
 
@@ -94,7 +102,14 @@ public class LoginFromAPI : MonoBehaviour
             // byte[] results = www.downloadHandler.data;
         }
 
-        CheckPassword();
+        if (!cardUser)
+        {
+            CheckPassword();
+        }
+        else if (cardUser)
+        {
+            NextScene();
+        }
     }
 
     public static string MD5Hash(string text)
