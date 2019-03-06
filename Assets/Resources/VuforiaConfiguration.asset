@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: -2067402452, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: VuforiaConfiguration
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   vuforia:
     vuforiaLicenseKey: AcFjtBj/////AAABmTe+KsQrWESwj1PmUNhYIjFkmvO6FUnYm3DKijzf8m/U5bFmhd+hvEi7qbQeguZ+rNWhsv8DbkzqQyKeYdb5nF408dCFMvJYzt0Ia0drvbkrhI8p3xMv684qQJ7Lu4pB04lCEokJ60ZJBJYCesecZbPha3UhA5wxpJi3VWGbDbiiQOp8pB866WVRgxEZpnSWSL02v/y2rYPe36VznM6+mdywEldTY+VtXlu0wl8cItFoOKrmMrJsT2ayh1L+nrw3ND9MrPjqbOR4oJLrn0Cj31U8fZD6x3Brzeke+biK6NlN60JTSKGGwa+l60z/iobTXR3fbPlA9y2//CuuZgDB7Nf4HTwXYEgKlvL9xDG37FI6
     ufoLicenseKey: QVdjL29sci8vLy8vQUFBQUtGMjFPZ2lVdFU5ZHJhVmJwdGFmZzUwYUlBQTRuYjdyU1RUaEJtOE41VCtyV1RMZ3lIZkpkVllTd1QwaEZnUm1sZjlpZVBhYk5qbXRZM1JNY1RrWmtXZFNkTVFhQ0diSXZid0F2VGlGU21taVhhbzRlaENQWTNoVlFNRC9TN1Bwc1NjOGg0UlhUckF1TmlRNEorOTQ5TDAxUzJEZUY4RUt1SzFhRkV6aWUvVE1pemozZS9RekxCcnlKaE5LM1Q5RGJkRTh3Mld0VGk4dC9URFVWTlFSQStqQ3E5a2NDbnhYd25mdG1xdnlXOUVMUEVHR0tSSVIwUTM1aUx2ZG1YQmQ5V0I3QUZLZjIvUTB6b1FlZWg0MkU0WURrSVBoZ05UWjdPeUUydU5KUkZvc01qNjdGemMzR09NVkt2ZHc2WmZCY05sSlJGUjF5VVNXVC9QK0hSb29oMWljRkhsZ3k0THpQVS9wUTJXbS9pSTM=
@@ -23,20 +23,20 @@ MonoBehaviour:
     cameraDirection: 0
     mirrorVideoBackground: 0
     version: 8.0.10
-    eulaAcceptedVersions: '{"Values":["7.2","7.5","7.1","7.7","8.0","8.1","0.0"]}'
+    eulaAcceptedVersions: '{"Values":["7.1","7.2","7.5","7.7","8.0","8.1","0.0"]}'
   digitalEyewear:
     cameraOffset: 0.06
     distortionRenderingLayer: 31
     eyewearType: 0
     stereoFramework: 0
     seeThroughConfiguration: 0
-    viewerName: 
-    viewerManufacturer: 
+    viewerName:
+    viewerManufacturer:
     useCustomViewer: 0
     customViewer:
       Version: 0
-      Name: 
-      Manufacturer: 
+      Name:
+      Manufacturer:
       ButtonType: 0
       ScreenToLensDistance: 0
       InterLensDistance: 0
@@ -64,7 +64,7 @@ MonoBehaviour:
     autoInitTracker: 0
     autoStartTracker: 0
   webcam:
-    deviceNameSetInEditor: 
+    deviceNameSetInEditor:
     flipHorizontally: 0
     turnOffWebCam: 0
     renderTextureLayer: 30
