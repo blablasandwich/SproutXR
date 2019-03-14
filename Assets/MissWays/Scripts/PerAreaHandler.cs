@@ -19,13 +19,13 @@ public class PerAreaHandler : MonoBehaviour
     public void P()
     {
         def.text = "L + L + W + W";
-        prob.text = "5ft + 5ft + 5ft + 5ft";
-        ans.text = "20ft";
+        prob.text = "5ft + 5ft + 3ft + 3ft";
+        ans.text = "16ft";
     }
     public void A()
     {
         def.text = "L * W";
-        prob.text = "5ft * 5ft";
-        ans.text = "25ft";
+        prob.text = "5ft * 3ft";
+        ans.text = "15ft";
     }
 }
