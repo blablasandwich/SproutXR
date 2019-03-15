@@ -37,11 +37,11 @@ public class MedievalCharacterBehavior : MonoBehaviour
 
     private IEnumerator DelayUntilDeath()
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.3f);
 
         SetKinematic(false);
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(4f);
 
         isDead = true;
        // SetKinematic(false);

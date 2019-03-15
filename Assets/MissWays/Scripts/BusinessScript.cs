@@ -7,13 +7,12 @@ public class BusinessScript : MonoBehaviour
     public GameObject[] myPrefabs;
 
     int index;
-
     public float Timer = 2;
+    public GameObject castle;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("I have started");
     }
 
     // Update is called once per frame
@@ -22,14 +21,16 @@ public class BusinessScript : MonoBehaviour
         Timer -= 1 * Time.deltaTime;
         if (Timer <= 0)
         {
-            index = Random.Range(0, myPrefabs.Length);
+            if (castle.GetComponent<MeshRenderer>().enabled)
+            {
+                index = Random.Range(0, myPrefabs.Length);
 
-            GameObject selectedPrefab = myPrefabs[index];
+                GameObject selectedPrefab = myPrefabs[index];
 
-            GameObject character = Instantiate(selectedPrefab, transform.position, transform.rotation);
+                GameObject character = Instantiate(selectedPrefab, transform.position, transform.rotation);
 
-            character.transform.parent = GameObject.Find("Castle").transform;
-
+                character.transform.parent = GameObject.Find("Castle").transform;
+            }
             Timer = .5f;
         }
     }

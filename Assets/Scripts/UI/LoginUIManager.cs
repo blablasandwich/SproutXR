@@ -17,8 +17,8 @@ public class LoginUIManager : MonoBehaviour
         libraryCanvas.SetActive(true);
     }
     // Update is called once per frame
-    void Update()
+    public void activateFreeTrial()
     {
-        
+        GameStateManager.instance.currentSubscription = EnumManager.ActivationType.Free;
     }
 }
