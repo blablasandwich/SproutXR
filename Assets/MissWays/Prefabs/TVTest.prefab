@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 4722439943967725574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75764, y: 0.75764, z: 0.75764}
+  m_LocalScale: {x: 0.75765115, y: 0.757651, z: 0.75765115}
   m_Children:
   - {fileID: 8349371920667195827}
   - {fileID: 8349371919939400100}
@@ -41,7 +41,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4722439943967725574}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 99b6b2f7d61d82f4dad1ee2f025bf116, type: 2}
   m_CullingMode: 0
@@ -59,12 +59,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8064446029345326948}
     m_Modifications:
-    - target: {fileID: 3443657042962257431, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: bec6ff88281b0a54ea7b396e8c1a4f50,
-        type: 3}
     - target: {fileID: 95879173530270501, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
         type: 3}
       propertyPath: m_Name
@@ -167,16 +161,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 95879173530270496, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
         type: 3}
-      propertyPath: ReplayCanvas
-      value: 
-      objectReference: {fileID: 6719405596972782726}
-    - target: {fileID: 95879173530270496, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
-        type: 3}
-      propertyPath: activeVideo
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 95879173530270496, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
-        type: 3}
       propertyPath: mediaPlayer
       value: 
       objectReference: {fileID: 8349371919932491634}
@@ -185,6 +169,27 @@ PrefabInstance:
       propertyPath: Screen
       value: 
       objectReference: {fileID: 8349371919580745727}
+    - target: {fileID: 95879173530270496, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+        type: 3}
+      propertyPath: ReplayCanvas
+      value: 
+      objectReference: {fileID: 6719405596972782726}
+    - target: {fileID: 95879173530270496, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+        type: 3}
+      propertyPath: activeVideo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 95879173530270496, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+        type: 3}
+      propertyPath: debugText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443657042962257431, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bec6ff88281b0a54ea7b396e8c1a4f50,
+        type: 3}
     - target: {fileID: 2061674171311614176, guid: b2cc7c95d0ca1144c91f9c6e3d4d8c60,
         type: 3}
       propertyPath: m_Name
@@ -223,6 +228,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8064446029345326948}
     m_Modifications:
+    - target: {fileID: 129894, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: m_Name
+      value: UniversalMediaPlayer
+      objectReference: {fileID: 0}
     - target: {fileID: 472386, guid: c404114afaafa3b4494665d1634c383c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -267,17 +276,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 129894, guid: c404114afaafa3b4494665d1634c383c, type: 3}
-      propertyPath: m_Name
-      value: UniversalMediaPlayer
-      objectReference: {fileID: 0}
     - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
       propertyPath: _renderingObjects.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
+      propertyPath: _renderingObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 8349371919580745727}
+    - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
       propertyPath: _path
-      value: https://www.youtube.com/watch?v=HhlJoNJd2ZQ&list=RDHhlJoNJd2ZQ&start_radio=1&t=0
+      value: https://www.youtube.com/watch?v=BaJqvDloKyY
       objectReference: {fileID: 0}
     - target: {fileID: 11420564, guid: c404114afaafa3b4494665d1634c383c, type: 3}
       propertyPath: _useAdvanced
