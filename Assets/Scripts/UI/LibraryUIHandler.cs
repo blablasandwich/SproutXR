@@ -38,8 +38,8 @@ public class LibraryUIHandler : MonoBehaviour
                 break;
             case "MissWays":
                 gamePromoImage.sprite = MissWaysPromoImage;
-                lightboxTitle.text = "Miss Ways";
-                lightboxDescription.text = "Go on adventures with Neptune, a quirky alien cat. Solve Puzzles using AR Cards and hidden targets all around you \n\n Curriculum: Elementary and Middle School Math, Science, Reading.";
+                lightboxTitle.text = "Synapse";
+                lightboxDescription.text = "Go on adventures with Fred, a quirky alien elephant. Solve Puzzles using AR Cards and hidden targets all around you \n\n Curriculum: Elementary and Middle School Math, Science, Reading.";
 
                 break;
             case "TeachAR":
