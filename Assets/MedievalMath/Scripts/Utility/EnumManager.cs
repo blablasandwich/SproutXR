@@ -26,8 +26,6 @@ public static class EnumManager{
 
     public enum GemType { Penny, Nickel, Dime, Quarter, Dollar}
 
-    public enum ActivationType { Free, Paid, Special}
-
     public static Dictionary<EnumManager.GemType, float> gemValues = new Dictionary<GemType, float>()
     {
         {GemType.Penny, .01f },

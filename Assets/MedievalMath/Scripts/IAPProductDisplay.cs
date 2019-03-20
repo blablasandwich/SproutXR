@@ -10,31 +10,8 @@ public class IAPProductDisplay : MonoBehaviour
     [SerializeField] private Text description = null;
 	[SerializeField] private Button purchaseButton;
 
+
     
-	private void Awake()
-	{
-        if (description) description.text = "";
-		if (purchaseButton) 
-		{
-			purchaseButton.onClick.RemoveAllListeners();
-			purchaseButton.onClick.AddListener(PurchaseProduct);
-		}
-	}
-
-    #region Event Subscriptions
-    private void OnEnable()
-    {
-
-    }
-
-    private void OnDisable()
-    {
-       
-    }
-    #endregion
-
-    // Initialize the product and display proper details
-	
 
 	void Update()
 	{
@@ -45,13 +22,6 @@ public class IAPProductDisplay : MonoBehaviour
 		}
 	}
 
-
-    // Purhcase the product
-    void PurchaseProduct()
-    {
-       
-    }
-
-  
+    
 
 }

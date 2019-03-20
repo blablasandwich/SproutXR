@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 using System.Security.Cryptography;
 
 public class CreateProfileCanvas : CanvasNavigation
@@ -28,12 +29,15 @@ public class CreateProfileCanvas : CanvasNavigation
     void SignUpPressed()
     {
         errorText.text = "";
-        /*
+
         if (!IsProfileValid())
             return;
-            */
-        GameObject.Find("CanvasHolder").GetComponent<CanvasHolder>().InitialMenu_Canvas.SetActive(false);
-        GameObject.Find("CanvasHolder").GetComponent<CanvasHolder>().Library_Canvas.SetActive(true);
+
+        UserNameTemp = displayName.InputField.text;
+        UserEmailTemp = email.InputField.text;
+        UserPasswordTemp = password.InputField.text;
+        DaysLeftTemp = 0;
+
         GoToNextCanvas();
     }
 
