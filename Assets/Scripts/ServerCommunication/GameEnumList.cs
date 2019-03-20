@@ -16,7 +16,10 @@ public class GameEnumList : MonoBehaviour
     //All Assetpacks contained in each of these games
     public enum MedievalMathLevels
     {
-        medmathscene //TODO: rename this asset pack to kells later
+        medmathscene, //TODO: rename this asset pack to kells later
+        kellslevel,
+        levelselection,
+        introkells
     }
 
     public enum MissWaysLevels
@@ -26,7 +29,7 @@ public class GameEnumList : MonoBehaviour
 
     //TODO: Add walking soles, etc.
     public GameList gameList;
-    public MedievalMathLevels medMathLevels = MedievalMathLevels.medmathscene;
+    public MedievalMathLevels medMathLevels = MedievalMathLevels.introkells;
     public MissWaysLevels misswaysLevels = MissWaysLevels.Planet_Selection;
     public string selectedLevel;
 
