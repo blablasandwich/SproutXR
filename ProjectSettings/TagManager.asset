@@ -18,6 +18,7 @@ TagManager:
   - Clickable
   - Planet
   - Screen
+  - Vocab
   layers:
   - Default
   - TransparentFX

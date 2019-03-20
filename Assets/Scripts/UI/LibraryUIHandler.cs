@@ -33,13 +33,13 @@ public class LibraryUIHandler : MonoBehaviour
             case "VRMath":
                 gamePromoImage.sprite = VRMathPromoImage;
                 lightboxTitle.text = "VR Math";
-                lightboxDescription.text = "In VR Math, teachers and students can visualize and solve tough geometry problems together in Virtual Reality \n\n Curriculum: Middle School Math, Geometry";
+                lightboxDescription.text = "In VR Math, teachers and students can visualize and solve tough geometry problems together in Virtual Reality. \n\n Curriculum: Middle School Math, Geometry";
 
                 break;
             case "MissWays":
                 gamePromoImage.sprite = MissWaysPromoImage;
-                lightboxTitle.text = "Synapse";
-                lightboxDescription.text = "Go on adventures with Fred, a quirky alien elephant. Solve Puzzles using AR Cards and hidden targets all around you \n\n Curriculum: Elementary and Middle School Math, Science, Reading.";
+                lightboxTitle.text = "ARcademy";
+                lightboxDescription.text = "In ARcademy you can make magical lessons appear right out of a card! Train to become the best wizard or which in town. \n\n Curriculum: Elementary and Middle School Math, Science, Reading.";
 
                 break;
             case "TeachAR":
