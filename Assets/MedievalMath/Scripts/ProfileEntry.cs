@@ -6,12 +6,16 @@ using UnityEngine.UI;
 public class ProfileEntry : MonoBehaviour 
 {
     public InputField InputField { get { return inputField; } }
-
+    public InputField customInputField;
     private InputField inputField;
 
 	private void Awake()
 	{
-        inputField = transform.GetChild(0).GetComponent<InputField>();
+        if(customInputField)
+        {
+            inputField = customInputField;
+        }
+        else inputField = transform.GetChild(0).GetComponent<InputField>();
 	}
 
 	private void Start()

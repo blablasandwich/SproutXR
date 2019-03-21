@@ -1046,6 +1046,9 @@ MonoBehaviour:
   studentButton: {fileID: 114798642515290320}
   teacherButton: {fileID: 114776343296308520}
   parentButton: {fileID: 1455649994}
+  teacherCanvas: {fileID: 0}
+  parentCanvas: {fileID: 113547574137901647, guid: 893855c30ebd17141ba60439455664ef,
+    type: 3}
 --- !u!114 &114668761807924304
 MonoBehaviour:
   m_ObjectHideFlags: 0

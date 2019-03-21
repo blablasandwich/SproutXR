@@ -45,9 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2450aa8eafd4c046956b3bafc01afde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameList: 1
+  gameList: 0
   medMathLevels: 1
-  selectedLevel: medmathscene
+  misswaysLevels: 0
+  selectedLevel: none
 --- !u!114 &4250640390493306799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +67,7 @@ MonoBehaviour:
   level: 
   url: 
   deviceType: 
+  dlButton: {fileID: 0}
 --- !u!114 &41813483
 MonoBehaviour:
   m_ObjectHideFlags: 0

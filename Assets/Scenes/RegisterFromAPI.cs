@@ -35,9 +35,10 @@ public class RegisterFromAPI : MonoBehaviour
     public void Start()
     {
         user = new User();
-        usernameInputField = GameObject.Find("DisplayName/InputField").GetComponent<InputField>();
-        passwordInputField = GameObject.Find("Password/InputField").GetComponent<InputField>();
-        passwordConfirmInputField = GameObject.Find("Confirm Password/InputField").GetComponent<InputField>();
+        usernameInputField = GameObject.Find("DisplayInputField").GetComponent<InputField>();
+        passwordInputField = GameObject.Find("PasswordInputField").GetComponent<InputField>();
+        print("FOUND : " + passwordInputField.ToString());
+        passwordConfirmInputField = GameObject.Find("ConfirmPassInputField").GetComponent<InputField>();
 
         //feedbackText = GameObject.Find("FeedbackText").GetComponent<Text>();
         libraryCanvas = GetComponent<LoginUIManager>();
@@ -55,7 +56,9 @@ public class RegisterFromAPI : MonoBehaviour
     public void VerifyPasswords()
     {
         user.username = usernameInputField.text;
+        print("username = " + user.username);
         user.password_hash = passwordInputField.text;
+        print("password = " + passwordInputField.text);
 
         if (user.password_hash == passwordConfirmInputField.text)
         {
@@ -66,7 +69,7 @@ public class RegisterFromAPI : MonoBehaviour
         }
 
         else
-        { Debug.Log("Passwords Dont Match"); }
+        { Debug.Log("Passwords Dont Match: " + user.password_hash.ToString() + "  -  " + passwordConfirmInputField.text.ToString()); }
 
     }
 
