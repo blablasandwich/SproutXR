@@ -158,7 +158,6 @@ public class MathController : MonoBehaviour {
     }
 
     public IEnumerator ActivatorVR(string vrToggle) {
-        SceneManager.LoadSceneAsync("kellsLevel");
         yield return new WaitForSeconds(.5f);
         UnityEngine.XR.XRSettings.LoadDeviceByName(vrToggle);
         yield return null;
@@ -167,7 +166,10 @@ public class MathController : MonoBehaviour {
 
     public void StartGame() {
         Debug.Log ("Starting game");
-        StartCoroutine(ActivatorVR("Cardboard"));
+        SceneManager.LoadScene("LevelSelection");
+        Screen.orientation = ScreenOrientation.Landscape;
+        //Screen.autorotateToLandscapeLeft = true;
+        //StartCoroutine(ActivatorVR("Cardboard"));
         startTime = Time.time;
     }
 }

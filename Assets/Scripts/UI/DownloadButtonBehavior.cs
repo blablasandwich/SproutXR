@@ -18,7 +18,7 @@ public class DownloadButtonBehavior : MonoBehaviour
     {
         currentApp = selectedApp;
         dlManager.GetComponent<DownloadManagerController>().SetGame(selectedApp);
-        dlManager.GetComponent<ServerDownload>().IsAssetBundleCached();
+        dlManager.GetComponent<ServerDownload>().IsAssetBundleCached("introkells");
         
     }
     // Start is called before the first frame update
@@ -28,7 +28,7 @@ public class DownloadButtonBehavior : MonoBehaviour
         {
             if(dlManager.GetComponent<GameEnumList>().gameList == GameEnumList.GameList.MedievalMath) {
                 loadingScreen.SetActive(true);
-                dlManager.GetComponent<ServerDownload>().DownloadAndroidAssetBundle();
+                dlManager.GetComponent<ServerDownload>().DownloadAndroidAssetBundle("introkells");
             }
             else if(dlManager.GetComponent<GameEnumList>().gameList == GameEnumList.GameList.MissWays)
             {

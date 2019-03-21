@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.VR;
 using UnityEngine.UI;
 
+
 public class MenuManager : MonoBehaviour
 {
     public Animator mathMenu;
@@ -28,7 +29,10 @@ public class MenuManager : MonoBehaviour
 	public Button logOutButton;
 	public Text userNameText;
 
-
+	void Awake()
+	{
+		//InAppPurchasing.InitializePurchasing ();
+	}
 	private void Start()
     {
         UIAudio.clip = splashScreenSountrack;

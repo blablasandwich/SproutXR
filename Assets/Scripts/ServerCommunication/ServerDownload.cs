@@ -16,6 +16,7 @@ public class ServerDownload : MonoBehaviour
     //https://drive.google.com/uc?export/download&id=1828BYrrrOqNevnMa4N2eLC-zPLTw2DWd   anims
     //https://drive.google.com/uc?export/download&id=1OekL2DFVA6G2UF2nhOn8PNEe0n5IYfk3  sounds
     //https://drive.google.com/uc?export/download&id=1FVoQV7ffz0kxeFuw4xGbpkCElbGmeolK walking sole scene
+    //https://s3.amazonaws.com/flamfoof/MedievalMath/AssetBundle/introkells intro
     UnityWebRequest uwr;
     WWW www;
     AssetBundle bundle;
@@ -26,7 +27,19 @@ public class ServerDownload : MonoBehaviour
     [Tooltip("This will automatically be set from the GameEnumList at start of play")]
     public string level;
     [Tooltip("Read only purposes from where asset bundle location is downloaded from")]
-    public string url;
+    public string Url;
+    public string url
+    {
+        get
+        {
+            return Url;
+        }
+        set
+        {
+            Debug.Log("Changed here");
+            Url = value;
+        }
+    }
     //TODO: android/iOS type for url
     public string deviceType;
 
@@ -103,14 +116,59 @@ public class ServerDownload : MonoBehaviour
             //Different ways to start each app. Should end up looking the same as kellsLevel
             StartCoroutine(PlayGame());
         }
-        
     }
+
+    public void DownloadAndroidAssetBundle(string packageName)
+    {
+        url = "https://s3.amazonaws.com/flamfoof/" + game.gameList + "/AssetBundle/" + packageName;
+        //Checks if a version already exists
+        if (!IsAssetBundleCached(packageName))
+        {
+            if (!isDownloading)
+                StartCoroutine(PlayButton());
+        }
+        else
+        {
+            Debug.Log("Asset bundle already exists");
+            if (downloadText)
+                downloadText.text = "Launch";
+            //Finds that asset bundle, same as above because it assigns it the asset bundle
+            StartCoroutine(PlayButton(packageName));
+
+            //Different ways to start each app. Should end up looking the same as kellsLevel
+            StartCoroutine(PlayGame());
+        }
+    }
+
+
     //TODO: Check if asset bundle is already downloaded, then change text accordingly
     public IEnumerator PlayButton()
     {
         isDownloading = true;
         //Checks if there is an available bundle
         yield return GetAndroidBundle();
+        if (!bundle)
+        {
+            Debug.Log("Bundle failed to load");
+            if (game.ToString() == "none")
+                Debug.LogError("No game is selected for download");
+            if (level == "none")
+                Debug.LogError("No level is selected");
+
+            isDownloading = false;
+            yield break;
+        }
+
+        isDownloading = false;
+
+        Debug.Log("Starting this");
+    }
+
+    public IEnumerator PlayButton(string ABName)
+    {
+        isDownloading = true;
+        //Checks if there is an available bundle
+        yield return GetAndroidBundle(ABName);
         if (!bundle)
         {
             Debug.Log("Bundle failed to load");
@@ -137,6 +195,43 @@ public class ServerDownload : MonoBehaviour
         while (!request.isDone)
         {
             if(!prog.isActiveAndEnabled)
+                prog.gameObject.SetActive(true);
+            if (request.progress > 0)
+                prog.value = request.progress + 0.1f;
+            if (downloadText)
+                downloadText.text = "Downloading....";
+
+            yield return null;
+        }
+        if (request.error == null)
+        {
+            if (!bundle)
+            {
+                bundle = request.assetBundle;
+            }
+
+            prog.gameObject.SetActive(false);
+            if (downloadText)
+                downloadText.text = "Launch";
+            Debug.Log("Success");
+        }
+        else
+        {
+            Debug.Log(request.error);
+        }
+
+    }
+
+    public IEnumerator GetAndroidBundle(string ABName)
+    {
+        //TODO: Have a version checking function to compare different asset bundle files
+        url = "https://s3.amazonaws.com/flamfoof/" + game.gameList + "/AssetBundle/" + ABName;
+        WWW request = WWW.LoadFromCacheOrDownload(url, 0);
+
+
+        while (!request.isDone)
+        {
+            if (!prog.isActiveAndEnabled)
                 prog.gameObject.SetActive(true);
             if (request.progress > 0)
                 prog.value = request.progress + 0.1f;
@@ -231,6 +326,22 @@ public class ServerDownload : MonoBehaviour
             downloadText.text = "Download Now!";
         return false;
     }
+
+    public bool IsAssetBundleCached(string ABName)
+    {
+        //update url
+        url = "https://s3.amazonaws.com/flamfoof/" + game.gameList + "/AssetBundle/" + ABName;
+        if (Caching.IsVersionCached(url, 0))
+        {
+            if (downloadText)
+                downloadText.text = "Launch";
+            return true;
+        }
+        if (downloadText)
+            downloadText.text = "Download Now!";
+        return false;
+    }
+
 
     private string GetStreamedAssetPath(string name)
     {

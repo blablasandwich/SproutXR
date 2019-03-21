@@ -21,7 +21,7 @@ public class DownloadManagerController : MonoBehaviour
         {
             case "MedievalMath":
                 game.SetGameList(GameEnumList.GameList.MedievalMath);
-                game.medMathLevels = GameEnumList.MedievalMathLevels.medmathscene;
+                game.medMathLevels = GameEnumList.MedievalMathLevels.introkells;
                 break;
             case "MissWays":
                 game.SetGameList(GameEnumList.GameList.MissWays);
