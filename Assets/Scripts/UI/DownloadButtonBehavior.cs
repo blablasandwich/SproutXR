@@ -21,7 +21,7 @@ public class DownloadButtonBehavior : MonoBehaviour
         dlManager.GetComponent<ServerDownload>().IsAssetBundleCached("introkells");
         
     }
-    // Start is called before the first frame update
+
     public void launchApp()
     {
         if (currentApp != "")
