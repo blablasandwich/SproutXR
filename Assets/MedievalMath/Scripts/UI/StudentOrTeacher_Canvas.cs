@@ -15,7 +15,7 @@ public class StudentOrTeacher_Canvas : CanvasNavigation
     [SerializeField]
     private Button parentButton;
     [SerializeField]
-    private GameObject parentCanvas;
+    public GameObject parentCanvas;
     MathController mController;
 
     private void Start()

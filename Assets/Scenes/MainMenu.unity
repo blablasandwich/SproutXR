@@ -856,6 +856,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 643643547, guid: 1cfeb3ea17696a649bb86046e0d152a3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -591
+      objectReference: {fileID: 0}
     - target: {fileID: 643643546, guid: 1cfeb3ea17696a649bb86046e0d152a3, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -867,6 +871,28 @@ PrefabInstance:
     - target: {fileID: 1102252609, guid: 1cfeb3ea17696a649bb86046e0d152a3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936418190, guid: 1cfeb3ea17696a649bb86046e0d152a3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 38.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 889881052, guid: 1cfeb3ea17696a649bb86046e0d152a3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 24.900002
+      objectReference: {fileID: 0}
+    - target: {fileID: 136592223, guid: 1cfeb3ea17696a649bb86046e0d152a3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -37.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 889881053, guid: 1cfeb3ea17696a649bb86046e0d152a3, type: 3}
+      propertyPath: m_Text
+      value: 'SproutXR has Augmented and Virtual Reality games.
+
+
+        Make sure you have enough space around you to play.
+
+
+        Parental supervision is important!'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cfeb3ea17696a649bb86046e0d152a3, type: 3}

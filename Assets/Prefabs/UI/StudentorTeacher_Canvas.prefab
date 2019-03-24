@@ -377,7 +377,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114508042532686046}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1995941553276420}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1415865026204496
@@ -1046,9 +1057,7 @@ MonoBehaviour:
   studentButton: {fileID: 114798642515290320}
   teacherButton: {fileID: 114776343296308520}
   parentButton: {fileID: 1455649994}
-  teacherCanvas: {fileID: 0}
-  parentCanvas: {fileID: 113547574137901647, guid: 893855c30ebd17141ba60439455664ef,
-    type: 3}
+  parentCanvas: {fileID: 78, guid: 893855c30ebd17141ba60439455664ef, type: 3}
 --- !u!114 &114668761807924304
 MonoBehaviour:
   m_ObjectHideFlags: 0
