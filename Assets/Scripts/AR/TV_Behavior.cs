@@ -20,6 +20,8 @@ public class TV_Behavior : MonoBehaviour
 
     public Text debugText;
 
+    List<TV_URL> JsonArry;
+
     public void DebugAR<T> (T msg)
     {
         // Function displays text on AR screen for debug on the phone
@@ -149,11 +151,46 @@ public class TV_Behavior : MonoBehaviour
     public class TV_URL
     {
         public string video;
-        public string video2;
-        public string video3;
     }
 
+    [System.Serializable]
+    private class MyWrapper
+    {
+        public List<TV_URL> videos;
+    }
 
+    void ParseJsonToObject(string json)
+    {
+        var wrappedjsonArray = JsonUtility.FromJson<MyWrapper>(json);
+        JsonArry = wrappedjsonArray.videos;
+    }
+
+    void CompareVid(UnityWebRequest w)
+    {
+        ParseJsonToObject(w.downloadHandler.text);
+
+        switch (activeVideo)
+        {
+            case 1:
+            {
+                mediaPlayer.Path = JsonArry[0].video;
+                mediaPlayer.Play();
+                break;
+            }
+            case 2:
+            {
+                mediaPlayer.Path = JsonArry[1].video;
+                mediaPlayer.Play();
+                break;
+            }
+            case 3:
+            {
+                mediaPlayer.Path = JsonArry[2].video;
+                mediaPlayer.Play();
+                break;
+            }
+        }
+    }
 
     public IEnumerator CheckVid()
     {
@@ -168,52 +205,10 @@ public class TV_Behavior : MonoBehaviour
                 DebugAR("Error: " + w.isNetworkError);
                 DebugAR("Error: " + w.isHttpError);
             }
-            else if (activeVideo == 1)
-            {
-                Debug.Log("Found Video: " + w.downloadHandler.text);
-                DebugAR("Found Video: " + w.downloadHandler.text);
-
-                TV_URL S=JsonUtility.FromJson<TV_URL>(w.downloadHandler.text);
-
-                mediaPlayer.Path = S.video;
-                mediaPlayer.Play();
-                
-                Debug.Log(S.video);
-                yield return new WaitForSeconds(delayDestroy);
-                Debug.Log("Video Time Length: " + mediaPlayer.Length / 1000);
-                yield return DestroyTV();
-
-            }
-            else if (activeVideo == 2)
-            {
-                Debug.Log("Found Video: " + w.downloadHandler.text);
-
-                TV_URL S = JsonUtility.FromJson<TV_URL>(w.downloadHandler.text);
-
-                mediaPlayer.Path = S.video2;
-                mediaPlayer.Play();
-
-                Debug.Log(S.video2);
-                yield return new WaitForSeconds(delayDestroy);
-                Debug.Log("Video Time Length: " + mediaPlayer.Length / 1000);
-                yield return DestroyTV();
-            }
-            else if (activeVideo == 3)
-            {
-                Debug.Log("Found Video: " + w.downloadHandler.text);
-
-                TV_URL S = JsonUtility.FromJson<TV_URL>(w.downloadHandler.text);
-
-                mediaPlayer.Path = S.video3;
-                mediaPlayer.Play();
-                Debug.Log(S.video3);
-                yield return new WaitForSeconds(delayDestroy);
-                Debug.Log("Video Time Length: " + mediaPlayer.Length / 1000);
-                yield return DestroyTV();
-            }
             else
             {
-                Debug.Log("I started way too soon");
+                Debug.Log(w.downloadHandler.text);
+                CompareVid(w);
             }
         }
     }
@@ -224,14 +219,4 @@ public class TV_Behavior : MonoBehaviour
         yield return new WaitForSeconds((mediaPlayer.Length / 1000.0f));
         ReplayCanvas.enabled = true;
     }
-
-
-    /*
-    private IEnumerator DestroyTV()
-    {
-        Debug.Log("Destroyed TV in " + ((uniMed.Length / 1000.0f)) + " seconds.");
-        yield return new WaitForSeconds((uniMed.Length / 1000.0f));
-        transform.gameObject.SetActive(false);
-    }
-    */
 }
