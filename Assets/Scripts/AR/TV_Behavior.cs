@@ -20,7 +20,8 @@ public class TV_Behavior : MonoBehaviour
 
     public Text debugText;
 
-    List<TV_URL> JsonArry;
+    //List<TV_URL> JsonArry;
+    TV_URL urls;
 
     public void DebugAR<T> (T msg)
     {
@@ -151,18 +152,21 @@ public class TV_Behavior : MonoBehaviour
     public class TV_URL
     {
         public string video;
+        public string video2;
+        public string video3;
+
     }
 
-    [System.Serializable]
-    private class MyWrapper
-    {
-        public List<TV_URL> videos;
-    }
+    //   [System.Serializable]
+    //   private class MyWrapper
+    //   {
+    //       public List<TV_URL> video;
+    //   }
 
     void ParseJsonToObject(string json)
     {
-        var wrappedjsonArray = JsonUtility.FromJson<MyWrapper>(json);
-        JsonArry = wrappedjsonArray.videos;
+        var wrappedjsonArray = JsonUtility.FromJson<TV_URL>(json);
+        urls = wrappedjsonArray;
     }
 
     void CompareVid(UnityWebRequest w)
@@ -173,19 +177,22 @@ public class TV_Behavior : MonoBehaviour
         {
             case 1:
             {
-                mediaPlayer.Path = JsonArry[0].video;
+                Debug.Log("<color=green>URL: </color>" + urls.video);
+                mediaPlayer.Path = urls.video;
                 mediaPlayer.Play();
                 break;
             }
             case 2:
             {
-                mediaPlayer.Path = JsonArry[1].video;
+                Debug.Log("<color=green>URL: </color>" + urls.video2);
+                mediaPlayer.Path = urls.video2;
                 mediaPlayer.Play();
                 break;
             }
             case 3:
             {
-                mediaPlayer.Path = JsonArry[2].video;
+                Debug.Log("<color=green>URL: </color>" + urls.video3);
+                mediaPlayer.Path = urls.video3;
                 mediaPlayer.Play();
                 break;
             }
@@ -207,7 +214,7 @@ public class TV_Behavior : MonoBehaviour
             }
             else
             {
-                Debug.Log(w.downloadHandler.text);
+                Debug.Log("<color=green>URL: </color>" + w.downloadHandler.text);
                 CompareVid(w);
             }
         }
