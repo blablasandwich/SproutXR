@@ -987,7 +987,7 @@ GameObject:
   - component: {fileID: 310555807662417992}
   - component: {fileID: 310555807662417994}
   m_Layer: 0
-  m_Name: TeachARSelectButton
+  m_Name: WalkingSolesSelectButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1003,7 +1003,8 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4.9207, y: 4.9207, z: 4.9207}
-  m_Children: []
+  m_Children:
+  - {fileID: 8828813508137268615}
   m_Father: {fileID: 310555809145782576}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1097,7 +1098,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: TeachAR
+          m_StringArgument: WalkingSoles
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 310555808563564018}
@@ -1108,7 +1109,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: TeachAR
+          m_StringArgument: WalkingSoles
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -2303,7 +2304,7 @@ GameObject:
   - component: {fileID: 310555809145782578}
   - component: {fileID: 310555809145782577}
   m_Layer: 0
-  m_Name: TAR
+  m_Name: WalkingSoles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2629,6 +2630,80 @@ MonoBehaviour:
   m_Text: 'VR Math
 
 '
+--- !u!1 &1678447983986216069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8828813508137268615}
+  - component: {fileID: 281845469989468202}
+  - component: {fileID: 8895708630698686522}
+  m_Layer: 0
+  m_Name: DemoIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8828813508137268615
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678447983986216069}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 310555807662417999}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -222, y: -60}
+  m_SizeDelta: {x: 102.01001, y: 44.800003}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &281845469989468202
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678447983986216069}
+  m_CullTransparentMesh: 0
+--- !u!114 &8895708630698686522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678447983986216069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 2f329aa4080dcbc4e99d5916bf83badd, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
 --- !u!1 &7192850986899238561
 GameObject:
   m_ObjectHideFlags: 0
@@ -2705,7 +2780,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6974939302696656771
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2805,6 +2880,7 @@ MonoBehaviour:
     type: 3}
   VRMathPromoImage: {fileID: 21300000, guid: 33880472553926b4b8703e5caf924763, type: 3}
   TeachARPromoImage: {fileID: 21300000, guid: 8f8adf3f463b3d14b823e282e0200190, type: 3}
+  WalkingSolesPromoImage: {fileID: 0}
   lightboxTitle: {fileID: 310555808461684958}
   lightboxDescription: {fileID: 310555809030081954}
 --- !u!1 &7193068548092246049
@@ -3374,6 +3450,18 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 814836657, guid: c70cc202306b7984f808af85a05b6651, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534373886, guid: c70cc202306b7984f808af85a05b6651, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1148715934, guid: c70cc202306b7984f808af85a05b6651, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c70cc202306b7984f808af85a05b6651, type: 3}

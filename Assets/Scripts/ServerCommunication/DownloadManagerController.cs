@@ -14,18 +14,23 @@ public class DownloadManagerController : MonoBehaviour
         game = GetComponent<GameEnumList>();
         sD = GetComponent<ServerDownload>();
     }
+
     //usually first or main menu is the first level of each game, so not going too much into detail
+    //Used when buttons are clicked and will set the game list enums to these variables.
+    //TODO: Unity doesn't support enums in button click functions on editor, so until that ever happens, we do this...
     public void SetGame(string name)
     {
         switch(name)
         {
             case "MedievalMath":
                 game.SetGameList(GameEnumList.GameList.MedievalMath);
-                game.medMathLevels = GameEnumList.MedievalMathLevels.introkells;
+                game.medMathLevels = GameEnumList.MedievalMathLevels.AB_MedievalMath;
+                game.selectedLevel = game.medMathLevels.ToString();
                 break;
-            case "MissWays":
-                game.SetGameList(GameEnumList.GameList.MissWays);
-                game.misswaysLevels = GameEnumList.MissWaysLevels.Planet_Selection;
+            case "WalkingSoles":
+                game.SetGameList(GameEnumList.GameList.WalkingSoles);
+                game.walkingSolesLevels = GameEnumList.WalkingSolesLevels.AB_WalkingSoles;
+                game.selectedLevel = game.walkingSolesLevels.ToString();
                 break;
             default:
                 break;

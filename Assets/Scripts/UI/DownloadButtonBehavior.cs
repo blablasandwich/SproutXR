@@ -18,7 +18,7 @@ public class DownloadButtonBehavior : MonoBehaviour
     {
         currentApp = selectedApp;
         dlManager.GetComponent<DownloadManagerController>().SetGame(selectedApp);
-        dlManager.GetComponent<ServerDownload>().IsAssetBundleCached("introkells");
+        dlManager.GetComponent<ServerDownload>().IsAssetBundleCached();
         
     }
 
@@ -26,21 +26,15 @@ public class DownloadButtonBehavior : MonoBehaviour
     {
         if (currentApp != "")
         {
-            if(dlManager.GetComponent<GameEnumList>().gameList == GameEnumList.GameList.MedievalMath) {
-                loadingScreen.SetActive(true);
-                dlManager.GetComponent<ServerDownload>().DownloadAndroidAssetBundle("introkells");
-            }
-            else if(dlManager.GetComponent<GameEnumList>().gameList == GameEnumList.GameList.MissWays)
+            if (dlManager.GetComponent<GameEnumList>().gameList != GameEnumList.GameList.none)
             {
                 loadingScreen.SetActive(true);
-                SceneManager.LoadScene(dlManager.GetComponent<GameEnumList>().misswaysLevels.ToString());
-               // Debug.Log("<color blue> </color>")
+                dlManager.GetComponent<ServerDownload>().DownloadAndroidAssetBundle();
             } else
             {
                 loadingScreen.SetActive(true);
                 SceneManager.LoadScene(currentApp);
             }
-            
         }
         else print("No Scene Selected");
     }

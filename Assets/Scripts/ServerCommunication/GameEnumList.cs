@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class GameEnumList : MonoBehaviour
 {
+    
     public enum GameList
     {
         none,
         MedievalMath,
-        MissWays,
+        WalkingSoles,
         TeachAR,
         VRMath
     }
@@ -16,21 +17,18 @@ public class GameEnumList : MonoBehaviour
     //All Assetpacks contained in each of these games
     public enum MedievalMathLevels
     {
-        medmathscene, //TODO: rename this asset pack to kells later
-        kellslevel,
-        levelselection,
-        introkells
+        AB_MedievalMath
     }
-
-    public enum MissWaysLevels
+    public enum WalkingSolesLevels
     {
-        Planet_Selection
+        AB_WalkingSoles
     }
 
-    //TODO: Add walking soles, etc.
+    //Add additional new game variables below here and then modify them in GameEnumProperties
     public GameList gameList;
-    public MedievalMathLevels medMathLevels = MedievalMathLevels.introkells;
-    public MissWaysLevels misswaysLevels = MissWaysLevels.Planet_Selection;
+    public MedievalMathLevels medMathLevels = MedievalMathLevels.AB_MedievalMath;
+    public WalkingSolesLevels walkingSolesLevels = WalkingSolesLevels.AB_WalkingSoles;
+
     public string selectedLevel;
 
     public void SetGameList(GameEnumList.GameList gL)

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -534,6 +534,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 022b6436a1b9e1b43b8c34c6bfb9b80b, type: 3}
+--- !u!114 &498553866 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6405754489700591757, guid: 8205f41f4315f474f88ee60bcfaa82a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 310555808265758604}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &521884269
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,14 +876,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1102252609, guid: 1cfeb3ea17696a649bb86046e0d152a3, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 360783108}
-    - target: {fileID: 1102252609, guid: 1cfeb3ea17696a649bb86046e0d152a3, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
     - target: {fileID: 1936418190, guid: 1cfeb3ea17696a649bb86046e0d152a3, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 38.2
@@ -883,6 +887,14 @@ PrefabInstance:
     - target: {fileID: 136592223, guid: 1cfeb3ea17696a649bb86046e0d152a3, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -37.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1102252609, guid: 1cfeb3ea17696a649bb86046e0d152a3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 360783108}
+    - target: {fileID: 1102252609, guid: 1cfeb3ea17696a649bb86046e0d152a3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 889881053, guid: 1cfeb3ea17696a649bb86046e0d152a3, type: 3}
       propertyPath: m_Text
@@ -908,18 +920,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 627789209}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &814836659 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 814836659, guid: 8205f41f4315f474f88ee60bcfaa82a5,
-    type: 3}
-  m_PrefabInstance: {fileID: 310555808265758604}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1307791474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,6 +1391,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 725
       objectReference: {fileID: 0}
+    - target: {fileID: 7192953392967141458, guid: 8205f41f4315f474f88ee60bcfaa82a5,
+        type: 3}
+      propertyPath: WalkingSolesPromoImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 8f8adf3f463b3d14b823e282e0200190,
+        type: 3}
+    - target: {fileID: 310555807662417994, guid: 8205f41f4315f474f88ee60bcfaa82a5,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405754487991069888, guid: 8205f41f4315f474f88ee60bcfaa82a5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8205f41f4315f474f88ee60bcfaa82a5, type: 3}
 --- !u!114 &310555808265758606 stripped
@@ -1481,7 +1497,7 @@ PrefabInstance:
         type: 3}
       propertyPath: prog
       value: 
-      objectReference: {fileID: 814836659}
+      objectReference: {fileID: 498553866}
     - target: {fileID: 4250640390493306799, guid: ea85389237e6a3043bf6a9c9982eb21f,
         type: 3}
       propertyPath: downloadText

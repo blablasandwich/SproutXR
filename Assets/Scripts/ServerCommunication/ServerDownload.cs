@@ -28,6 +28,7 @@ public class ServerDownload : MonoBehaviour
     public string level;
     [Tooltip("Read only purposes from where asset bundle location is downloaded from")]
     public string url;
+    private protected string rootURL = "https://s3.amazonaws.com/flamfoof/";
 
     //TODO: android/iOS type for url
     public string deviceType;
@@ -46,7 +47,7 @@ public class ServerDownload : MonoBehaviour
     string fileName;
     string filePath;
 
-    
+    static ServerDownload serverDownloadInstance;
 
     Dictionary<string, string> dict;
 
@@ -60,6 +61,18 @@ public class ServerDownload : MonoBehaviour
         {
             Caching.ClearCache();
         }
+
+        if (serverDownloadInstance == null)
+        {
+            serverDownloadInstance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(this.gameObject);
+
     }
 
     void Start()
@@ -73,7 +86,7 @@ public class ServerDownload : MonoBehaviour
             //dlButton = Resources.FindObjectsOfTypeAll<DownloadButtonBehavior>()[0];
         }
         //TODO: Make an iOS and Android file path for url depending on device
-        url = "https://s3.amazonaws.com/flamfoof/" + game.gameList + "/AssetBundle/" + level;
+        url = rootURL + game.gameList + "/AssetBundle/" + level;
         
         filePath = GetStreamedAssetPath(level.ToString());
         //Debug.Log(filePath);
@@ -84,11 +97,34 @@ public class ServerDownload : MonoBehaviour
         //DownloadAndroidAssetBundle();
     }
 
-    //TODO: Make this function more modular for other situations like a different game URL
-    //Currently being called from download button behavior script
+
+    //Default asset download function
+    public void DownloadAndroidAssetBundle()
+    {
+        url = rootURL + game.gameList + "/AssetBundle/" + game.selectedLevel;
+        //Checks if a version already exists
+        if (!IsAssetBundleCached(game.selectedLevel))
+        {
+            if (!isDownloading)
+                StartCoroutine(PlayButton(game.selectedLevel));
+        }
+        else
+        {
+            Debug.Log("Asset bundle already exists");
+            if (downloadText)
+                downloadText.text = "Launch";
+            //Finds that asset bundle, same as above because it assigns it the asset bundle
+            StartCoroutine(PlayButton(game.selectedLevel));
+
+            //Different ways to start each app. Should end up looking the same as kellsLevel
+            //StartCoroutine(PlayGame());
+        }
+    }
+
+    //Specified package download
     public void DownloadAndroidAssetBundle(string packageName)
     {
-        url = "https://s3.amazonaws.com/flamfoof/" + game.gameList + "/AssetBundle/" + packageName;
+        url = rootURL + game.gameList + "/AssetBundle/" + packageName;
         //Checks if a version already exists
         if (!IsAssetBundleCached(packageName))
         {
@@ -135,7 +171,7 @@ public class ServerDownload : MonoBehaviour
     public IEnumerator GetAndroidBundle(string ABName)
     {
         //TODO: Have a version checking function to compare different asset bundle files
-        url = "https://s3.amazonaws.com/flamfoof/" + game.gameList + "/AssetBundle/" + ABName;
+        url = rootURL + game.gameList + "/AssetBundle/" + ABName;
         WWW request = WWW.LoadFromCacheOrDownload(url, 0);
 
 
@@ -198,23 +234,32 @@ public class ServerDownload : MonoBehaviour
                     Debug.Log(bundle.GetAllScenePaths()[i]);
                 }
                 Debug.Log("Level name loaded is: " + sceneArray[0]);
-                mController.StartGame();
+                SceneManager.LoadScene(sceneArray[0].ToString());
+                //mController.StartGame();
                 break;
-            /* No asset bundle made for miss ways yet
-            case GameEnumList.GameList.MissWays:
+            case GameEnumList.GameList.WalkingSoles:
                 sceneArray = bundle.GetAllScenePaths();
                 for (int i = 0; i < bundle.GetAllScenePaths().Length; i++)
                 {
                     Debug.Log(bundle.GetAllScenePaths()[i]);
                 }
                 Debug.Log("Level name loaded is: " + sceneArray[0]);
+                StartCoroutine(LoadVRScene(sceneArray[0].ToString(), "Cardboard"));
                 break;
-                */
             default:
                 SceneManager.LoadScene(game.selectedLevel);
                 break;
         }
-        
+
+        IEnumerator LoadVRScene(string sceneName,string vrToggle)
+        {
+            SceneManager.LoadScene(sceneName);
+            yield return new WaitForSeconds(.5f);
+            UnityEngine.XR.XRSettings.LoadDeviceByName(vrToggle);
+            yield return null;
+            UnityEngine.XR.XRSettings.enabled = true;
+        }
+
 
         /*For texting without the dlButton
         sceneArray = bundle.GetAllScenePaths();
@@ -228,10 +273,36 @@ public class ServerDownload : MonoBehaviour
         */
     }
 
+    //Checks if asset bundle is already cached from the selected level input
+    public bool IsAssetBundleCached()
+    {
+
+        StartCoroutine(AssetBundleChecker());
+        return true;
+    }
+
+    IEnumerator AssetBundleChecker()
+    {
+        yield return new WaitForSeconds(0.2f);
+        //update url
+        url = rootURL + game.gameList + "/AssetBundle/" + game.selectedLevel;
+        Debug.Log(url);
+        if (Caching.IsVersionCached(url, 0))
+        {
+            if (downloadText)
+                downloadText.text = "Launch";
+            //return true;
+        }
+        if (downloadText)
+            downloadText.text = "Download Now!";
+        //return false;
+    }
+
+    //specify which asset bundle to check
     public bool IsAssetBundleCached(string ABName)
     {
         //update url
-        url = "https://s3.amazonaws.com/flamfoof/" + game.gameList + "/AssetBundle/" + ABName;
+        url = rootURL + game.gameList + "/AssetBundle/" + ABName;
         if (Caching.IsVersionCached(url, 0))
         {
             if (downloadText)

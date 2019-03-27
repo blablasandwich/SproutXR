@@ -8,16 +8,17 @@ public class GameEnumProperties : Editor
     public SerializedProperty
         gameProp,
         mainLevel,
-        mmLevel,
-        mwLevel;
+        MMLevel,
+        WSLevel;
 
     void OnEnable()
     {
         // Setup the SerializedProperties
+        // Note: These variable names are the same as the ones from GameEnumList, please list them properly.
         gameProp = serializedObject.FindProperty("gameList");
-        mainLevel = serializedObject.FindProperty("selectedLevel");
-        mmLevel = serializedObject.FindProperty("medMathLevels");
-        mwLevel = serializedObject.FindProperty("misswaysLevels");
+        mainLevel = serializedObject.FindProperty("SelectedLevel");
+        MMLevel = serializedObject.FindProperty("medMathLevels");
+        WSLevel = serializedObject.FindProperty("walkingSolesLevels");
     }
 
     public override void OnInspectorGUI()
@@ -28,22 +29,22 @@ public class GameEnumProperties : Editor
 
         GameEnumList.GameList gL = (GameEnumList.GameList)gameProp.enumValueIndex;
         
-        //Edit this list as the game list grows
+        //Edit this list as the game list grows. This will set the current level of the Asset Bundle being loaded
+        //and will make debugging download properties easier to debug
         switch (gL)
         {
             case GameEnumList.GameList.none:
-                GameEnumList.GameList temp1 = (GameEnumList.GameList)gameProp.enumValueIndex;
-                Selection.activeGameObject.GetComponent<GameEnumList>().selectedLevel = temp1.ToString();
+                GameEnumList.GameList temp = (GameEnumList.GameList)gameProp.enumValueIndex;
+                Selection.activeGameObject.GetComponent<GameEnumList>().selectedLevel = temp.ToString();
                 break;
-
             case GameEnumList.GameList.MedievalMath:
-                GameEnumList.MedievalMathLevels temp2 = (GameEnumList.MedievalMathLevels)mmLevel.enumValueIndex;
-                EditorGUILayout.PropertyField(mmLevel, new GUIContent("medMathLevels"));
+                GameEnumList.MedievalMathLevels temp2 = (GameEnumList.MedievalMathLevels)MMLevel.enumValueIndex;
+                EditorGUILayout.PropertyField(MMLevel, new GUIContent("medMathLevels"));
                 Selection.activeGameObject.GetComponent<GameEnumList>().selectedLevel = temp2.ToString();
                 break;
-            case GameEnumList.GameList.MissWays:
-                GameEnumList.MissWaysLevels temp3 = (GameEnumList.MissWaysLevels)mwLevel.enumValueIndex;
-                EditorGUILayout.PropertyField(mwLevel, new GUIContent("misswaysLevels"));
+            case GameEnumList.GameList.WalkingSoles:
+                GameEnumList.WalkingSolesLevels temp3 = (GameEnumList.WalkingSolesLevels)WSLevel.enumValueIndex;
+                EditorGUILayout.PropertyField(WSLevel, new GUIContent("walkingSolesLevels"));
                 Selection.activeGameObject.GetComponent<GameEnumList>().selectedLevel = temp3.ToString();
                 break;
             default:

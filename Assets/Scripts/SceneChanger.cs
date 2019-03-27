@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
@@ -62,4 +63,15 @@ public class SceneChanger : MonoBehaviour
     {
         anim.SetTrigger("FadeObj");
     }
+
+    public IEnumerator LoadVRScene(string sceneName, string vrToggle)
+    {
+        SceneManager.LoadScene(sceneName);
+        yield return new WaitForSeconds(.5f);
+        UnityEngine.XR.XRSettings.LoadDeviceByName(vrToggle);
+        yield return null;
+        UnityEngine.XR.XRSettings.enabled = true;
+    }
+
+    
 }
