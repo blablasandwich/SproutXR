@@ -13,6 +13,7 @@ public class LoginFromAPI : MonoBehaviour
     public InputField passwordInputField;
     public Text feedbackText;
     public bool cardUser = false;
+    public static bool LoginWithEmail = false;
     /* Testing Login
      email: example@lucernastudios.com
      pass: 12345678
@@ -23,12 +24,14 @@ public class LoginFromAPI : MonoBehaviour
     private User user;
     private bool authenticated = false;
     private string inputUsername = "";
+    private string email = "";
     private string inputPassword = "";    
 
     [System.Serializable]
     public class User
     {
         public string username = "";
+        public string email = "";
         public string password_hash = "";
     }
 
@@ -43,10 +46,10 @@ public class LoginFromAPI : MonoBehaviour
 
     public void CheckUser()
     {
-        inputUsername = usernameInputField.text;
-        inputPassword = passwordInputField.text;
-        cardUser = false;
-        StartCoroutine(GetUser());
+            email = usernameInputField.text;
+            inputPassword = passwordInputField.text;
+            cardUser = false;
+            StartCoroutine(GetUser());
     }
 
     public void LogInCard(string user, string password)
@@ -84,7 +87,16 @@ public class LoginFromAPI : MonoBehaviour
 
     IEnumerator GetUser()
     {
-        string url = API_URL + "/api/username/" + inputUsername;
+        string url;
+        if (!cardUser)
+        {
+            url = API_URL + "/api/email/" + email;
+        }
+        else
+        {
+            url = API_URL + "/api/username/" + inputUsername;
+        }
+
         UnityWebRequest www = UnityWebRequest.Get(url);
         yield return www.SendWebRequest();
 
