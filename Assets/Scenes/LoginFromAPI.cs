@@ -19,7 +19,9 @@ public class LoginFromAPI : MonoBehaviour
      pass: 12345678
     */
 
-    public string API_URL = "http://sproutxr-api-dev.herokuapp.com";
+       // public string API_URL = "http://sproutxr-api.herokuapp.com";
+
+      public string API_URL = "http://api.sproutxr.com";
 
     private User user;
     private bool authenticated = false;
@@ -37,6 +39,12 @@ public class LoginFromAPI : MonoBehaviour
 
     public void Start()
     {
+        if (Debug.isDebugBuild)
+        {
+            API_URL = "http://api.lucernalabs.com/";
+           // API_URL = "http://sproutxr-api-dev.herokuapp.com";
+        }
+
         user = new User();
         usernameInputField = GameObject.Find("Username/InputField").GetComponent<InputField>();
         passwordInputField = GameObject.Find("Password/InputField").GetComponent<InputField>();
