@@ -28,7 +28,7 @@ public class StudentOrTeacher_Canvas : CanvasNavigation
 
     void SchoolSelected()
     {
-        Application.OpenURL("http://dashboard.sproutxr.com/signup/teacher");
+        Application.OpenURL("http://www.sproutxr.com/");
     }
     void HomePressed()
     {
