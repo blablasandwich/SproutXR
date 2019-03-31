@@ -234,7 +234,8 @@ public class ServerDownload : MonoBehaviour
                     Debug.Log(bundle.GetAllScenePaths()[i]);
                 }
                 Debug.Log("Level name loaded is: " + sceneArray[0]);
-                SceneManager.LoadScene(sceneArray[0].ToString());
+                //SceneManager.LoadScene(sceneArray[0].ToString());
+                StartCoroutine(LoadVRScene(sceneArray[0].ToString(), "None"));
                 //mController.StartGame();
                 break;
             case GameEnumList.GameList.WalkingSoles:
@@ -258,6 +259,7 @@ public class ServerDownload : MonoBehaviour
             UnityEngine.XR.XRSettings.LoadDeviceByName(vrToggle);
             yield return null;
             UnityEngine.XR.XRSettings.enabled = true;
+            Screen.orientation = ScreenOrientation.Landscape;
         }
 
 
