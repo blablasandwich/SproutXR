@@ -255,11 +255,12 @@ public class ServerDownload : MonoBehaviour
         IEnumerator LoadVRScene(string sceneName,string vrToggle)
         {
             SceneManager.LoadScene(sceneName);
+            Screen.orientation = ScreenOrientation.Landscape;
             yield return new WaitForSeconds(.5f);
             UnityEngine.XR.XRSettings.LoadDeviceByName(vrToggle);
             yield return null;
             UnityEngine.XR.XRSettings.enabled = true;
-            Screen.orientation = ScreenOrientation.Landscape;
+            
         }
 
 
