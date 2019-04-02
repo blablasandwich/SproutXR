@@ -103,6 +103,7 @@ public class ServerDownload : MonoBehaviour
     {
         url = rootURL + game.gameList + "/AssetBundle/" + game.selectedLevel;
         //Checks if a version already exists
+
         if (!IsAssetBundleCached(game.selectedLevel))
         {
             if (!isDownloading)
@@ -173,7 +174,7 @@ public class ServerDownload : MonoBehaviour
         //TODO: Have a version checking function to compare different asset bundle files
         url = rootURL + game.gameList + "/AssetBundle/" + ABName;
         WWW request = WWW.LoadFromCacheOrDownload(url, 0);
-
+        
 
         while (!request.isDone)
         {
@@ -234,7 +235,8 @@ public class ServerDownload : MonoBehaviour
                     Debug.Log(bundle.GetAllScenePaths()[i]);
                 }
                 Debug.Log("Level name loaded is: " + sceneArray[0]);
-                SceneManager.LoadScene(sceneArray[0].ToString());
+                //SceneManager.LoadScene(sceneArray[0].ToString());
+                StartCoroutine(LoadVRScene(sceneArray[0].ToString(), "None"));
                 //mController.StartGame();
                 break;
             case GameEnumList.GameList.WalkingSoles:
@@ -254,10 +256,12 @@ public class ServerDownload : MonoBehaviour
         IEnumerator LoadVRScene(string sceneName,string vrToggle)
         {
             SceneManager.LoadScene(sceneName);
+            Screen.orientation = ScreenOrientation.Landscape;
             yield return new WaitForSeconds(.5f);
             UnityEngine.XR.XRSettings.LoadDeviceByName(vrToggle);
             yield return null;
             UnityEngine.XR.XRSettings.enabled = true;
+            
         }
 
 
@@ -286,7 +290,10 @@ public class ServerDownload : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         //update url
         url = rootURL + game.gameList + "/AssetBundle/" + game.selectedLevel;
-        Debug.Log(url);
+        //Debug.Log(url);
+        //AssetBundle manifestBundle = AssetBundle.LoadFromFile(url);
+        //AssetBundleManifest manifest = manifestBundle.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
+        //Debug.Log(manifest.GetHashCode());
         if (Caching.IsVersionCached(url, 0))
         {
             if (downloadText)
@@ -303,6 +310,9 @@ public class ServerDownload : MonoBehaviour
     {
         //update url
         url = rootURL + game.gameList + "/AssetBundle/" + ABName;
+        string urlManifest = rootURL + game.gameList + "/AssetBundle/" + ABName + ".manifest";
+        //Hash128 hash = AssetBundleManifest.GetAssetBundleHash("yes");
+        
         if (Caching.IsVersionCached(url, 0))
         {
             if (downloadText)
