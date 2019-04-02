@@ -34,14 +34,15 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        ConfigManager.instance.orbitSpeedInDaysPerSecond = slider.value;
+        //ConfigManager.instance.orbitSpeedInDaysPerSecond = slider.value;
 
-        slider.onValueChanged.AddListener(delegate
+        /*slider.onValueChanged.AddListener(delegate
         {
             ConfigManager.instance.orbitSpeedInDaysPerSecond = slider.value;
         });
+        */
 
-        orbits = GameObject.FindGameObjectsWithTag(ConstantValues.OrbitTag);
+        //orbits = GameObject.FindGameObjectsWithTag(ConstantValues.OrbitTag);
         PlanetManager.instance.SetOverwiewPlanetsRadius();
         TogglePlanetInfoPanel(false);
 
@@ -53,6 +54,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    /*
     public void ToggleOrbits(bool enable)
     {
         foreach (var orbit in orbits)
@@ -60,15 +62,16 @@ public class UIManager : MonoBehaviour
             orbit.SetActive(enable);
         }
     }
+    */
 
     public void SwitchToDetailedPlanetView(string astronomicalBody)
     {
         // Call UI Manager to disable orbits (line renderers)
-        ToggleOrbits(false);
+        //ToggleOrbits(false);
 
         TogglePlanetInfoPanel(true);
 
-        CameraManager.instance.SwitchToMainCamera();
+        //CameraManager.instance.SwitchToMainCamera();
 
         PlanetManager.instance.DisableAllPlanetsExceptSelected(astronomicalBody);
 
@@ -86,11 +89,12 @@ public class UIManager : MonoBehaviour
         this.planetInfoPanel.SetActive(true);
     }
 
+    /*
     public void SwitchToOrbitView()
     {
         if (CameraManager.instance.cameraMode.Equals(ConstantValues.CameraMode.Detailed))
         {
-            UIManager.instance.ToggleOrbits(true);
+            //UIManager.instance.ToggleOrbits(true);
 
             TogglePlanetInfoPanel(false);
 
@@ -115,6 +119,7 @@ public class UIManager : MonoBehaviour
             this.planetInfoPanel.SetActive(false);
         }
      }
+     */
 
     /// <summary>
     /// Changes the satellites.

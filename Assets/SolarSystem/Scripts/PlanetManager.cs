@@ -58,8 +58,8 @@ public class PlanetManager : MonoBehaviour
             this.selectedPlanet = planet.transform;
 
             // set up initial distance to be minimum distance
-            ConfigManager.instance.distance = Mathf.Max(ConfigManager.instance.minDistanceForPlanets * planet.transform.localScale.x, ConfigManager.instance.minDistanceForPlanets);
-            ConfigManager.instance.minDistanceForSelectedPlanet = ConfigManager.instance.distance;
+            //ConfigManager.instance.distance = Mathf.Max(ConfigManager.instance.minDistanceForPlanets * planet.transform.localScale.x * 0.5f, ConfigManager.instance.minDistanceForPlanets);
+            //ConfigManager.instance.minDistanceForSelectedPlanet = ConfigManager.instance.distance;
 
             // Switch off flare if sun is selected
 
