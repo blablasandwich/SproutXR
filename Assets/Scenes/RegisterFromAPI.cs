@@ -6,81 +6,71 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using TMPro;
-public class RegisterFromAPI : MonoBehaviour
-{
+public class RegisterFromAPI : MonoBehaviour {
     public LoginUIManager libraryCanvas;
-    public InputField usernameInputField;
-    public InputField passwordInputField;
-    public InputField passwordConfirmInputField;
-    public Text feedbackText;
+    public InputField     usernameInputField;
+    public InputField     emailInputField;
+    public InputField     passwordInputField;
+    public InputField     passwordConfirmInputField;
+    public Text           feedbackText;
     public TMP_InputField CID_InputField;
-    public GameObject CIDUI;
-    // "classroom_code" : classroomCode
+    public GameObject     CIDUI;
+    public string         API_URL = "http://sproutxr-api-dev.herokuapp.com";
 
-    public string API_URL = "http://sproutxr-api-dev.herokuapp.com";
-
-    private User user;
+    private User   user;
     private string inputUsername = "";
+    private string inputEmail    = "";
     private string inputPassword = "";
-    private string cid = "";
+    private string cid           = "";
 
     [System.Serializable]
-    public class User
-    {
-        public string username = "";
+    public class User {
+        public string username      = "";
+        public string email         = "";
         public string password_hash = "";
-        public string cid = "";
+        public string cid           = "";
     }
 
-    public void Start()
-    {
-        user = new User();
-        usernameInputField = GameObject.Find("DisplayInputField").GetComponent<InputField>();
-        passwordInputField = GameObject.Find("PasswordInputField").GetComponent<InputField>();
+    public void Start() {
+        user                      = new User();
+  //    usernameInputField        =  GameObject.Find("").GetComponent<InputField>();
+        emailInputField           = GameObject.Find("DisplayInputField").GetComponent<InputField>();
+        passwordInputField        = GameObject.Find("PasswordInputField").GetComponent<InputField>();
         passwordConfirmInputField = GameObject.Find("ConfirmPassInputField").GetComponent<InputField>();
-
-        //feedbackText = GameObject.Find("FeedbackText").GetComponent<Text>();
-        libraryCanvas = GetComponent<LoginUIManager>();
+        libraryCanvas             = GetComponent<LoginUIManager>();
     }
 
-    public void ValidateCID()
-    {
-        if (CID_InputField.text != "")
-        {
+    public void ValidateCID() {
+        if (CID_InputField.text != "") {
             user.cid = CID_InputField.text;
             CIDUI.SetActive(false);
         }
     }
 
-    public void VerifyPasswords()
-    {
-        user.username = usernameInputField.text;
-        print("username = " + user.username);
+    public void VerifyPasswords() {
+        user.username      = usernameInputField.text;
+        user.email         = emailInputField.text;
         user.password_hash = passwordInputField.text;
-        print("password = " + passwordInputField.text);
 
-        if (user.password_hash == passwordConfirmInputField.text)
-        {
+        if (user.password_hash == passwordConfirmInputField.text) {
             // Register
             StartCoroutine(APIPost("/api/user", CreateUserPayload()));
             Debug.Log("Passwords Match");
             // TODO: Verify success
         }
 
-        else
-        { Debug.Log("Passwords Dont Match: " + user.password_hash.ToString() + "  -  " + passwordConfirmInputField.text.ToString()); }
-
+        else {
+            Debug.Log("Passwords Dont Match: " + user.password_hash.ToString() + "  -  " + passwordConfirmInputField.text.ToString());
+        }
     }
 
 
-    void NextScene()
-    {
+    void NextScene() {
         Debug.Log("Passwords match!");
         libraryCanvas.OpenLibraryCanvas();
     }
 
-    public static string MD5Hash(string text)
-    {
+    public static string MD5Hash(string text) {
         MD5 md5 = new MD5CryptoServiceProvider();
 
         //compute hash from the bytes of text  
@@ -90,8 +80,7 @@ public class RegisterFromAPI : MonoBehaviour
         byte[] result = md5.Hash;
 
         StringBuilder strBuilder = new StringBuilder();
-        for (int i = 0; i < result.Length; i++)
-        {
+        for (int i = 0; i < result.Length; i++) {
             //change it into 2 hexadecimal digits  
             //for each byte  
             strBuilder.Append(result[i].ToString("x2"));
@@ -100,8 +89,7 @@ public class RegisterFromAPI : MonoBehaviour
         return strBuilder.ToString();
     }
 
-    IEnumerator APIPost(string key, string jsonPayload)
-    {
+    IEnumerator APIPost(string key, string jsonPayload) {
         string url = API_URL + key;
         Debug.Log("Server: " + url);
 
@@ -112,13 +100,11 @@ public class RegisterFromAPI : MonoBehaviour
         www.SetRequestHeader("Content-Type", "application/json");
 
         yield return www.Send();
-
-        if (www.isNetworkError || www.isHttpError)
-        {
+ 
+        if (www.isNetworkError || www.isHttpError) {
             Debug.Log(www.error);
         }
-        else
-        {
+        else {
             Debug.Log(www.downloadHandler.text);
             // byte[] results = www.downloadHandler.data;
         }
@@ -132,24 +118,20 @@ public class RegisterFromAPI : MonoBehaviour
     }
     */
 
-    public string addJson<T>(string old, string key, T val)
-    {
-        if (old == "")
-        {
+    public string addJson<T>(string old, string key, T val) {
+        if (old == "") {
             return string.Format("\"{0}\":\"{1}\"", key, val.ToString());
         }
-
         return string.Format("{0},\"{1}\":\"{2}\"", old, key, val.ToString());
     }
 
-    public string CreateUserPayload()
-    {
+    public string CreateUserPayload() {
 
-        string username = user.username;
+        string username      = user.username;
+        string email         = user.email;
         string password_hash = MD5Hash(user.password_hash);
-        string cid = user.cid;
-
-        string payload = "";
+        string cid           = user.cid;
+        string payload       = "";
 
         payload = addJson(payload, "username", username);
         payload = addJson(payload, "password_hash", password_hash);
