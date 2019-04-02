@@ -385,8 +385,11 @@ public class GameData : MonoBehaviour
         if (www.isNetworkError || www.isHttpError)
         {
             Debug.Log(www.error);
-            Debug.Log("Failed to reach server data information for: " + key + ".... Restarting.");
-            StartCoroutine(NewAPIPost(key, jsonPayload));
+            if (!www.isNetworkError)
+            {
+                Debug.Log("Failed to reach server data information for: " + key + ".... Restarting.");
+                StartCoroutine(NewAPIPost(key, jsonPayload));
+            }
         }
         else
         {

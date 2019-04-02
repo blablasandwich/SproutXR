@@ -103,6 +103,7 @@ public class ServerDownload : MonoBehaviour
     {
         url = rootURL + game.gameList + "/AssetBundle/" + game.selectedLevel;
         //Checks if a version already exists
+
         if (!IsAssetBundleCached(game.selectedLevel))
         {
             if (!isDownloading)
@@ -173,7 +174,7 @@ public class ServerDownload : MonoBehaviour
         //TODO: Have a version checking function to compare different asset bundle files
         url = rootURL + game.gameList + "/AssetBundle/" + ABName;
         WWW request = WWW.LoadFromCacheOrDownload(url, 0);
-
+        
 
         while (!request.isDone)
         {
@@ -289,7 +290,10 @@ public class ServerDownload : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         //update url
         url = rootURL + game.gameList + "/AssetBundle/" + game.selectedLevel;
-        Debug.Log(url);
+        //Debug.Log(url);
+        //AssetBundle manifestBundle = AssetBundle.LoadFromFile(url);
+        //AssetBundleManifest manifest = manifestBundle.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
+        //Debug.Log(manifest.GetHashCode());
         if (Caching.IsVersionCached(url, 0))
         {
             if (downloadText)
@@ -306,6 +310,9 @@ public class ServerDownload : MonoBehaviour
     {
         //update url
         url = rootURL + game.gameList + "/AssetBundle/" + ABName;
+        string urlManifest = rootURL + game.gameList + "/AssetBundle/" + ABName + ".manifest";
+        //Hash128 hash = AssetBundleManifest.GetAssetBundleHash("yes");
+        
         if (Caching.IsVersionCached(url, 0))
         {
             if (downloadText)
