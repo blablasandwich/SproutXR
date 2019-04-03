@@ -593,7 +593,7 @@ MonoBehaviour:
   DaysLeftTemp: 0
   displayName: {fileID: 513}
   email: {fileID: 513}
-  password: {fileID: 0}
+  password: {fileID: 8568278936633484264}
   confirmPassword: {fileID: 531}
   signUpButton: {fileID: 497}
   errorText: {fileID: 545}
@@ -612,7 +612,7 @@ MonoBehaviour:
   libraryCanvas: {fileID: 0}
   usernameInputField: {fileID: 619}
   emailInputField: {fileID: 619}
-  passwordInputField: {fileID: 0}
+  passwordInputField: {fileID: 3772884577497201472}
   passwordConfirmInputField: {fileID: 575}
   feedbackText: {fileID: 490}
   CID_InputField: {fileID: 0}
