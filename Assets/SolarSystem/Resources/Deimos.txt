@@ -1,4 +1,17 @@
-﻿Orbital characteristics 
+﻿Deimos, like Mars's other moon, Phobos, has spectra, albedos and densities similar to those of a C- or D-type asteroid.
+Like most bodies of its size, Deimos is highly non-spherical with triaxial dimensions of 15 × 12.2 × 11 km, making it 0.56 times the size of Phobos.
+
+
+
+
+
+
+
+
+
+
+
+Orbital characteristics 
 Periapsis 23455.5 km 
 Apoapsis 23470.9 km 
 Semi-major axis 
@@ -31,9 +44,6 @@ The name Deimos is pronounced /ˈdaɪmɒs/ dy-mos, or sometimes /ˈdiːməs/ dee
 In Greek mythology, Deimos was the twin brother of Phobos and personified terror.
 
 Deimos is 23,460 km (14,580 mi) from Mars, much further than Mars's other moon, Phobos.
-
-Deimos, like Mars's other moon, Phobos, has spectra, albedos and densities similar to those of a C- or D-type asteroid.
-Like most bodies of its size, Deimos is highly non-spherical with triaxial dimensions of 15 × 12.2 × 11 km, making it 0.56 times the size of Phobos.
 
 Deimos is composed of rock rich in carbonaceous material, much like C-type asteroids and carbonaceous chondrite meteorites.
 It is cratered, but the surface is noticeably smoother than that of Phobos, caused by the partial filling of craters with regolith.

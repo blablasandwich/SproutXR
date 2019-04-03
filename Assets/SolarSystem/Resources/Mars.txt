@@ -1,17 +1,4 @@
-﻿
-Aphelion 	 1.6660 AU 249.2 Gm 
-Perihelion 	 1.3814 AU 206.7 Gm 
-Semi-major axis 	 1.523679 AU 227.9392 Gm 
-Eccentricity 	 0.0934 
-Orbital period 	 1.8808 Julian years 
-Synodic period 	 779.96 days 2.135 Julian years 
-Average orbital speed 	 24.077 km/s 
-Mean anomaly 	 19.373° 
-Longitude of ascending node 	 49.558° 
-Argument of perihelion 	 286.502° 
-Satellites 2
-
-Mars is the fourth planet from the
+﻿Mars is the fourth planet from the
  Sun and the second smallest planet
  in the Solar System, after Mercury. 
 Named after the Roman god of war, 
@@ -23,6 +10,28 @@ atmosphere, having surface features reminiscent
 both of the impact craters of the Moon and the valleys, 
 deserts, and polar ice caps of Earth. 
 
+
+
+
+
+
+
+
+
+
+
+
+Aphelion 	 1.6660 AU 249.2 Gm 
+Perihelion 	 1.3814 AU 206.7 Gm 
+Semi-major axis 	 1.523679 AU 227.9392 Gm 
+Eccentricity 	 0.0934 
+Orbital period 	 1.8808 Julian years 
+Synodic period 	 779.96 days 2.135 Julian years 
+Average orbital speed 	 24.077 km/s 
+Mean anomaly 	 19.373° 
+Longitude of ascending node 	 49.558° 
+Argument of perihelion 	 286.502° 
+Satellites 2
 
 The rotational period and seasonal cycles of Mars are likewise similar 
  to those of Earth, as is the tilt that produces the seasons. 

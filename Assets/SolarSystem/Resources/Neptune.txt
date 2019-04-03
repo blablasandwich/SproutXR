@@ -1,4 +1,42 @@
-﻿Aphelion 	 30.33 AU (4,540 Gm) 
+﻿Neptune is the eighth and farthest known planet from the Sun. 
+It is the fourth-largest planet by diameter and the third-largest by mass.
+Among the giant planets in the Solar System, Neptune is the most dense. 
+Neptune is 17 times the mass of Earth and is slightly more massive than its near-twin Uranus,
+which is 15 times the mass of Earth and slightly larger than Neptune. 
+Neptune orbits the Sun at an average distance of 30.1 astronomical units (4.50×109 km).
+Named after the Roman god of the sea, its astronomical symbol is ♆, a stylised version of the god Neptune's trident.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Aphelion 	 30.33 AU (4,540 Gm) 
 Perihelion		 29.81 AU (4,460 Gm) 
 Semi-major axis 	 30.110387 AU (4,504.45 Gm) 
 Eccentricity 	 0.009456 
@@ -13,13 +51,6 @@ Longitude of ascending node 	 131.784°
 Argument of perihelion 	 276.336° 
 Known satellites 	 14 
 
-Neptune is the eighth and farthest known planet from the Sun. 
-It is the fourth-largest planet by diameter and the third-largest by mass.
-Among the giant planets in the Solar System, Neptune is the most dense. 
-Neptune is 17 times the mass of Earth and is slightly more massive than its near-twin Uranus,
-which is 15 times the mass of Earth and slightly larger than Neptune. 
-Neptune orbits the Sun at an average distance of 30.1 astronomical units (4.50×109 km).
-Named after the Roman god of the sea, its astronomical symbol is ♆, a stylised version of the god Neptune's trident.
 
 Neptune is not visible to the unaided eye and is the only planet in the Solar System found
 thus far by mathematical prediction rather than by empirical observation. Unexpected changes

@@ -1,4 +1,9 @@
-﻿Orbital characteristics  
+﻿Europa Listeni/jʊˈroʊpə/ (Jupiter II), is the sixth-closest moon of Jupiter, and the smallest of its four Galilean satellites, but still the sixth-largest moon in the Solar System.
+ Europa was discovered in 1610 by Galileo Galilei and was named after Europa, mother of King Minos of Crete, who became one of Zeus' lovers.
+ Progressively better observations of Europa have occurred over the centuries by Earth-bound telescopes, and by space probe flybys starting in the 1970s.
+
+
+Orbital characteristics  
 Periapsis 664862 km 
 Apoapsis 676938 km 
 Mean orbit radius 670900 km 
@@ -16,9 +21,6 @@ Volume 1.593×1010 km3 (0.015 Earths)
 Mass (4.799844±0.000013)×1022 kg (0.008 Earths) 
 Mean density 3.013±0.005 g/cm3 
 
-Europa Listeni/jʊˈroʊpə/ (Jupiter II), is the sixth-closest moon of Jupiter, and the smallest of its four Galilean satellites, but still the sixth-largest moon in the Solar System.
- Europa was discovered in 1610 by Galileo Galilei and was named after Europa, mother of King Minos of Crete, who became one of Zeus' lovers.
- Progressively better observations of Europa have occurred over the centuries by Earth-bound telescopes, and by space probe flybys starting in the 1970s.
 
 Slightly smaller than the Moon, Europa is primarily made of silicate rock and has a water-ice crust and probably an iron–nickel core.
 It has a tenuous atmosphere composed primarily of oxygen. Its surface is striated by cracks and streaks, whereas craters are relatively rare. 

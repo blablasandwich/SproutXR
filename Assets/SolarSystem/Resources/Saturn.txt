@@ -1,4 +1,27 @@
-﻿Aphelion 	 10.086 AU 	 (1,509 Gm) 
+﻿Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter.
+ It is a gas giant with an average radius about nine times that of Earth.
+ Although only one-eighth the average density of Earth, with its larger volume Saturn is just over 95 times more massive.
+ Saturn is named after the Roman god of agriculture; its astronomical symbol (♄) represents the god's sickle.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Aphelion 	 10.086 AU 	 (1,509 Gm) 
 Perihelion		 9.024 AU 	 (1,350 Gm) 
 Semi-major axis 	 9.554909 AU 	 1,429.39 Gm 
 Eccentricity		 0.05555 
@@ -11,11 +34,7 @@ Longitude of ascending node 	113.665°
 Argument of perihelion 	 339.392° 
 Known satellites 	 62 with formal designations; innumerable additional moonlets. 
 
-Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter.
- It is a gas giant with an average radius about nine times that of Earth.
- Although only one-eighth the average density of Earth, with its larger volume Saturn is just over 95 times more massive.
- Saturn is named after the Roman god of agriculture; its astronomical symbol (♄) represents the god's sickle.
- 
+
 Saturn's interior is probably composed of a core of iron–nickel and rock (silicon and oxygen compounds).
  This core is surrounded by a deep layer of metallic hydrogen, an intermediate layer of liquid hydrogen and liquid helium, 
  and finally outside the Frenkel line a gaseous outer layer. Saturn has a pale yellow hue due to ammonia crystals
