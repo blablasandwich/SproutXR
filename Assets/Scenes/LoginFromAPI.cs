@@ -24,6 +24,7 @@ public class LoginFromAPI : MonoBehaviour
       public string API_URL = "http://api.sproutxr.com";
 
     private User user;
+    private User userCompare;
     private bool authenticated = false;
     private string inputUsername = "";
     private string email = "";
@@ -34,7 +35,7 @@ public class LoginFromAPI : MonoBehaviour
     {
         public string username = "";
         public string email = "";
-        public string password_hash = "";
+        public string password_hash = "r";
     }
 
     public void Start()
@@ -46,6 +47,7 @@ public class LoginFromAPI : MonoBehaviour
         }
 
         user = new User();
+        userCompare = new User();
         usernameInputField = GameObject.Find("Username/InputField").GetComponent<InputField>();
         passwordInputField = GameObject.Find("Password/InputField").GetComponent<InputField>();
         feedbackText = GameObject.Find("FeedbackText").GetComponent<Text>();
@@ -54,10 +56,10 @@ public class LoginFromAPI : MonoBehaviour
 
     public void CheckUser()
     {
-            email = usernameInputField.text;
-            inputPassword = passwordInputField.text;
-            cardUser = false;
-            StartCoroutine(GetUser());
+        email = usernameInputField.text;
+        inputPassword = passwordInputField.text;
+        cardUser = false;
+        StartCoroutine(GetUser());
     }
 
     public void LogInCard(string user, string password)
@@ -70,6 +72,13 @@ public class LoginFromAPI : MonoBehaviour
 
     void CheckPassword()
     {
+        string debugTest = "Testing password check: \n" +
+            "Pass : " + inputPassword +
+            "\nPass hash: " + user.password_hash +
+            "\nmd5 hash: " + MD5Hash(inputPassword);
+
+        Debug.Log(debugTest);
+
         if (user.password_hash == MD5Hash(inputPassword))
         {
             authenticated = true;            
@@ -116,12 +125,13 @@ public class LoginFromAPI : MonoBehaviour
         {
             // Show results as text
             Debug.Log(www.downloadHandler.text);
-            
-            user = JsonUtility.FromJson<User>(www.downloadHandler.text);
+
+            if(www.downloadHandler.text != "")
+                user = JsonUtility.FromJson<User>(www.downloadHandler.text);
             // Or retrieve results as binary data
             // byte[] results = www.downloadHandler.data;
         }
-
+        
         if (!cardUser)
         {
             CheckPassword();
