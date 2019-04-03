@@ -134,6 +134,7 @@ public class RegisterFromAPI : MonoBehaviour {
         string payload       = "";
 
         payload = addJson(payload, "username", username);
+        payload = addJson(payload, "email", email);
         payload = addJson(payload, "password_hash", password_hash);
         payload = addJson(payload, "classroom_code", cid);
 
