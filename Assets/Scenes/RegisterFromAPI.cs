@@ -35,7 +35,7 @@ public class RegisterFromAPI : MonoBehaviour {
         user                      = new User();
   //    usernameInputField        =  GameObject.Find("").GetComponent<InputField>();
         emailInputField           = GameObject.Find("DisplayInputField").GetComponent<InputField>();
-        passwordInputField        = GameObject.Find("PasswordInputField").GetComponent<InputField>();
+        passwordInputField        = GameObject.Find("PassIF").GetComponent<InputField>();
         passwordConfirmInputField = GameObject.Find("ConfirmPassInputField").GetComponent<InputField>();
         libraryCanvas             = GetComponent<LoginUIManager>();
     }
