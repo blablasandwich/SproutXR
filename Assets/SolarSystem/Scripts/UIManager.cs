@@ -47,11 +47,11 @@ public class UIManager : MonoBehaviour
         TogglePlanetInfoPanel(false);
 
         //disable ui panel if overview camera is selected by default
-        if(CameraManager.instance.cameraMode.Equals(ConstantValues.CameraMode.Overwiew))
+        /*if(CameraManager.instance.cameraMode.Equals(ConstantValues.CameraMode.Overwiew))
         {
             this.astronomicalBodiesButtons.SetActive(false);
             this.planetInfoPanel.SetActive(false);
-        }
+        }*/
     }
 
     /*
@@ -69,7 +69,7 @@ public class UIManager : MonoBehaviour
         // Call UI Manager to disable orbits (line renderers)
         //ToggleOrbits(false);
 
-        TogglePlanetInfoPanel(true);
+        //TogglePlanetInfoPanel(true);
 
         //CameraManager.instance.SwitchToMainCamera();
 

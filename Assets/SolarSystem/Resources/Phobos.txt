@@ -1,4 +1,24 @@
-﻿Orbital characteristics 
+﻿Phobos (systematic designation: Mars I) is the larger and innermost of the two natural satellites of Mars, the other being Deimos.
+Both moons were discovered in 1877 by American astronomer Asaph Hall.
+
+Phobos is a small, irregularly shaped object with a mean radius of 11 km (7 mi), and is seven times more massive than Deimos, Mars's outer moon.
+Phobos is named after the Greek god Phobos, a son of Ares (Mars) and Aphrodite (Venus) which was the personification of Horror.
+The name "Phobos" is pronounced /ˈfoʊbəs/ foh-bəs or /ˈfoʊbɒs/ foh-bos,[3] or like the Greek Φόβος.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Orbital characteristics 
 Periapsis 	 9234.42 km 
 Apoapsis 	 9517.58 km 
 Semi-major axis 	 9376 km (2.76 Mars radii) 
@@ -22,12 +42,7 @@ Axial tilt 	 0°
 Albedo 	 0.071 
 Temperature 	 ≈ 233 K 
 
-Phobos (systematic designation: Mars I) is the larger and innermost of the two natural satellites of Mars, the other being Deimos.
-Both moons were discovered in 1877 by American astronomer Asaph Hall.
 
-Phobos is a small, irregularly shaped object with a mean radius of 11 km (7 mi), and is seven times more massive than Deimos, Mars's outer moon.
-Phobos is named after the Greek god Phobos, a son of Ares (Mars) and Aphrodite (Venus) which was the personification of Horror.
-The name "Phobos" is pronounced /ˈfoʊbəs/ foh-bəs or /ˈfoʊbɒs/ foh-bos,[3] or like the Greek Φόβος.
 
 Phobos orbits 6,000 km (3,700 mi) from the Martian surface, closer to its primary than any other known planetary moon.
 It is so close that it orbits Mars faster than Mars rotates, and completes an orbit in just 7 hours and 39 minutes.

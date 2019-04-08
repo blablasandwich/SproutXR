@@ -69,14 +69,14 @@ public class PlanetManager : MonoBehaviour
 
     public void DisableSunFlare(string selectedPlanetName)
     {
-        if (selectedPlanetName == "Sun")
+     /*   if (selectedPlanetName == "Sun")
         {
             SunLight.enabled = false;
         }
         else
         {
             SunLight.enabled = true;
-        }
+        }*/
     }
 
     public void ToggleFollowOrbitForEachPlanet(bool enabled)
@@ -170,6 +170,7 @@ public class PlanetManager : MonoBehaviour
 
     public GameObject GetPlanet(string planetName)
     {
+        print(planetName);
         return GameObject.Find(planetName);
     }
 

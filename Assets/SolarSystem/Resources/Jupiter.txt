@@ -1,19 +1,4 @@
-﻿Aphelion 	 5.45492 AU (816.04 Gm) 
-Perihelion		 4.95029 AU (740.55 Gm) 
-Semi-major axis 	 5.20260 AU (778.299 Gm) 
-Eccentricity 	 0.048498 
-Orbital period 	 11.8618 yr 	 4,332.59 d  
-Synodic period 	 398.88 d 
-Average orbital speed 	 13.07 km/s 
-Mean anomaly 	 20.020° 
-Inclination		 1.303° to ecliptic 
-6.09° to Sun's equator 
-0.32° to invariable plane 
-Longitude of ascending node 	 100.464° 
-Argument of perihelion 	 273.867° 
-Known satellites 	 67 (as of 2014) 
-
-Jupiter is the fifth planet from the Sun and the largest in the Solar System.
+﻿Jupiter is the fifth planet from the Sun and the largest in the Solar System.
  It is a giant planet with a mass one-thousandth that of the Sun, but two and
  a half times that of all the other planets in the Solar System combined.
  Jupiter is a gas giant, along with Saturn. (Uranus and Neptune are ice giants.) 
@@ -30,3 +15,19 @@ comprises only about a tenth of the number of molecules. It may also have a rock
  Surrounding Jupiter is a faint planetary ring system and a powerful magnetosphere. 
  Jupiter has at least 67 moons, including the four large Galilean moons discovered by Galileo Galilei in 1610. 
  Ganymede, the largest of these, has a diameter greater than that of the planet Mercury.
+
+Aphelion 	 5.45492 AU (816.04 Gm) 
+Perihelion		 4.95029 AU (740.55 Gm) 
+Semi-major axis 	 5.20260 AU (778.299 Gm) 
+Eccentricity 	 0.048498 
+Orbital period 	 11.8618 yr 	 4,332.59 d  
+Synodic period 	 398.88 d 
+Average orbital speed 	 13.07 km/s 
+Mean anomaly 	 20.020° 
+Inclination		 1.303° to ecliptic 
+6.09° to Sun's equator 
+0.32° to invariable plane 
+Longitude of ascending node 	 100.464° 
+Argument of perihelion 	 273.867° 
+Known satellites 	 67 (as of 2014) 
+
