@@ -15,6 +15,7 @@ public class LoginUIManager : MonoBehaviour
     public void OpenLibraryCanvas()
     {
         libraryCanvas.SetActive(true);
+        libraryCanvas.GetComponent<Canvas>().sortingOrder = 2;  
     }
     // Update is called once per frame
     public void activateFreeTrial()

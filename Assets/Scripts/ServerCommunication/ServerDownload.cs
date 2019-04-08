@@ -33,7 +33,19 @@ public class ServerDownload : MonoBehaviour
     //TODO: android/iOS type for url
     public string deviceType;
 
-    private GameEnumList game;
+    private GameEnumList Game;
+    private GameEnumList game
+    {
+        get
+        {
+            return Game;
+        }
+        set
+        {
+            Debug.Log("changed");
+            Game = value;
+        }
+    }
     public DownloadButtonBehavior dlButton;
     private MathController mController;
 
@@ -174,7 +186,6 @@ public class ServerDownload : MonoBehaviour
         //TODO: Have a version checking function to compare different asset bundle files
         url = rootURL + game.gameList + "/AssetBundle/" + ABName;
         WWW request = WWW.LoadFromCacheOrDownload(url, 0);
-        
 
         while (!request.isDone)
         {
@@ -312,6 +323,7 @@ public class ServerDownload : MonoBehaviour
         url = rootURL + game.gameList + "/AssetBundle/" + ABName;
         string urlManifest = rootURL + game.gameList + "/AssetBundle/" + ABName + ".manifest";
         //Hash128 hash = AssetBundleManifest.GetAssetBundleHash("yes");
+        Debug.Log("manifest Url: " + urlManifest);
         
         if (Caching.IsVersionCached(url, 0))
         {
@@ -322,6 +334,62 @@ public class ServerDownload : MonoBehaviour
         if (downloadText)
             downloadText.text = "Download Now!";
         return false;
+    }
+
+    //specify which asset bundle to check
+    public IEnumerator IsAssetBundleCachedOnline(string ABName)
+    {
+        //update url
+        yield return new WaitForSeconds(0.5f);
+        Debug.Log(game.gameList.ToString());
+        url = rootURL + game.gameList + "/AssetBundle/" + ABName;
+        string urlManifest = rootURL + game.gameList + "/AssetBundle/" + ABName + ".manifest";
+        string fileName = ABName + ".manifest";
+        //        UnityWebRequest uwr = UnityWebRequestAssetBundle.GetAssetBundle(urlManifest);
+        UnityWebRequest uwr = UnityWebRequestAssetBundle.GetAssetBundle(url);
+        AssetBundleManifest bundleManifest = null;
+        Debug.Log("manifest Url: " + urlManifest);
+        //yield return 
+        uwr.SendWebRequest();
+        while(!uwr.isDone)
+        {
+            Debug.Log(uwr.downloadProgress);
+            yield return null;
+        }
+
+        if (uwr.isNetworkError || uwr.isHttpError)
+        {
+            Debug.Log(uwr.error);
+        }
+        else
+        {
+            // Get downloaded asset bundle
+            //AssetBundle bundle = DownloadHandlerAssetBundle.GetContent(uwr);
+            //bundleManifest = bundle.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
+            //Debug.Log(uwr.GetHashCode());
+            //uwr.downloadHandler.text
+            //uwr.downloadHandler.text.ToCharArray();
+            AssetBundle bundlerooo = DownloadHandlerAssetBundle.GetContent(uwr);
+            bundleManifest = bundlerooo.LoadAsset<AssetBundleManifest>(fileName);
+            
+            //Debug.Log(uwr.downloadHandler.data.ToString());
+            Debug.Log(bundleManifest.GetHashCode());
+        }
+
+        //int manifestText = bundleManifest.GetHashCode();
+        //AssetBundleManifest man = (AssetBundleManifest)DownloadHandlerAssetBundle.GetContent(uwr);
+        //Hash128 hash = AssetBundleManifest.GetAssetBundleHash("yes");
+        
+        
+        if (Caching.IsVersionCached(url, 0))
+        {
+            if (downloadText)
+                downloadText.text = "Launch";
+        }
+        if (downloadText)
+            downloadText.text = "Download Now!";
+
+        yield return null;
     }
 
 
