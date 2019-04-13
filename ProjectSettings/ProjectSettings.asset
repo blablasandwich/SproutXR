@@ -243,7 +243,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: D:/Jose/GameDev/SproutXR_Github/_KeyStore/main.keystore
+  AndroidKeystoreName: D:/Unity/Lucerna/unity 18.3.2/SproutXR/_KeyStore/main.keystore
   AndroidKeyaliasName: sproutxr
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
